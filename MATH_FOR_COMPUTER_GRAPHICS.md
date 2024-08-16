@@ -119,8 +119,8 @@ Finally, although it should be clear from reading this, the opinions given withi
 
 13) ТЕОРМЕХ
 
-    https://library.bmstu.ru/Pages/Edu/Books/1kurs/2semestr/teoreticheskaya_mehanika
-    https://ru.wikipedia.org/wiki/Теоретическая_механика
+    - https://library.bmstu.ru/Pages/Edu/Books/1kurs/2semestr/teoreticheskaya_mehanika
+    - https://ru.wikipedia.org/wiki/Теоретическая_механика
 
 
 CONCLUDING WORDS: APPLIED AND PURE MATHEMATICS
