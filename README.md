@@ -81,7 +81,7 @@
 
 
 # ПРОЧЕЕ
-	- Кафедра теоретической механики и мехатроники | Кафедры мехмата https://www.youtube.com/watch?v=ZiRcSYtDeS4
+	-Кафедра теоретической механики и мехатроники | Кафедры мехмата https://www.youtube.com/watch?v=ZiRcSYtDeS4
 
 
 ![](math.png)
