@@ -112,6 +112,14 @@
     - *На простых примерах, взятых из области механики и геометрии, разъясняется понятие огибающей, играющее важную рошль в высшей математике. Эти примеры не требуют рассмотрения никаких других функций, кроме многочленов, благодаря чему разыскание огибающих производится весьма простыми методами.*
     - *С помощью дифференциальных методов показывают как вывести уравнение огибающей для уравнений семейства кривых*
     - *Последний параграф посвящён эволютам и эвольвентам, в котором для дальнейшего чтения рекомендуется книга Бермана «Циклоида»*
+- **Differential Geometry** https://www.youtube.com/playlist?list=PLdgVBOaXkb9DJjk8V0-RkXTnD4ZXUOFsc
+    - Introduction to Differential Geometry: Curves
+    - Arc Length and Reparameterization
+    - Arc Length as a Parameter
+    - Closed Curves and Periodic Curves
+    - Curvature: Intuition and Derivation
+    - Introducing Torsion and Special Planes
+    - The Frenet-Serret Formulas 
 
 # ПРОЕКТИВНАЯ ГЕОМЕТРИЯ
 - С проективной геометрией я сталкивался, когда изучал 3D и матрицы 10 лет назад. Сейчас поры бы уже начать изучать этот раздел основательно
