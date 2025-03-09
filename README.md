@@ -561,6 +561,7 @@
   - статья про деление и метод касательных и реализацию своего Float-а https://habr.com/ru/companies/ruvds/articles/836054/
   - статья про BigFloat и программы-калькуляторы. Рекомендуется бесплатный и открытый французский PARI/GP, так как он считает невероятно быстро. В тесте использовалось вычисление первого замечательного предела https://habr.com/ru/companies/ruvds/articles/845084/
   - статья про UX в калькуляторе https://habr.com/ru/articles/883366/
-
+- **Алгоритмы манипуляций с битами** https://habr.com/ru/articles/886182/
+  - http://www-graphics.stanford.edu/~seander/bithacks.html
 
 ![](math.png)
