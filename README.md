@@ -567,6 +567,8 @@
 - **Computer Graphics**
   - Math in Game Development Summit: A Visual Guide to Quaternions and Dual Quaternions https://www.youtube.com/watch?v=en2QcehKJd8
   - Quick Understanding of Homogeneous Coordinates for Computer Graphics https://www.youtube.com/watch?v=o-xwmTODTUI
-
+  - Torsion: How curves twist in space, and the TNB or Frenet Frame https://www.youtube.com/watch?v=VIqA8U9ozIA
+  - A Visual Intro to Curves and the Frenet Frame https://www.youtube.com/watch?v=LwOorOh6Wt4
+  - An Introduction to Curvilinear Coordinates in Differential Geometry https://www.youtube.com/watch?v=2V__naEkXVY
 
 ![](math.png)
