@@ -564,4 +564,9 @@
 - **Алгоритмы манипуляций с битами** https://habr.com/ru/articles/886182/
   - http://www-graphics.stanford.edu/~seander/bithacks.html
 
+- **Computer Graphics**
+  - Math in Game Development Summit: A Visual Guide to Quaternions and Dual Quaternions https://www.youtube.com/watch?v=en2QcehKJd8
+  - 
+
+
 ![](math.png)
