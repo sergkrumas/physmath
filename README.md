@@ -566,7 +566,7 @@
 
 - **Computer Graphics**
   - Math in Game Development Summit: A Visual Guide to Quaternions and Dual Quaternions https://www.youtube.com/watch?v=en2QcehKJd8
-  - 
+  - Quick Understanding of Homogeneous Coordinates for Computer Graphics https://www.youtube.com/watch?v=o-xwmTODTUI
 
 
 ![](math.png)
