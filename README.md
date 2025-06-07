@@ -610,5 +610,7 @@
   - An Introduction to Curvilinear Coordinates in Differential Geometry https://www.youtube.com/watch?v=2V__naEkXVY
   - How to learn Differential Geometry | Differential Geometry | Differential Geometry Lecture https://www.youtube.com/watch?v=ITHausnPq7A
 
+- Python Internals
+  - **CPython Internals: Your Guide to the Python 3 Interpreter**
 
 ![](math.png)
