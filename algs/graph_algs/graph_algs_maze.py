@@ -88,7 +88,7 @@ class Maze():
             i = 1
             for y in range(self.height):
                 for x in range(self.width):
-                    if (y == self.height) or (x == self.width):
+                    if y == self.height or x == self.width:
                         self[x, y].left_wall = True
                         self[x, y].up_wall = True
                     else:
@@ -96,7 +96,6 @@ class Maze():
                         i += 1
                         self[x, y].left_wall = b
                         self[x, y].up_wall = a
-
 
     def saveMaze(self, filename):
         with open(filename, 'w+', encoding='utf8') as file:
@@ -110,13 +109,15 @@ class Maze():
     def drawMaze(self, painter, widget):
         painter.save()
 
-        painter.fillRect(widget.rect(), Qt.gray)
-
         CELLSIZE = 50
-
-
-
         o = QPoint(10, 10)
+
+        rect = QRect(0, 0, CELLSIZE*self.width, CELLSIZE*self.height)
+        rect.moveTopLeft(o)
+        painter.fillRect(rect, Qt.gray)
+
+        painter.setPen(QPen(Qt.black, 2))
+
         for x in range(self.width):
             for y in range(self.height):
                 cell = self[x, y]
@@ -136,7 +137,6 @@ class Maze():
         path.lineTo(o + QPoint(self.width*CELLSIZE, 0))
         painter.drawPath(path)
 
-
         painter.restore()
 
 
@@ -148,12 +148,10 @@ class Window(QWidget):
         self.maze = None
 
     def paintEvent(self, event):
-
         painter = QPainter()
         painter.begin(self)
         if self.maze:
             self.maze.drawMaze(painter, self)
-
         painter.end()
 
 
