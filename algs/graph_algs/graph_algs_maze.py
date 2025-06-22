@@ -25,6 +25,7 @@ class Location():
     def __init__(self):
         self.left_wall = False
         self.up_wall = False
+        self.visited = False
 
     def __repr__(self):
         return f'Location ({self.left_wall} {self.up_wall})'
@@ -63,8 +64,9 @@ class Maze():
         self.height = 0
         self.maze_array = []
 
-
         self.allowed_indexes = (0, 1, 2)
+
+        self.Path = []
 
     def setLength(self, w, h):
         elements_count = w*h
@@ -86,8 +88,8 @@ class Maze():
             self.setLength(self.width+1, self.height+1)
 
             i = 1
-            for y in range(self.height):
-                for x in range(self.width):
+            for y in range(self.height+1):
+                for x in range(self.width+1):
                     if y == self.height or x == self.width:
                         self[x, y].left_wall = True
                         self[x, y].up_wall = True
@@ -110,7 +112,7 @@ class Maze():
         painter.save()
 
         CELLSIZE = 50
-        o = QPoint(10, 10)
+        o = offset = QPoint(10, 10)
 
         rect = QRect(0, 0, CELLSIZE*self.width, CELLSIZE*self.height)
         rect.moveTopLeft(o)
@@ -137,8 +139,75 @@ class Maze():
         path.lineTo(o + QPoint(self.width*CELLSIZE, 0))
         painter.drawPath(path)
 
+        if self.Path:
+            i = 0
+            Path = self.Path
+ 
+            # while not ((Path[i].x() == -1) and Path[i].y() == -1):
+                # p = Path[i]
+
+            for p in self.Path:
+                xc = CELLSIZE * (2 * p.x() + 1) // 2
+                yc = CELLSIZE * (2 * p.y() + 1) // 2
+                rect1 = QRect(QPoint(xc-5, yc-5), QPoint(xc+5, yc+5))
+                rect1.moveTopLeft(offset + rect1.topLeft())
+                painter.drawEllipse(rect1)
+                i += 1
+
         painter.restore()
 
+    def recursive_solve(self, s: QPoint, f: QPoint):
+
+        Path = []
+
+
+        DX = (1, 0, -1, 0)
+        DY = (0, -1, 0, 1)
+
+        # служебная функция, определяет
+        # можно ли пройти из локации(x, y) в локацию (x+dx, y+dy),
+        # то есть нет ли между ними стены
+        def CanGo(x, y, dx, dy) -> bool:
+            if dx == -1: return not self[x, y].left_wall
+            elif dx == 1: return not self[x+1, y].left_wall
+            elif dy == -1: return not self[x, y].up_wall
+            else: return not self[x, y+1].up_wall
+
+        # поиск финишной локации из точки (x, y)
+        def Solve(x, y, depth) -> bool:
+            print('solve depth', depth)
+            nonlocal Path
+            self[x, y].visited = True  #поменить локацию как посещённую
+
+            # Path[depth] = QPoint(x, y) #добавить её в описание маршрута
+            # Path[depth+1] = QPoint(-1, -1) #добавить признак конца маршрута
+
+            if (x == f.x()) and (y == f.y()):
+                Path.append(QPoint(x, y))
+                return True
+
+            for i in range(4):
+                if CanGo(x, y, DX[i], DY[i]) and not self[x+DX[i], y+DY[i]].visited:
+                    if Solve(x + DX[i], y + DY[i], depth + 1):
+                        Path.append(QPoint(x, y))
+                        return True
+
+            self[x, y].visited = False
+
+            return False
+
+        # Path = list(_generator(lambda: None, self.width*self.height+1))
+
+        for xx in range(self.width):
+            for yy in range(self.height):
+                self[xx, yy].visited = False
+
+        if Solve(s.x(), s.y(), 0):
+            self.Path = Path
+            print('solved')
+        else:
+            self.Path = [QPoint(0, 0), QPoint(5, 0)]
+            print('not solved')
 
 class Window(QWidget):
 
@@ -155,6 +224,11 @@ class Window(QWidget):
         painter.end()
 
 
+    def mousePressEvent(self, event):
+        self.maze.recursive_solve(QPoint(0, 3), QPoint(4, 0))
+        self.update()
+
+
 def main():
     
     maze = Maze()
@@ -164,7 +238,7 @@ def main():
     print(maze.width, maze.height)
     print(maze.maze_array)
 
-    maze.saveMaze('new_maze.txt')
+    # maze.saveMaze('new_maze.txt')
 
 
 
