@@ -370,6 +370,9 @@ class GameStateVisualizer(QWidget):
             b = self.prepare_state_for_viz(self.solving_path[n+1])
             self.transitions.append((a, b))
 
+
+        self.setWindowTitle('Animated Solve Path')
+
         self.timer = QTimer()
         self.timer.timeout.connect(self.timer_handler)
         self.timer.setInterval(100)
@@ -409,8 +412,6 @@ class GameStateVisualizer(QWidget):
         painter = QPainter()
         painter.begin(self)
 
-        painter.setBrush(QBrush(Qt.white))
-        painter.setPen(QPen(Qt.gray, 2))
 
         font = painter.font()
         font.setPixelSize(20)
@@ -419,8 +420,18 @@ class GameStateVisualizer(QWidget):
 
         WIDTH = 50
 
-        def draw_number():
+        def draw_number(highlight=False):
             rect = QRectF(i*WIDTH, j*WIDTH, WIDTH-1, WIDTH-1)
+
+            if highlight:
+                bc = QColor(220, 150, 150)
+                pc = Qt.black
+            else:
+                bc = Qt.white
+                pc = Qt.gray
+
+            painter.setBrush(QBrush(bc))
+            painter.setPen(QPen(pc, 2))
 
             path = QPainterPath()
             path.addRoundedRect(rect, 5, 5)
@@ -445,7 +456,8 @@ class GameStateVisualizer(QWidget):
                 b_pos = b[number_key]
 
                 number_pos = a_pos
-                if a_pos != b_pos:
+                is_moving = a_pos != b_pos
+                if is_moving:
                     number_pos = (
                             b_pos[0]*factor+a_pos[0]*factor_inv,
                             b_pos[1]*factor+a_pos[1]*factor_inv
@@ -453,7 +465,7 @@ class GameStateVisualizer(QWidget):
 
                 i, j = number_pos
                 value = number_key
-                draw_number()
+                draw_number(highlight=is_moving)
 
             status_string = f'{self.transition_index} {self.transition_step_factor:.01f} '
 
