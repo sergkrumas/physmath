@@ -23,7 +23,7 @@ class GameState(): #состояние игрового поля
         if len(self.array) != self.LEN:
             raise ValueError('Array length must be 9!')
         if not all(map(lambda x: isinstance(x, int), self.array)):
-            raise ValueError('Array elements must me all integers!')
+            raise TypeError('Array elements must me all integers!')
 
     def _check_indexes(self, i, j):
         if i not in self.allowed_indexes or j not in self.allowed_indexes:
