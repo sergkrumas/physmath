@@ -90,6 +90,8 @@ class Program():
 
     start_state = [4, 1, 3, 2, 0, 6, 7, 5, 8]
 
+    solving_path = []
+
     @staticmethod
     def GridItemToInt(data):
         if data is None:
@@ -175,9 +177,12 @@ class Program():
         cls.TailIdx = 1
         c = 0 #количество уже исследованных вершин
 
+        cls.solving_path.clear()
+
         def inner_repeat_body():
             nonlocal v
             v = cls.L[v.PrevVertex]
+            cls.solving_path.insert(0, v)
             window.memo.setPlainText(f'{v.State} \n{window.memo.toPlainText()}')
 
         def repeat_body():
@@ -188,6 +193,7 @@ class Program():
             if cls.IsGoal(v.State): # если текущая вершина является целевой
                 window.memo.setPlainText(f'{v.State} \n')
 
+                cls.solving_path.insert(0, v)
                 # шаг за шагом определяем путь от целевой вершины до стартовой,
                 # на каждой итерации выводя соответствующее состояние
                 inner_repeat_body()
@@ -285,9 +291,12 @@ class Program():
         cls.TailIdx = 1
         c = 0
 
+        cls.solving_path.clear()
+
         def inner_repeat_body():
             nonlocal v
             v = cls.L2[v.PrevVertex]
+            cls.solving_path.insert(0, v)
             window.memo.setPlainText(f'{v.State} \n{window.memo.toPlainText()}')
 
         def repeat_body():
@@ -328,7 +337,140 @@ class Program():
 
         window.memo.setPlainText(f'Решение не найдено {time.time()}, {c}')
 
+    @classmethod
+    def animated_resolution(cls):
+        global gtv
+        Program.Initialize()
+        gtv = GameStateVisualizer(Program.StartingState, Program.solving_path)
+        gtv.show()
 
+class GameStateVisualizer(QWidget):
+
+    def prepare_state_for_viz(self, vertex_state):
+        number_states = dict()
+        for i in range(3):
+            for j in range(3):
+                value = vertex_state.State[j, i]
+                if value == 0:
+                    continue
+                number_states[value] = (i, j)
+        return number_states
+
+    def __init__(self, game_state, solving_path):
+        super().__init__()
+        self.game_state = game_state
+        self.solving_path = solving_path
+
+        self.transitions = []
+
+        self.restart_transition()
+
+        for n, solve_step in enumerate(self.solving_path[:-1]):
+            a = self.prepare_state_for_viz(solve_step)
+            b = self.prepare_state_for_viz(self.solving_path[n+1])
+            self.transitions.append((a, b))
+
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.timer_handler)
+        self.timer.setInterval(100)
+
+    def restart_transition(self):
+        self.transition_index = 0
+        self.transition_step_factor = 0.0
+
+    def timer_handler(self):
+        if not self.animation_tick():
+            self.timer.stop()
+            self.restart_transition()
+            print('ANIMATION DONE')
+
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            # self.animation_tick()
+            self.timer.start()
+
+    def animation_tick(self):
+        self.transition_step_factor += 0.2
+        if self.transition_step_factor > 1.0:
+            self.transition_step_factor = 0.0
+            self.transition_index += 1
+
+        last_index = len(self.transitions)-1
+        if self.transition_index > last_index:
+            self.transition_index = last_index
+            self.transition_step_factor = 1.0
+            return False
+
+        self.update()
+        return True
+
+    def paintEvent(self, event):
+
+        painter = QPainter()
+        painter.begin(self)
+
+        painter.setBrush(QBrush(Qt.white))
+        painter.setPen(QPen(Qt.gray, 2))
+
+        font = painter.font()
+        font.setPixelSize(20)
+        painter.setFont(font)
+
+
+        WIDTH = 50
+
+        def draw_number():
+            rect = QRectF(i*WIDTH, j*WIDTH, WIDTH-1, WIDTH-1)
+
+            path = QPainterPath()
+            path.addRoundedRect(rect, 5, 5)
+            painter.drawPath(path)
+
+            painter.save()
+            painter.setPen(QPen(QColor(220, 50, 50)))
+            painter.restore()
+
+            painter.drawText(rect, Qt.AlignCenter, str(value))
+
+        if self.transitions:
+            current_transiton = self.transitions[self.transition_index]
+            factor = self.transition_step_factor
+            factor_inv = 1.0 - factor
+
+            a = current_transiton[0]
+            b = current_transiton[1]
+
+            for number_key in a.keys():
+                a_pos = a[number_key]
+                b_pos = b[number_key]
+
+                number_pos = a_pos
+                if a_pos != b_pos:
+                    number_pos = (
+                            b_pos[0]*factor+a_pos[0]*factor_inv,
+                            b_pos[1]*factor+a_pos[1]*factor_inv
+                        )
+
+                i, j = number_pos
+                value = number_key
+                draw_number()
+
+            status_string = f'{self.transition_index} {self.transition_step_factor:.01f} '
+
+        else:
+
+            for i in range(3):
+                for j in range(3):
+                    value = self.game_state[j, i]
+                    if value == 0:
+                        continue
+                    draw_number()
+
+            status_string = f'Решение не загружено!'
+
+        painter.drawText(self.rect(), Qt.AlignCenter, status_string)
+
+        painter.end()
 
 
 
@@ -364,6 +506,9 @@ class Window(QWidget):
         astar_deepsearch_btn = QPushButton('A*')
         astar_deepsearch_btn.clicked.connect(Program.do_A_start_deep_search)
 
+        show_btn = QPushButton('Animated')
+        show_btn.clicked.connect(Program.animated_resolution)
+
         memo = self.memo = QPlainTextEdit()
 
         main = QVBoxLayout(self)
@@ -383,6 +528,7 @@ class Window(QWidget):
         secondary.setAlignment(deepsearch_btn, Qt.AlignTop | Qt.AlignVCenter)
         secondary.setAlignment(astar_deepsearch_btn, Qt.AlignTop | Qt.AlignVCenter)
 
+        main.addWidget(show_btn)
         main.addWidget(memo)
 
         tw.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
