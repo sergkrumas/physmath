@@ -15,7 +15,7 @@ from enum import IntEnum
 
 from collections import namedtuple
 
-
+import random
 
 class Location():
 
@@ -35,40 +35,27 @@ def _generator(what_to_call, i):
 
 class Maze():
 
-
-
-    def _check_indexes(self, i, j):
-        if 0 <= i <= self.width and 0 <= j <= self.height:
-            pass
-        else:
-            raise IndexError()
-
     def __getitem__(self, index):
         i, j = index
-        self._check_indexes(i, j)
-        value = self.maze_array[self.width*i+j]
+        value = self.maze_array[i][j]
         return value
 
     def __setitem__(self, index, value):
         i, j = index
-        self._check_indexes(i, j)
-        self.maze_array[self.width*i+j] = value
-
-    def LEN(self):
-        self.width * self.height
+        self.maze_array[i][j] = value
 
     def __init__(self):
         self.width = 0
         self.height = 0
         self.maze_array = []
 
-        self.allowed_indexes = (0, 1, 2)
-
         self.Path = []
 
     def setLength(self, w, h):
-        elements_count = w*h
-        self.maze_array = list(_generator(Location, elements_count)) 
+        self.maze_array = []
+        for i in range(w):
+            sa = list(_generator(Location, h))
+            self.maze_array.append(sa)
 
     def readBoolPair(self, line):
         a, b = self.readIntPair(line)
@@ -269,8 +256,130 @@ class Maze():
         self.Path = Path
 
 
+    def PrimGenerateMaze(self, Width, Height):
+
+        DX = (1, 0, -1, 0)
+        DY = (0, -1, 0, 1)
 
 
+        AttrTypeInside = 1
+        AttrTypeOutside = 2
+        AttrTypeBorder = 3
+
+        def breakWall(x, y, dx, dy):
+            if dx == -1: self[x, y].left_wall = False
+            elif dx == 1: self[x+1, y].left_wall = False
+            elif dy == -1: self[x, y].up_wall = False
+            else: self[x, y+1].up_wall = False
+
+
+        self.width = Width
+        self.height = Height
+
+        self.setLength(Width+1, Height+1)
+
+        for x in range(Width):
+            for y in range(Height):
+                self[x, y].attribute = AttrTypeOutside
+
+        for y in range(Height+1):
+            for x in range(Width+1):
+                self[x, y].left_wall = True
+                self[x, y].up_wall = True
+
+        x = random.randint(0, Width)
+        y = random.randint(0, Height)
+        self[x, y].attribute = AttrTypeInside
+
+
+        for i in range(4):
+            xc = x + DX[i]
+            yc = y + DY[i]
+            if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height):
+                self[xc, yc].attribute = AttrTypeBorder
+
+        ExitFor1 = False
+        ExitFor2 = False
+        ExitFor3 = False
+
+        while True:
+            isEnd = True
+            counter = 0
+            print('new cycle')
+            for x in range(Width):
+                for y in range(Height):
+                    if self[x, y].attribute == AttrTypeBorder:
+                        counter += 1
+
+            counter = random.randint(0, counter) + 1
+            for x in range(Width):
+                if ExitFor1:
+                    break
+                for y in range(Height):
+                    if ExitFor1:
+                        break
+                    if self[x, y].attribute == AttrTypeBorder:
+                        counter -= 1
+                        if counter == 0:
+                            xloc = x
+                            yloc = y
+                            ExitFor1 = True
+                            break
+            if ExitFor1:
+                print('exit for 1')
+                self[xloc, yloc].attribute = AttrTypeInside
+
+                counter = 0
+                for i in range(4):
+                    xc = xloc + DX[i]
+                    yc = yloc + DY[i]
+                    if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height):
+                        if self[xc, yc].attribute == AttrTypeInside:
+                            counter += 1
+                        if self[xc, yc].attribute == AttrTypeOutside:
+                            self[xc, yc].attribute = AttrTypeBorder
+
+                counter = random.randint(0, counter) + 1
+                for i in range(4):
+                    xc = xloc + DX[i]
+                    yc = yloc = DY[i]
+
+                    if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height) and (self[xc, yc].attribute == AttrTypeInside):
+                        counter -= 1
+                        if counter == 0:
+                            breakWall(xloc, yloc, DX[i], DY[i])
+                            ExitFor2 = True
+                            ExitFor1 = False
+                            break
+
+                ExitFor1 = False
+
+            if ExitFor2:
+                print('exit for 2')
+                for x in range(Width):
+                    if ExitFor3:
+                        break
+                    for y in range(Height):
+                        if ExitFor3:
+                            break
+                        if self[x, y].attribute == AttrTypeBorder:
+                            IsEnd = False
+                            ExitFor3 = True
+                            ExitFor2 = False
+                            break
+
+                ExitFor2 = False
+
+            if ExitFor3:
+                print('exit for 3')
+                window.update()
+                app.processEvents()
+
+                ExitFor3 = False
+
+            if isEnd:
+                print('break of loop, isEnd =', isEnd)
+                break
 
 class Window(QWidget):
 
@@ -293,6 +402,7 @@ class Window(QWidget):
         recursive_solve = subMenu.addAction("Рекурсивный обход")
         wave_tracing = subMenu.addAction("Волновая трассировка")
         subMenu.addSeparator()
+        prim_generate_maze = subMenu.addAction("Алгоритм Прима")
 
         action = subMenu.exec_(QCursor().pos())
         if action is None:
@@ -305,6 +415,11 @@ class Window(QWidget):
         elif action is wave_tracing:
             print('wave tracing')
             self.maze.waveTracingSolve(QPoint(0, 0), QPoint(4, 0))
+
+        elif action is prim_generate_maze:
+            self.maze.PrimGenerateMaze(10, 8)
+
+
 
 
         self.update()
