@@ -39,6 +39,7 @@ class Location():
         self.visited = False
         self.mark = 0
         self.attr = 0
+        self.start = False
 
     def __repr__(self):
         return f'Location ({self.left_wall} {self.up_wall})'
@@ -124,6 +125,15 @@ class Maze():
         for x in range(self.width):
             for y in range(self.height):
                 cell = self[x, y]
+
+                r1 = QRect(QPoint(x*CELLSIZE, y*CELLSIZE), QPoint((x+1)*CELLSIZE, (y+1)*CELLSIZE))
+                r1.moveTopLeft(o + r1.topLeft())
+
+                if cell.start:
+                    painter.fillRect(r1, QColor(220, 100, 100))
+
+
+
                 painter.setPen(QPen(Qt.black, 2))
                 path = QPainterPath()
                 if cell.up_wall:
@@ -134,8 +144,6 @@ class Maze():
                     path.lineTo(o + QPoint(x*CELLSIZE, (y+1)*CELLSIZE))
                 painter.drawPath(path)
 
-                r1 = QRect(QPoint(x*CELLSIZE, y*CELLSIZE), QPoint((x+1)*CELLSIZE, (y+1)*CELLSIZE))
-                r1.moveTopLeft(o + r1.topLeft())
                 text = atToStr[self[x, y].attr]
                 text = text + f'\n{x}:{y}'
 
@@ -159,8 +167,6 @@ class Maze():
 
         if self.Path:
             i = 0
-            Path = self.Path
- 
             for p in self.Path:
                 xc = CELLSIZE * (2 * p.x() + 1) // 2
                 yc = CELLSIZE * (2 * p.y() + 1) // 2
@@ -295,16 +301,12 @@ class Maze():
         def breakWall(x, y, dx, dy):
             if dx == -1:
                 self[x, y].left_wall = False
-                print('wall break left', x, y)
             elif dx == 1:
                 self[x+1, y].left_wall = False
-                print('wall break left', x+1, y)
             elif dy == -1:
                 self[x, y].up_wall = False
-                print('wall break up', x, y)
             else:
                 self[x, y+1].up_wall = False
-                print('wall break up', x, y+1)
 
         self.width = Width
         self.height = Height
@@ -324,7 +326,8 @@ class Maze():
         x = randint(Width) # выбираем начальную локацию
         y = randint(Height) # и присваиваем ей атрибут Inside
         self[x, y].attr = atInside
-        print('mark inside', x, y)
+
+        self[x, y].start = True
 
         for i in range(4):  # всем её соседям присваиваем атрибут Border
             xc = x + DX[i]
@@ -332,9 +335,8 @@ class Maze():
             if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height):
                 self[xc, yc].attr = atBorder
 
-        # return
-
         counter = xloc = yloc = 0
+        isEnd = False
 
         def first_step():
             nonlocal counter, xloc, yloc
@@ -381,31 +383,28 @@ class Maze():
             for x in range(Width):
                 for y in range(Height):
                     if self[x, y].attr == atBorder:
-                        IsEnd = False
+                        isEnd = False
                         return True
             return False
 
-
-
         while True:  # главный цикл
+            window.update()
+            app.processEvents()
+            time.sleep(0.1)
+
             isEnd = True
             counter = 0
-            print('!! new cycle')
 
             for x in range(Width):   # подсчитываем количество локаций с атрибутом Border
                 for y in range(Height):
                     if self[x, y].attr == atBorder:
                         counter += 1
 
-            first_step()
-            second_step()
-            final_step()
-
-            window.update()
-            app.processEvents()
+            a = first_step()
+            b = second_step()
+            c = final_step()
 
             if isEnd:
-                print('end of loop')
                 break
 
 class Window(QWidget):
