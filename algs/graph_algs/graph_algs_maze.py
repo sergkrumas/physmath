@@ -26,6 +26,7 @@ class Location():
         self.left_wall = False
         self.up_wall = False
         self.visited = False
+        self.mark = 0
 
     def __repr__(self):
         return f'Location ({self.left_wall} {self.up_wall})'
@@ -204,6 +205,82 @@ class Maze():
             print('not solved')
 
 
+    def waveTracingSolve(self, s: QPoint, f: QPoint):
+
+        Path = []
+
+        DX = (1, 0, -1, 0)
+        DY = (0, -1, 0, 1)
+
+        # служебная функция, определяет
+        # можно ли пройти из локации(x, y) в локацию (x+dx, y+dy),
+        # то есть нет ли между ними стены
+        def CanGo(x, y, dx, dy) -> bool:
+            if dx == -1: return not self[x, y].left_wall
+            elif dx == 1: return not self[x+1, y].left_wall
+            elif dy == -1: return not self[x, y].up_wall
+            else: return not self[x, y+1].up_wall
+
+        # поиск решения
+        def Solve() -> bool:
+
+            N = 1
+
+            while True:
+                noSolution = True
+                for x in range(self.width):
+                    for y in range(self.height):
+                        if self[x, y].mark == N:
+                            for i in range(4):
+                                if CanGo(x, y, DX[i], DY[i]) and (self[x + DX[i], y + DY[i]].mark == 0):
+                                    noSolution = False
+                                    self[x + DX[i], y + DY[i]].mark = N + 1
+                                    if (x + DX[i] == f.x()) and (y + DY[i] == f.y()):
+                                        return True
+                N += 1
+                if noSolution:
+                    break
+            return False
+
+
+        for xx in range(self.width):
+            for yy in range(self.height):
+                self[xx, yy].mark = 0
+
+        self[s.x(), s.y()].mark = 1
+
+
+
+        if Solve():
+            print('solved')
+
+            x = f.x()
+            y = f.y()
+
+            finish_mark = self[f.x(), f.y()].mark
+            for N in range(finish_mark, 0, -1):
+                Path.append(QPoint(x, y))
+
+
+                for i in range(4):
+                    if CanGo(x, y, DX[i], DY[i]) and (self[x+DX[i], y + DY[i]].mark == N-1):
+                        x += DX[i]
+                        y += DY[i]
+                        break
+
+        else:
+            print('not solved')
+
+
+        self.Path = Path
+
+        # if Solve(s.x(), s.y(), 0):
+        #     self.Path = Path
+        #     print('solved')
+        # else:
+        #     self.Path = [QPoint(0, 0), QPoint(5, 0)]
+        #     print('not solved')
+
 
 class Window(QWidget):
 
@@ -236,6 +313,7 @@ class Window(QWidget):
 
         elif action is wave_tracing:
             print('wave tracing')
+            self.maze.waveTracingSolve(QPoint(0, 0), QPoint(4, 0))
 
 
         self.update()
