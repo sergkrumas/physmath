@@ -156,10 +156,9 @@ class Maze():
 
         painter.restore()
 
-    def recursive_solve(self, s: QPoint, f: QPoint):
+    def recursiveSolve(self, s: QPoint, f: QPoint):
 
         Path = []
-
 
         DX = (1, 0, -1, 0)
         DY = (0, -1, 0, 1)
@@ -179,9 +178,6 @@ class Maze():
             nonlocal Path
             self[x, y].visited = True  #поменить локацию как посещённую
 
-            # Path[depth] = QPoint(x, y) #добавить её в описание маршрута
-            # Path[depth+1] = QPoint(-1, -1) #добавить признак конца маршрута
-
             if (x == f.x()) and (y == f.y()):
                 Path.append(QPoint(x, y))
                 return True
@@ -196,8 +192,6 @@ class Maze():
 
             return False
 
-        # Path = list(_generator(lambda: None, self.width*self.height+1))
-
         for xx in range(self.width):
             for yy in range(self.height):
                 self[xx, yy].visited = False
@@ -208,6 +202,8 @@ class Maze():
         else:
             self.Path = [QPoint(0, 0), QPoint(5, 0)]
             print('not solved')
+
+
 
 class Window(QWidget):
 
@@ -236,7 +232,7 @@ class Window(QWidget):
 
         elif action is recursive_solve:
             print('recursive solve')
-            self.maze.recursive_solve(QPoint(0, 3), QPoint(4, 0))
+            self.maze.recursiveSolve(QPoint(0, 3), QPoint(4, 0))
 
         elif action is wave_tracing:
             print('wave tracing')
