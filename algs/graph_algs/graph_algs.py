@@ -179,14 +179,7 @@ class Program():
 
         cls.solving_path.clear()
 
-        def inner_repeat_body():
-            nonlocal v
-            v = cls.L[v.PrevVertex]
-            cls.solving_path.insert(0, v)
-            window.memo.setPlainText(f'{v.State} \n{window.memo.toPlainText()}')
-
-        def repeat_body():
-            nonlocal HeadIdx, c, v
+        while True: #repeat until
             v = cls.L[HeadIdx] # v - первый элемент списка
             c += 1
 
@@ -196,9 +189,13 @@ class Program():
                 cls.solving_path.insert(0, v)
                 # шаг за шагом определяем путь от целевой вершины до стартовой,
                 # на каждой итерации выводя соответствующее состояние
-                inner_repeat_body()
-                while (v.PrevVertex != -1):
-                    inner_repeat_body()
+
+                while True: #repeat until
+                    v = cls.L[v.PrevVertex]
+                    cls.solving_path.insert(0, v)
+                    window.memo.setPlainText(f'{v.State} \n{window.memo.toPlainText()}')
+                    if v.PrevVertex == -1:
+                        break
 
                 window.memo.setPlainText(f'{window.memo.toPlainText()} \nИсследовано состояний: {c}')
                 return False
@@ -212,12 +209,8 @@ class Program():
 
             HeadIdx += 1 #сдвиг головы списка
 
-            return True
-
-        repeat_body()
-        while HeadIdx != cls.TailIdx:
-            if not repeat_body():
-                return
+            if HeadIdx == cls.TailIdx:
+                break
 
         window.memo.setPlainText(f'Решение не найдено {time.time()}, {c}')
 
