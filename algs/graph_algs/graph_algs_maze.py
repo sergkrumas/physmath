@@ -17,6 +17,20 @@ from collections import namedtuple
 
 import random
 
+
+atNull = 0
+atInside = 1
+atOutside = 2
+atBorder = 3
+
+atToStr = {
+    atNull: 'null',
+    atInside: 'inside',
+    atOutside: 'outside',
+    atBorder: 'border'
+}
+
+
 class Location():
 
     def __init__(self):
@@ -24,14 +38,17 @@ class Location():
         self.up_wall = False
         self.visited = False
         self.mark = 0
+        self.attr = 0
 
     def __repr__(self):
         return f'Location ({self.left_wall} {self.up_wall})'
 
 def _generator(what_to_call, i):
-
     for i in range(i):
         yield what_to_call()
+
+def randint(n):
+    return random.randint(0, n-1)
 
 class Maze():
 
@@ -103,11 +120,11 @@ class Maze():
         rect.moveTopLeft(o)
         painter.fillRect(rect, Qt.gray)
 
-        painter.setPen(QPen(Qt.black, 2))
 
         for x in range(self.width):
             for y in range(self.height):
                 cell = self[x, y]
+                painter.setPen(QPen(Qt.black, 2))
                 path = QPainterPath()
                 if cell.up_wall:
                     path.moveTo(o + QPoint(x*CELLSIZE, y*CELLSIZE))
@@ -117,6 +134,22 @@ class Maze():
                     path.lineTo(o + QPoint(x*CELLSIZE, (y+1)*CELLSIZE))
                 painter.drawPath(path)
 
+                r1 = QRect(QPoint(x*CELLSIZE, y*CELLSIZE), QPoint((x+1)*CELLSIZE, (y+1)*CELLSIZE))
+                r1.moveTopLeft(o + r1.topLeft())
+                text = atToStr[self[x, y].attr]
+                text = text + f'\n{x}:{y}'
+
+                color = {
+                    0: Qt.black,
+                    1: Qt.white,
+                    2: QColor(100, 100, 100),
+                    3: Qt.blue
+                }
+
+                painter.setPen(QPen(color[self[x, y].attr], 2))
+                painter.drawText(r1, Qt.AlignCenter, text)
+
+        painter.setPen(QPen(Qt.black, 2))
 
         path = QPainterPath()
         path.moveTo(o + QPoint(0, self.height*CELLSIZE))
@@ -184,7 +217,6 @@ class Maze():
         else:
             self.Path = []
             print('not solved')
-
 
     def waveTracingSolve(self, s: QPoint, f: QPoint):
 
@@ -255,23 +287,24 @@ class Maze():
 
         self.Path = Path
 
-
     def PrimGenerateMaze(self, Width, Height):
 
         DX = (1, 0, -1, 0)
         DY = (0, -1, 0, 1)
 
-
-        AttrTypeInside = 1
-        AttrTypeOutside = 2
-        AttrTypeBorder = 3
-
         def breakWall(x, y, dx, dy):
-            if dx == -1: self[x, y].left_wall = False
-            elif dx == 1: self[x+1, y].left_wall = False
-            elif dy == -1: self[x, y].up_wall = False
-            else: self[x, y+1].up_wall = False
-
+            if dx == -1:
+                self[x, y].left_wall = False
+                print('wall break left', x, y)
+            elif dx == 1:
+                self[x+1, y].left_wall = False
+                print('wall break left', x+1, y)
+            elif dy == -1:
+                self[x, y].up_wall = False
+                print('wall break up', x, y)
+            else:
+                self[x, y+1].up_wall = False
+                print('wall break up', x, y+1)
 
         self.width = Width
         self.height = Height
@@ -280,105 +313,99 @@ class Maze():
 
         for x in range(Width):
             for y in range(Height):
-                self[x, y].attribute = AttrTypeOutside
+                self[x, y].attr = atOutside
 
-        for y in range(Height+1):
-            for x in range(Width+1):
+        for x in range(Width+1):
+            for y in range(Height+1):
                 self[x, y].left_wall = True
                 self[x, y].up_wall = True
 
-        x = random.randint(0, Width)
-        y = random.randint(0, Height)
-        self[x, y].attribute = AttrTypeInside
+        random.seed(random.randint(0, 1000))
+        x = randint(Width) # выбираем начальную локацию
+        y = randint(Height) # и присваиваем ей атрибут Inside
+        self[x, y].attr = atInside
+        print('mark inside', x, y)
 
-
-        for i in range(4):
+        for i in range(4):  # всем её соседям присваиваем атрибут Border
             xc = x + DX[i]
             yc = y + DY[i]
             if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height):
-                self[xc, yc].attribute = AttrTypeBorder
+                self[xc, yc].attr = atBorder
 
-        ExitFor1 = False
-        ExitFor2 = False
-        ExitFor3 = False
+        # return
 
-        while True:
+        counter = xloc = yloc = 0
+
+        def first_step():
+            nonlocal counter, xloc, yloc
+            counter = randint(counter) + 1 # выбираем из них одну случайную
+            for x in range(Width):
+                for y in range(Height):
+                    if self[x, y].attr == atBorder:
+                        counter -= 1
+                        if counter == 0:
+                            xloc = x   # xloc, yloc - её координаты
+                            yloc = y
+                            return True
+            return False
+
+        def second_step():
+            nonlocal counter, xloc, yloc
+
+            self[xloc, yloc].attr = atInside
+
+            counter = 0
+            for i in range(4):
+                xc = xloc + DX[i]
+                yc = yloc + DY[i]
+                if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height):
+                    if self[xc, yc].attr == atInside:
+                        counter += 1
+                    if self[xc, yc].attr == atOutside:
+                        self[xc, yc].attr = atBorder
+
+            counter = randint(counter) + 1
+            for i in range(4):
+                xc = xloc + DX[i]
+                yc = yloc + DY[i]
+                if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height) and (self[xc, yc].attr == atInside):
+                    counter -= 1
+                    if counter == 0:
+                        breakWall(xloc, yloc, DX[i], DY[i])
+                        return True
+            return False
+
+        def final_step():
+            nonlocal isEnd
+
+            for x in range(Width):
+                for y in range(Height):
+                    if self[x, y].attr == atBorder:
+                        IsEnd = False
+                        return True
+            return False
+
+
+
+        while True:  # главный цикл
             isEnd = True
             counter = 0
-            print('new cycle')
-            for x in range(Width):
+            print('!! new cycle')
+
+            for x in range(Width):   # подсчитываем количество локаций с атрибутом Border
                 for y in range(Height):
-                    if self[x, y].attribute == AttrTypeBorder:
+                    if self[x, y].attr == atBorder:
                         counter += 1
 
-            counter = random.randint(0, counter) + 1
-            for x in range(Width):
-                if ExitFor1:
-                    break
-                for y in range(Height):
-                    if ExitFor1:
-                        break
-                    if self[x, y].attribute == AttrTypeBorder:
-                        counter -= 1
-                        if counter == 0:
-                            xloc = x
-                            yloc = y
-                            ExitFor1 = True
-                            break
-            if ExitFor1:
-                print('exit for 1')
-                self[xloc, yloc].attribute = AttrTypeInside
+            first_step()
+            second_step()
+            final_step()
 
-                counter = 0
-                for i in range(4):
-                    xc = xloc + DX[i]
-                    yc = yloc + DY[i]
-                    if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height):
-                        if self[xc, yc].attribute == AttrTypeInside:
-                            counter += 1
-                        if self[xc, yc].attribute == AttrTypeOutside:
-                            self[xc, yc].attribute = AttrTypeBorder
-
-                counter = random.randint(0, counter) + 1
-                for i in range(4):
-                    xc = xloc + DX[i]
-                    yc = yloc = DY[i]
-
-                    if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height) and (self[xc, yc].attribute == AttrTypeInside):
-                        counter -= 1
-                        if counter == 0:
-                            breakWall(xloc, yloc, DX[i], DY[i])
-                            ExitFor2 = True
-                            ExitFor1 = False
-                            break
-
-                ExitFor1 = False
-
-            if ExitFor2:
-                print('exit for 2')
-                for x in range(Width):
-                    if ExitFor3:
-                        break
-                    for y in range(Height):
-                        if ExitFor3:
-                            break
-                        if self[x, y].attribute == AttrTypeBorder:
-                            IsEnd = False
-                            ExitFor3 = True
-                            ExitFor2 = False
-                            break
-
-                ExitFor2 = False
-
-            if ExitFor3:
-                print('exit for 3')
-                window.update()
-                app.processEvents()
-
-                ExitFor3 = False
+            window.update()
+            app.processEvents()
 
             if isEnd:
-                print('break of loop, isEnd =', isEnd)
+                print('end of loop')
                 break
 
 class Window(QWidget):
