@@ -121,6 +121,12 @@ class Maze():
         rect.moveTopLeft(o)
         painter.fillRect(rect, Qt.gray)
 
+        MAX_N = 0
+        for x in range(self.width):
+            for y in range(self.height):
+                cell = self[x, y]
+                MAX_N  = max(MAX_N, cell.mark)
+
 
         for x in range(self.width):
             for y in range(self.height):
@@ -132,7 +138,11 @@ class Maze():
                 if cell.start:
                     painter.fillRect(r1, QColor(220, 100, 100))
 
-
+                if MAX_N != 0:
+                    pass
+                    factor = cell.mark/MAX_N
+                    color = QColor.fromHslF(0.6, factor, factor*0.5, 0.5)
+                    painter.fillRect(r1, color)
 
                 painter.setPen(QPen(Qt.black, 2))
                 path = QPainterPath()
@@ -144,8 +154,8 @@ class Maze():
                     path.lineTo(o + QPoint(x*CELLSIZE, (y+1)*CELLSIZE))
                 painter.drawPath(path)
 
-                text = atToStr[self[x, y].attr]
-                text = text + f'\n{x}:{y}'
+                attr = atToStr[self[x, y].attr]
+                text = f'{cell.mark} {attr}\n{x}:{y}'
 
                 color = {
                     0: Qt.black,
@@ -179,7 +189,7 @@ class Maze():
 
     def recursiveSolve(self, s: QPoint, f: QPoint):
 
-        Path = []
+        self.Path = []
 
         DX = (1, 0, -1, 0)
         DY = (0, -1, 0, 1)
@@ -196,19 +206,25 @@ class Maze():
         # поиск финишной локации из точки (x, y)
         def Solve(x, y, depth) -> bool:
 
-            nonlocal Path
+            p = QPoint(x, y)
             self[x, y].visited = True  #поменить локацию как посещённую
+            self.Path.append(p)
+
+            window.update()
+            app.processEvents()
+            time.sleep(0.2)
 
             if (x == f.x()) and (y == f.y()):
-                Path.append(QPoint(x, y))
+                # Path.append(QPoint(x, y))
                 return True
 
             for i in range(4):
                 if CanGo(x, y, DX[i], DY[i]) and not self[x+DX[i], y+DY[i]].visited:
                     if Solve(x + DX[i], y + DY[i], depth + 1):
-                        Path.append(QPoint(x, y))
+                        # Path.append(QPoint(x, y))
                         return True
 
+            self.Path.remove(p)
             self[x, y].visited = False
 
             return False
@@ -218,15 +234,15 @@ class Maze():
                 self[xx, yy].visited = False
 
         if Solve(s.x(), s.y(), 0):
-            self.Path = Path
-            print('solved')
+            # print('solved')
+            pass
         else:
             self.Path = []
-            print('not solved')
+            # print('not solved')
 
     def waveTracingSolve(self, s: QPoint, f: QPoint):
 
-        Path = []
+        self.Path = []
 
         DX = (1, 0, -1, 0)
         DY = (0, -1, 0, 1)
@@ -246,6 +262,11 @@ class Maze():
             N = 1
 
             while True:
+
+                window.update()
+                app.processEvents()
+                time.sleep(0.2)
+
                 noSolution = True
                 for x in range(self.width):
                     for y in range(self.height):
@@ -260,7 +281,6 @@ class Maze():
                 if noSolution:
                     break
             return False
-
 
         for xx in range(self.width):
             for yy in range(self.height):
@@ -277,17 +297,16 @@ class Maze():
 
             finish_mark = self[f.x(), f.y()].mark
             for N in range(finish_mark, 0, -1):
-                Path.append(QPoint(x, y))
+                self.Path.append(QPoint(x, y))
                 for i in range(4):
                     if CanGo(x, y, DX[i], DY[i]) and (self[x+DX[i], y + DY[i]].mark == N-1):
                         x += DX[i]
                         y += DY[i]
                         break
-            self.Path = Path
             return True
         else:
             # print('not solved')
-            self.Path = Path
+            self.Path = []
             return False
 
     def PrimGenerateMaze(self, Width, Height):
@@ -405,7 +424,6 @@ class Maze():
 
             if isEnd:
                 break
-
 
     def KruskalGenerateMaze(self, Width, Height):
 
