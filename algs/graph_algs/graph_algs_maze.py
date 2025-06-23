@@ -305,6 +305,8 @@ class Maze():
             else:
                 self[x, y+1].up_wall = False
 
+        self.Path = []
+
         self.width = Width
         self.height = Height
 
@@ -418,7 +420,9 @@ class Maze():
                 self[x, y+1].up_wall = False
 
         def isConnected(xs, ys, xf, yf):
-            return self.waveTracingSolve(QPoint(xs, ys), QPoint(xf, yf))
+            res = self.waveTracingSolve(QPoint(xs, ys), QPoint(xf, yf))
+            self.Path = []
+            return res
 
         class Wall():
             def __init__(self):
@@ -427,12 +431,12 @@ class Maze():
                 self.dx = 0
                 self.dy = 0
 
+
         self.width = Width
         self.height = Height
 
         self.setLength(Width+1, Height+1)
 
-        # walls = list(_generator(Wall, (Width-1)*Height + (Height-1)*Width))
         walls = list()
 
         for i in range(Width+1):
@@ -453,27 +457,19 @@ class Maze():
 
         for i in range(Width):
             for j in range(Height):   
-
-                wall = Wall() #сначала все вертикальные
+                wall = Wall() #потом все вертикальные
                 wall.x = i
                 wall.y = j
                 wall.dx = 0
                 wall.dy = -1
                 walls.append(wall)
 
-
-
         random.shuffle(walls)
 
-        locations = Width * Height
-        i = 0
-        while locations > 1:
-            cur_wall = walls[i]
-            i += 1
+        while walls:
+            cur_wall = walls.pop()
             if not isConnected(cur_wall.x, cur_wall.y, cur_wall.x + cur_wall.dx, cur_wall.y + cur_wall.dy):
                 breakWall(cur_wall.x, cur_wall.y, cur_wall.dx, cur_wall.dy)
-                locations -= 1
-
                 window.update()
                 app.processEvents()
                 time.sleep(0.1)
