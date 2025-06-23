@@ -68,6 +68,7 @@ class Maze():
         self.maze_array = []
 
         self.Path = []
+        self.main_offset = QPoint(10, 10)
 
     def setLength(self, w, h):
         self.maze_array = []
@@ -115,7 +116,8 @@ class Maze():
         painter.save()
 
         CELLSIZE = 50
-        o = offset = QPoint(10, 10)
+
+        o = offset = self.main_offset
 
         rect = QRect(0, 0, CELLSIZE*self.width, CELLSIZE*self.height)
         rect.moveTopLeft(o)
@@ -127,13 +129,28 @@ class Maze():
                 cell = self[x, y]
                 MAX_N  = max(MAX_N, cell.mark)
 
+        widget.maze_cells.clear()
 
         for x in range(self.width):
             for y in range(self.height):
                 cell = self[x, y]
 
+                is_marked_cell = False
+                for p in window.points:
+                    if p.x() == x and p.y() == y:
+                        is_marked_cell = True
+                        break
+
                 r1 = QRect(QPoint(x*CELLSIZE, y*CELLSIZE), QPoint((x+1)*CELLSIZE, (y+1)*CELLSIZE))
                 r1.moveTopLeft(o + r1.topLeft())
+
+                painter.setPen(QPen(Qt.red, 4))
+                if is_marked_cell:
+                    r1_small = r1.adjusted(10, 10, -10, -10)
+                    painter.drawLine(r1_small.topLeft(), r1_small.bottomRight())
+                    painter.drawLine(r1_small.bottomLeft(), r1_small.topRight())
+
+                widget.maze_cells.append((r1, x, y))
 
                 if cell.start:
                     painter.fillRect(r1, QColor(220, 100, 100))
@@ -175,6 +192,7 @@ class Maze():
         path.lineTo(o + QPoint(self.width*CELLSIZE, 0))
         painter.drawPath(path)
 
+        painter.setPen(QPen(Qt.red, 3))
         if self.Path:
             i = 0
             for p in self.Path:
@@ -498,6 +516,13 @@ class Window(QWidget):
     def __init__(self,):
         super().__init__()
         self.maze = None
+        self.maze_cells = []
+        self.points = []
+        self.points.append(QPoint(0, 0))
+        self.points.append(QPoint(4, 0))
+
+        self.insert_index = 0
+        self.insert_activated = False
 
     def paintEvent(self, event):
         painter = QPainter()
@@ -507,32 +532,52 @@ class Window(QWidget):
         painter.end()
 
 
+
+    def maze_cell_rect_to_cell_indexes(self, event, i):
+        for r1, x, y in self.maze_cells:
+            if r1.contains(event.pos()):
+                self.points[i] = QPoint(x, y)
+
     def mousePressEvent(self, event):
 
-        subMenu = QMenu()
-        recursive_solve = subMenu.addAction("Рекурсивный обход")
-        wave_tracing = subMenu.addAction("Волновая трассировка")
-        subMenu.addSeparator()
-        prim_generate_maze = subMenu.addAction("Алгоритм Прима")
-        kruskal_generate_maze = subMenu.addAction("Алгоритм Краскала")
+        if self.insert_activated:
+            self.maze_cell_rect_to_cell_indexes(event, self.insert_index)
+            if self.insert_index == 0:
+                self.insert_index = 1
+            elif self.insert_index == 1:
+                self.insert_index = 0
+                self.insert_activated = False
+        else:
 
-        action = subMenu.exec_(QCursor().pos())
-        if action is None:
-            pass
+            subMenu = QMenu()
+            recursive_solve = subMenu.addAction("Рекурсивный обход")
+            wave_tracing = subMenu.addAction("Волновая трассировка")
+            subMenu.addSeparator()
+            prim_generate_maze = subMenu.addAction("Алгоритм Прима")
+            kruskal_generate_maze = subMenu.addAction("Алгоритм Краскала")
+            subMenu.addSeparator()
+            set_start_and_finish_points = subMenu.addAction("Задать стартовую и финишную точки")
 
-        elif action is recursive_solve:
-            print('recursive solve')
-            self.maze.recursiveSolve(QPoint(0, 3), QPoint(4, 0))
+            action = subMenu.exec_(QCursor().pos())
+            if action is None:
+                pass
 
-        elif action is wave_tracing:
-            print('wave tracing')
-            self.maze.waveTracingSolve(QPoint(0, 0), QPoint(4, 0))
+            elif action is recursive_solve:
+                print('recursive solve')
+                self.maze.recursiveSolve(self.points[0], self.points[1])
 
-        elif action is prim_generate_maze:
-            self.maze.PrimGenerateMaze(10, 8)
+            elif action is wave_tracing:
+                print('wave tracing')
+                self.maze.waveTracingSolve(self.points[0], self.points[1])
 
-        elif action is kruskal_generate_maze:
-            self.maze.KruskalGenerateMaze(10, 8)
+            elif action is prim_generate_maze:
+                self.maze.PrimGenerateMaze(10, 8)
+
+            elif action is kruskal_generate_maze:
+                self.maze.KruskalGenerateMaze(10, 8)
+
+            elif action is set_start_and_finish_points:
+                self.insert_activated = True
 
 
 
