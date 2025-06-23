@@ -16,9 +16,6 @@ from enum import IntEnum
 from collections import namedtuple
 
 
-# f = namedtuple('Location', 'left_wall right_wall up_wall down_wall')
-
-
 
 class Location():
 
@@ -273,13 +270,6 @@ class Maze():
 
 
         self.Path = Path
-
-        # if Solve(s.x(), s.y(), 0):
-        #     self.Path = Path
-        #     print('solved')
-        # else:
-        #     self.Path = [QPoint(0, 0), QPoint(5, 0)]
-        #     print('not solved')
 
 
 class Window(QWidget):
