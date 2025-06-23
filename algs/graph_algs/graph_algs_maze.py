@@ -8,13 +8,9 @@ from PyQt5.QtGui import *
 from PyQt5.QtNetwork import *
 
 import sys
+import os
 import time
-
-
 from enum import IntEnum
-
-from collections import namedtuple
-
 import random
 
 
@@ -492,7 +488,7 @@ class Maze():
                 walls.append(wall)
 
         for i in range(Width):
-            for j in range(Height):   
+            for j in range(Height):
                 wall = Wall() #потом все вертикальные
                 wall.x = i
                 wall.y = j
@@ -531,8 +527,6 @@ class Window(QWidget):
             self.maze.drawMaze(painter, self)
         painter.end()
 
-
-
     def maze_cell_rect_to_cell_indexes(self, event, i):
         for r1, x, y in self.maze_cells:
             if r1.contains(event.pos()):
@@ -549,6 +543,8 @@ class Window(QWidget):
                 self.insert_activated = False
         else:
 
+            path = os.path.join(os.path.dirname(__file__), 'new_maze.txt')
+
             subMenu = QMenu()
             recursive_solve = subMenu.addAction("Рекурсивный обход")
             wave_tracing = subMenu.addAction("Волновая трассировка")
@@ -557,6 +553,9 @@ class Window(QWidget):
             kruskal_generate_maze = subMenu.addAction("Алгоритм Краскала")
             subMenu.addSeparator()
             set_start_and_finish_points = subMenu.addAction("Задать стартовую и финишную точки")
+            subMenu.addSeparator()
+            save_maze = subMenu.addAction("Сохранить")
+            open_maze = subMenu.addAction("Открыть")
 
             action = subMenu.exec_(QCursor().pos())
             if action is None:
@@ -579,36 +578,36 @@ class Window(QWidget):
             elif action is set_start_and_finish_points:
                 self.insert_activated = True
 
+            elif action is save_maze:
+                data = QFileDialog.getSaveFileName(self, "Save file", f"{path}", None)
+                path = data[0]
+                if path:
+                    self.maze.saveMaze(path)
 
+            elif action is open_maze:
+                dialog = QFileDialog()
+                dialog.setFileMode(QFileDialog.ExistingFile)
+                data = dialog.getOpenFileName(self, "Open file", path, "Maze File (*.txt)")
+                path = data[0]
+                if path:
+                    self.maze.loadMaze(path)
 
         self.update()
 
 
 def main():
-    
-    maze = Maze()
-
-    maze.loadMaze('maze.txt')
-
-    print(maze.width, maze.height)
-    print(maze.maze_array)
-
-    # maze.saveMaze('new_maze.txt')
-
-
-
 
     global app, window
     app = QApplication(sys.argv)
+
+    maze = Maze()
+    maze.loadMaze('maze.txt')
+
     window = Window()
     window.maze = maze
     window.resize(1100, 500)
     window.show()
     app.exec_()
-
-
-
-
 
 if __name__ == '__main__':
     main()
