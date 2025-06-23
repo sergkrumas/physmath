@@ -271,27 +271,24 @@ class Maze():
 
 
         if Solve():
-            print('solved')
-
+            # print('solved')
             x = f.x()
             y = f.y()
 
             finish_mark = self[f.x(), f.y()].mark
             for N in range(finish_mark, 0, -1):
                 Path.append(QPoint(x, y))
-
-
                 for i in range(4):
                     if CanGo(x, y, DX[i], DY[i]) and (self[x+DX[i], y + DY[i]].mark == N-1):
                         x += DX[i]
                         y += DY[i]
                         break
-
+            self.Path = Path
+            return True
         else:
-            print('not solved')
-
-
-        self.Path = Path
+            # print('not solved')
+            self.Path = Path
+            return False
 
     def PrimGenerateMaze(self, Width, Height):
 
@@ -407,6 +404,80 @@ class Maze():
             if isEnd:
                 break
 
+
+    def KruskalGenerateMaze(self, Width, Height):
+
+        def breakWall(x, y, dx, dy):
+            if dx == -1:
+                self[x, y].left_wall = False
+            elif dx == 1:
+                self[x+1, y].left_wall = False
+            elif dy == -1:
+                self[x, y].up_wall = False
+            else:
+                self[x, y+1].up_wall = False
+
+        def isConnected(xs, ys, xf, yf):
+            return self.waveTracingSolve(QPoint(xs, ys), QPoint(xf, yf))
+
+        class Wall():
+            def __init__(self):
+                self.x = 0
+                self.y = 0
+                self.dx = 0
+                self.dy = 0
+
+        self.width = Width
+        self.height = Height
+
+        self.setLength(Width+1, Height+1)
+
+        # walls = list(_generator(Wall, (Width-1)*Height + (Height-1)*Width))
+        walls = list()
+
+        for i in range(Width+1):
+            for j in range(Height+1):
+                self[i, j].left_wall = True
+                self[i, j].up_wall = True
+
+        # заполнение массива стен
+        for i in range(Width):
+            for j in range(Height): #сначала все горизонтальные
+                wall = Wall()
+                wall.x = i
+                wall.y = j
+                wall.dx = -1
+                wall.dy = 0
+
+                walls.append(wall)
+
+        for i in range(Width):
+            for j in range(Height):   
+
+                wall = Wall() #сначала все вертикальные
+                wall.x = i
+                wall.y = j
+                wall.dx = 0
+                wall.dy = -1
+                walls.append(wall)
+
+
+
+        random.shuffle(walls)
+
+        locations = Width * Height
+        i = 0
+        while locations > 1:
+            cur_wall = walls[i]
+            i += 1
+            if not isConnected(cur_wall.x, cur_wall.y, cur_wall.x + cur_wall.dx, cur_wall.y + cur_wall.dy):
+                breakWall(cur_wall.x, cur_wall.y, cur_wall.dx, cur_wall.dy)
+                locations -= 1
+
+                window.update()
+                app.processEvents()
+                time.sleep(0.1)
+
 class Window(QWidget):
 
 
@@ -429,6 +500,7 @@ class Window(QWidget):
         wave_tracing = subMenu.addAction("Волновая трассировка")
         subMenu.addSeparator()
         prim_generate_maze = subMenu.addAction("Алгоритм Прима")
+        kruskal_generate_maze = subMenu.addAction("Алгоритм Краскала")
 
         action = subMenu.exec_(QCursor().pos())
         if action is None:
@@ -445,6 +517,8 @@ class Window(QWidget):
         elif action is prim_generate_maze:
             self.maze.PrimGenerateMaze(10, 8)
 
+        elif action is kruskal_generate_maze:
+            self.maze.KruskalGenerateMaze(10, 8)
 
 
 
