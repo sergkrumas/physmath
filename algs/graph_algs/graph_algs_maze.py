@@ -141,9 +141,6 @@ class Maze():
             i = 0
             Path = self.Path
  
-            # while not ((Path[i].x() == -1) and Path[i].y() == -1):
-                # p = Path[i]
-
             for p in self.Path:
                 xc = CELLSIZE * (2 * p.x() + 1) // 2
                 yc = CELLSIZE * (2 * p.y() + 1) // 2
@@ -172,7 +169,7 @@ class Maze():
 
         # поиск финишной локации из точки (x, y)
         def Solve(x, y, depth) -> bool:
-            print('solve depth', depth)
+
             nonlocal Path
             self[x, y].visited = True  #поменить локацию как посещённую
 
@@ -198,7 +195,7 @@ class Maze():
             self.Path = Path
             print('solved')
         else:
-            self.Path = [QPoint(0, 0), QPoint(5, 0)]
+            self.Path = []
             print('not solved')
 
 
@@ -272,6 +269,9 @@ class Maze():
         self.Path = Path
 
 
+
+
+
 class Window(QWidget):
 
 
@@ -292,6 +292,7 @@ class Window(QWidget):
         subMenu = QMenu()
         recursive_solve = subMenu.addAction("Рекурсивный обход")
         wave_tracing = subMenu.addAction("Волновая трассировка")
+        subMenu.addSeparator()
 
         action = subMenu.exec_(QCursor().pos())
         if action is None:
