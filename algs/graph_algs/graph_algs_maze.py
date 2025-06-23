@@ -225,7 +225,23 @@ class Window(QWidget):
 
 
     def mousePressEvent(self, event):
-        self.maze.recursive_solve(QPoint(0, 3), QPoint(4, 0))
+
+        subMenu = QMenu()
+        recursive_solve = subMenu.addAction("Рекурсивный обход")
+        wave_tracing = subMenu.addAction("Волновая трассировка")
+
+        action = subMenu.exec_(QCursor().pos())
+        if action is None:
+            pass
+
+        elif action is recursive_solve:
+            print('recursive solve')
+            self.maze.recursive_solve(QPoint(0, 3), QPoint(4, 0))
+
+        elif action is wave_tracing:
+            print('wave tracing')
+
+
         self.update()
 
 
