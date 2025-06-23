@@ -261,7 +261,7 @@ class Program():
         # определить следующую вершину извлекаемую из списка L2
         Min = 1000000
         idx = 0
-        for i in range(cls.TailIdx):
+        for i in range(len(cls.L2)):
             if (cls.L2[i].Marked == False) and (cls.L2[i].Cost + cls.L2[i].Heuristics < Min):
                 idx = i # определяем неотмеченный элемент списка с минимальным значением величины "цена + эвристика"
                 Min = cls.L2[i].Cost + cls.L2[i].Heuristics
@@ -272,17 +272,19 @@ class Program():
     def do_A_start_deep_search(cls):
 
         v = None # текущая исследуемая вершина
-        idx = 0 # индекс анализируемого элемента
+        # idx = 0 # индекс анализируемого элемента
 
         cls.Initialize()
-        cls.L2[0].State = GameState(cls.StartingState)
-        cls.L2[0].PrevVertex = -1
-        cls.L2[0].Cost = 0
-        # вычисляем эвристику
-        cls.L2[0].Heuristics = cls.CalculateHeuristics(GameState(cls.StartingState))
-        cls.L2[0].Marked = False
 
-        cls.TailIdx = 1
+        v0 = AdvancedVertex()
+        cls.L2.append(v0)
+        v0.State = GameState(cls.StartingState)
+        v0.PrevVertex = None
+        v0.Cost = 0
+        # вычисляем эвристику
+        v0.Heuristics = cls.CalculateHeuristics(GameState(cls.StartingState))
+        v0.Marked = False
+
         c = 0
 
         cls.solving_path.clear()
@@ -290,18 +292,20 @@ class Program():
         while True: #repeat until
             # определяем следующий анализируемый элемент списка
             idx = cls.GetIndexofNextElement()
-            v = cls.L2[idx] # извлекаем элемент из списка
+            v = cls.L2.pop(idx) # извлекаем элемент из списка
+            v.Marked = True #помечаем его как рассмотренный
             c += 1
-            cls.L2[idx].Marked = True #помечаем его как рассмотренный
 
             if cls.IsGoal(v.State):
                 window.memo.setPlainText(f'{v.State} \n')
 
+                cls.solving_path.insert(0, v)
+
                 while True: #repeat until
-                    v = cls.L2[v.PrevVertex]
+                    v = v.PrevVertex
                     cls.solving_path.insert(0, v)
                     window.memo.setPlainText(f'{v.State} \n{window.memo.toPlainText()}')
-                    if (v.PrevVertex == -1):
+                    if v.PrevVertex is None:
                         break
 
                 window.memo.setPlainText(f'{window.memo.toPlainText()} \nИсследовано состояний: {c}')
@@ -309,15 +313,15 @@ class Program():
 
             N = cls.GetNeighbours(v.State)
             for i in range(N):
-                cls.L2[cls.TailIdx].State = GameState(cls.Neighbours[i])
+                vN = AdvancedVertex()
+                cls.L2.append(vN)
+                vN.State = GameState(cls.Neighbours[i])
                 # цена текущей это цена предыдущей вершины плюс вес ребра
-                cls.L2[cls.TailIdx].Cost = v.Cost + 1
-                cls.L2[cls.TailIdx].Heuristics = cls.CalculateHeuristics(cls.Neighbours[i])
-                cls.L2[cls.TailIdx].PrevVertex = idx
+                vN.Cost = v.Cost + 1
+                vN.Heuristics = cls.CalculateHeuristics(cls.Neighbours[i])
+                vN.PrevVertex = v
 
-                cls.TailIdx += 1
-
-            if cls.TailIdx == 0:
+            if not cls.L2:
                 break
 
         window.memo.setPlainText(f'Решение не найдено {time.time()}, {c}')
