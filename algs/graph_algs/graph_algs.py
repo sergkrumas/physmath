@@ -286,14 +286,7 @@ class Program():
 
         cls.solving_path.clear()
 
-        def inner_repeat_body():
-            nonlocal v
-            v = cls.L2[v.PrevVertex]
-            cls.solving_path.insert(0, v)
-            window.memo.setPlainText(f'{v.State} \n{window.memo.toPlainText()}')
-
-        def repeat_body():
-            nonlocal idx, c, v
+        while True: #repeat until
             # определяем следующий анализируемый элемент списка
             idx = cls.GetIndexofNextElement()
             v = cls.L2[idx] # извлекаем элемент из списка
@@ -303,9 +296,12 @@ class Program():
             if cls.IsGoal(v.State):
                 window.memo.setPlainText(f'{v.State} \n')
 
-                inner_repeat_body()
-                while (v.PrevVertex != -1):
-                    inner_repeat_body()
+                while True: #repeat until
+                    v = cls.L2[v.PrevVertex]
+                    cls.solving_path.insert(0, v)
+                    window.memo.setPlainText(f'{v.State} \n{window.memo.toPlainText()}')
+                    if (v.PrevVertex == -1):
+                        break
 
                 window.memo.setPlainText(f'{window.memo.toPlainText()} \nИсследовано состояний: {c}')
                 return False
@@ -320,13 +316,8 @@ class Program():
 
                 cls.TailIdx += 1
 
-
-            return True
-
-        repeat_body()
-        while cls.TailIdx != 0:
-            if not repeat_body():
-                return
+            if cls.TailIdx == 0:
+                break
 
         window.memo.setPlainText(f'Решение не найдено {time.time()}, {c}')
 
