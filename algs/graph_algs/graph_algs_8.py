@@ -58,13 +58,13 @@ class Vertex(): #вершина графа
 
     def __init__(self):
         self.State = GameState() # соответствующее состояние
-        self.PrevVertex = 0 # номер предыдущей вершины на пути к текущей
+        self.PrevVertex = None # предыдущая вершина на пути к текущей
 
 class AdvancedVertex():
 
     def __init__(self):
         self.State = GameState() # GameState instance
-        self.PrevVertex = 0
+        self.PrevVertex = None
 
         self.Cost = 0
         self.Heuristics = 0
@@ -80,8 +80,8 @@ class Program():
 
     StartingState = GameState() #начальное состояние
     Neighbours = list(_generator(GameState, 4)) #массив соседних состояний
-    L = list(_generator(Vertex, 10000)) # список просматриваемых вершин
-    L2 = list(_generator(AdvancedVertex, 10000)) # список просматриваемых вершин для эвристической функции
+    L = list() # список просматриваемых вершин
+    L2 = list() # список просматриваемых вершин для эвристической функции
     TailIdx = 0 #указатель на хвост списка
 
     # !!! автор книги: для упрощения программы, список L описан как массив из 10 000 элементов. Конечно, на практике это решение никуда не годится: для любого более-менее сложного начального расположения кубиков произойдёт выход за границы массива. В реальных приложениях лучше использоваться динамические массивы или связные списки.
@@ -171,16 +171,18 @@ class Program():
         v = None #текущая исследуемая вершина
 
         cls.Initialize()
-        cls.L[0].State = GameState(cls.StartingState) #вносим в список L стартовую вершину
-        cls.L[0].PrevVertex = -1 #предыдущей вершины у стартовой нет
-        HeadIdx = 0 #указатель на начало списка L
-        cls.TailIdx = 1
+
+        v0 = Vertex()
+        cls.L.append(v0) #вносим в список L стартовую вершину
+        v0.State = GameState(cls.StartingState) 
+        v0.PrevVertex = None #предыдущей вершины у стартовой нет
+
         c = 0 #количество уже исследованных вершин
 
         cls.solving_path.clear()
 
         while True: #repeat until
-            v = cls.L[HeadIdx] # v - первый элемент списка
+            v = cls.L.pop(0) # берём первый элемент списка
             c += 1
 
             if cls.IsGoal(v.State): # если текущая вершина является целевой
@@ -191,10 +193,10 @@ class Program():
                 # на каждой итерации выводя соответствующее состояние
 
                 while True: #repeat until
-                    v = cls.L[v.PrevVertex]
+                    v = v.PrevVertex
                     cls.solving_path.insert(0, v)
                     window.memo.setPlainText(f'{v.State} \n{window.memo.toPlainText()}')
-                    if v.PrevVertex == -1:
+                    if v.PrevVertex is None:
                         break
 
                 window.memo.setPlainText(f'{window.memo.toPlainText()} \nИсследовано состояний: {c}')
@@ -203,13 +205,12 @@ class Program():
             # определяем соседние вершины и вносим их в список L
             N = cls.GetNeighbours(v.State) # количество соседних состояний
             for i in range(N):
-                cls.L[cls.TailIdx].State = GameState(cls.Neighbours[i])
-                cls.L[cls.TailIdx].PrevVertex = HeadIdx
-                cls.TailIdx += 1
+                vN = Vertex()
+                vN.State = GameState(cls.Neighbours[i])
+                vN.PrevVertex = v
+                cls.L.append(vN)
 
-            HeadIdx += 1 #сдвиг головы списка
-
-            if HeadIdx == cls.TailIdx:
+            if not cls.L:
                 break
 
         window.memo.setPlainText(f'Решение не найдено {time.time()}, {c}')
