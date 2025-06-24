@@ -254,7 +254,7 @@ class Maze():
             self.Path = []
             # print('not solved')
 
-    def waveTracingSolve(self, s: QPoint, f: QPoint):
+    def waveTracingSolve(self, s: QPoint, f: QPoint, freeze=0.2):
 
         self.Path = []
 
@@ -285,7 +285,7 @@ class Maze():
 
                 window.update()
                 app.processEvents()
-                time.sleep(0.2)
+                time.sleep(freeze)
 
                 noSolution = True
                 for loc in make_iteration_copy_and_clear(N_mark_locations):
@@ -467,7 +467,7 @@ class Maze():
                 self[x, y+1].up_wall = False
 
         def isConnected(xs, ys, xf, yf):
-            res = self.waveTracingSolve(QPoint(xs, ys), QPoint(xf, yf))
+            res = self.waveTracingSolve(QPoint(xs, ys), QPoint(xf, yf), freeze=0.1)
             self.Path = []
             return res
 
