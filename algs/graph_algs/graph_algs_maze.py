@@ -270,11 +270,17 @@ class Maze():
             elif dy == -1: return not self[x, y].up_wall
             else: return not self[x, y+1].up_wall
 
+        N_mark_locations = []
+
+        def make_iteration_copy_and_clear(data_list):
+            _iteration_copy = data_list[:]
+            data_list.clear()
+            return _iteration_copy
+
         # поиск решения
         def Solve() -> bool:
 
             N = 1
-
             while True:
 
                 window.update()
@@ -282,15 +288,19 @@ class Maze():
                 time.sleep(0.2)
 
                 noSolution = True
-                for x in range(self.width):
-                    for y in range(self.height):
-                        if self[x, y].mark == N:
-                            for i in range(4):
-                                if CanGo(x, y, DX[i], DY[i]) and (self[x + DX[i], y + DY[i]].mark == 0):
-                                    noSolution = False
-                                    self[x + DX[i], y + DY[i]].mark = N + 1
-                                    if (x + DX[i] == f.x()) and (y + DY[i] == f.y()):
-                                        return True
+                for loc in make_iteration_copy_and_clear(N_mark_locations):
+                    for i in range(4):
+                        try:
+                            cur_loc = self[loc._xx + DX[i], loc._yy + DY[i]]
+                        except (IndexError, AttributeError):
+                            continue
+                        if CanGo(loc._xx, loc._yy, DX[i], DY[i]) and (cur_loc.mark == 0):
+                            noSolution = False
+                            cur_loc.mark = N + 1
+                            N_mark_locations.append(cur_loc)
+                            if (loc._xx + DX[i] == f.x()) and (loc._yy + DY[i] == f.y()):
+                                return True
+
                 N += 1
                 if noSolution:
                     break
@@ -298,10 +308,15 @@ class Maze():
 
         for xx in range(self.width):
             for yy in range(self.height):
-                self[xx, yy].mark = 0
+                l  = self[xx, yy]
+                l.mark = 0
+                l._xx = xx
+                l._yy = yy
 
-        self[s.x(), s.y()].mark = 1
 
+        loc = self[s.x(), s.y()]
+        loc.mark = 1
+        N_mark_locations.append(loc)
 
 
         if Solve():
