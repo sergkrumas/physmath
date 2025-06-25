@@ -390,23 +390,9 @@ class Maze():
                 border_locations.append(loc)
 
         counter = 0
-        xloc = yloc = 0
-        isEnd = False
-
         cur_loc = None
 
         def first_step():
-            # nonlocal counter, xloc, yloc
-            # counter = randint(counter) + 1 
-            # for x in range(Width):
-            #     for y in range(Height):
-            #         if self[x, y].attr == atBorder:
-            #             counter -= 1
-            #             if counter == 0:
-            #                 xloc = x   # xloc, yloc - её координаты
-            #                 yloc = y
-            #                 return True
-            # return False
 
             nonlocal cur_loc
 
@@ -451,7 +437,6 @@ class Maze():
             app.processEvents()
             time.sleep(0.1)
 
-            isEnd = True
             counter = 0
 
             counter = len(border_locations)
