@@ -288,7 +288,6 @@ class Maze():
             elif dy == -1: return not self[x, y].up_wall
             else: return not self[x, y+1].up_wall
 
-        N_mark_locations = []
 
         def make_iteration_copy_and_clear(data_list):
             _iteration_copy = data_list[:]
@@ -297,6 +296,12 @@ class Maze():
 
         # поиск решения
         def Solve() -> bool:
+
+            N_mark_locations = []
+
+            loc = self[s.x(), s.y()]
+            loc.mark = 1
+            N_mark_locations.append(loc)
 
             N = 1
             while True:
@@ -330,12 +335,6 @@ class Maze():
                 l.mark = 0
                 l._xx = xx
                 l._yy = yy
-
-
-        loc = self[s.x(), s.y()]
-        loc.mark = 1
-        N_mark_locations.append(loc)
-
 
         if Solve():
             # print('solved')
@@ -690,7 +689,7 @@ class Window(QWidget):
                 self.maze.waveTracingSolve(self.points[0], self.points[1])
 
             elif action is double_wave_tracing:
-                print('wave tracing')
+                print('double wave tracing')
                 self.maze.doubleWaveTracingSolve(self.points[0], self.points[1])
 
             elif action is prim_generate_maze:
