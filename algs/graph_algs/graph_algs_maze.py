@@ -393,19 +393,15 @@ class Maze():
         cur_loc = None
 
         def first_step():
-
             nonlocal cur_loc
 
             if border_locations:
                 cur_loc = random.choice(border_locations) # выбираем одну случайную
                 border_locations.remove(cur_loc)
-                xloc = loc._xx
-                yloc = loc._yy
                 return True
             return False
 
         def second_step():
-
             nonlocal cur_loc
             cur_loc.attr = atInside
 
@@ -436,8 +432,6 @@ class Maze():
             window.update()
             app.processEvents()
             time.sleep(0.1)
-
-            counter = 0
 
             counter = len(border_locations)
 
