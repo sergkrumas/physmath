@@ -403,28 +403,22 @@ class Maze():
 
                 cur_loc.attr = atInside
 
-                counter = 0
+                inside_locations = []
                 for i in range(4):
                     xc = cur_loc._xx + DX[i]
                     yc = cur_loc._yy + DY[i]
                     l = self[xc, yc]
                     if check_bounds(xc, yc):
                         if l.attr == atInside:
-                            counter += 1
+                            l.dx = DX[i]
+                            l.dy = DY[i]
+                            inside_locations.append(l)
                         if l.attr == atOutside:
                             l.attr = atBorder
                             border_locations.append(l)
 
-                counter = randint(counter) + 1
-                # !!! пока не могу избавиться от использования counter, перепробовал все замены и лабиринт с этими заменами не получается
-                for i in range(4):
-                    xc = cur_loc._xx + DX[i]
-                    yc = cur_loc._yy + DY[i]
-                    if check_bounds(xc, yc) and self[xc, yc].attr == atInside:
-                        counter -= 1
-                        if counter == 0:
-                            breakWall(cur_loc._xx, cur_loc._yy, DX[i], DY[i])
-
+                r_loc = random.choice(inside_locations)
+                breakWall(cur_loc._xx, cur_loc._yy, r_loc.dx, r_loc.dy)
             else:
                 break
 
