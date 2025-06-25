@@ -353,6 +353,9 @@ class Maze():
             else:
                 self[x, y+1].up_wall = False
 
+        def check_bounds(xc, yc):
+            return (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height)
+
         self.Path = []
 
         self.width = Width
@@ -363,8 +366,6 @@ class Maze():
         for x in range(Width):
             for y in range(Height):
                 self[x, y].attr = atOutside
-
-        border_locations = []
 
         for x in range(Width+1):
             for y in range(Height+1):
@@ -378,67 +379,52 @@ class Maze():
         x = randint(Width) # выбираем начальную локацию
         y = randint(Height) # и присваиваем ей атрибут Inside
         self[x, y].attr = atInside
-
         self[x, y].start = True
+
+        border_locations = []
+        cur_loc = None
 
         for i in range(4):  # всем её соседям присваиваем атрибут Border
             xc = x + DX[i]
             yc = y + DY[i]
-            if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height):
+            if check_bounds(xc, yc):
                 loc = self[xc, yc]
                 loc.attr = atBorder
                 border_locations.append(loc)
-
-        counter = 0
-        cur_loc = None
-
-        def first_step():
-            nonlocal cur_loc
-
-            if border_locations:
-                cur_loc = random.choice(border_locations) # выбираем одну случайную
-                border_locations.remove(cur_loc)
-                return True
-            return False
-
-        def second_step():
-            nonlocal cur_loc
-            cur_loc.attr = atInside
-
-            counter = 0
-            for i in range(4):
-                xc = cur_loc._xx + DX[i]
-                yc = cur_loc._yy + DY[i]
-                _loc = self[xc, yc]
-                if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height):
-                    if _loc.attr == atInside:
-                        counter += 1
-                    if _loc.attr == atOutside:
-                        _loc.attr = atBorder
-                        border_locations.append(_loc)
-
-            counter = randint(counter) + 1
-            for i in range(4):
-                xc = cur_loc._xx + DX[i]
-                yc = cur_loc._yy + DY[i]
-                if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height) and (self[xc, yc].attr == atInside):
-                    counter -= 1
-                    if counter == 0:
-                        breakWall(cur_loc._xx, cur_loc._yy, DX[i], DY[i])
-                        return True
-            return False
 
         while True:  # главный цикл
             window.update()
             app.processEvents()
             time.sleep(0.1)
 
-            counter = len(border_locations)
+            if border_locations:
+                cur_loc = random.choice(border_locations) # выбираем одну случайную
+                border_locations.remove(cur_loc)
 
-            a = first_step()
-            b = second_step()
+                cur_loc.attr = atInside
 
-            if not border_locations:
+                counter = 0
+                for i in range(4):
+                    xc = cur_loc._xx + DX[i]
+                    yc = cur_loc._yy + DY[i]
+                    l = self[xc, yc]
+                    if check_bounds(xc, yc):
+                        if l.attr == atInside:
+                            counter += 1
+                        if l.attr == atOutside:
+                            l.attr = atBorder
+                            border_locations.append(l)
+
+                counter = randint(counter) + 1
+                for i in range(4):
+                    xc = cur_loc._xx + DX[i]
+                    yc = cur_loc._yy + DY[i]
+                    if check_bounds(xc, yc) and self[xc, yc].attr == atInside:
+                        counter -= 1
+                        if counter == 0:
+                            breakWall(cur_loc._xx, cur_loc._yy, DX[i], DY[i])
+
+            else:
                 break
 
     def KruskalGenerateMaze(self, Width, Height):
