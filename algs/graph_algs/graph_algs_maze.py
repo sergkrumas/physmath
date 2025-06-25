@@ -131,17 +131,17 @@ class Maze():
             for y in range(self.height):
                 cell = self[x, y]
 
-                is_marked_cell = False
+                is_mouse_marked_cell = False
                 for p in window.points:
                     if p.x() == x and p.y() == y:
-                        is_marked_cell = True
+                        is_mouse_marked_cell = True
                         break
 
                 r1 = QRect(QPoint(x*CELLSIZE, y*CELLSIZE), QPoint((x+1)*CELLSIZE, (y+1)*CELLSIZE))
                 r1.moveTopLeft(o + r1.topLeft())
 
                 painter.setPen(QPen(Qt.red, 4))
-                if is_marked_cell:
+                if is_mouse_marked_cell:
                     r1_small = r1.adjusted(10, 10, -10, -10)
                     painter.drawLine(r1_small.topLeft(), r1_small.bottomRight())
                     painter.drawLine(r1_small.bottomLeft(), r1_small.topRight())
@@ -168,7 +168,7 @@ class Maze():
                 painter.drawPath(path)
 
                 attr = atToStr[self[x, y].attr]
-                text = f'{cell.mark} {attr}\n{x}:{y}'
+                text = f'{cell.mark}\n{attr}\n{x}:{y}'
 
                 color = {
                     0: Qt.black,
@@ -337,6 +337,91 @@ class Maze():
             # print('not solved')
             self.Path = []
             return False
+
+    def waveTracingSolve2(self, s: QPoint, f: QPoint, freeze=0.2):
+
+        self.Path = []
+
+        DX = (1, 0, -1, 0)
+        DY = (0, -1, 0, 1)
+
+        # служебная функция, определяет
+        # можно ли пройти из локации(x, y) в локацию (x+dx, y+dy),
+        # то есть нет ли между ними стены
+        def CanGo(x, y, dx, dy) -> bool:
+            if dx == -1: return not self[x, y].left_wall
+            elif dx == 1: return not self[x+1, y].left_wall
+            elif dy == -1: return not self[x, y].up_wall
+            else: return not self[x, y+1].up_wall
+
+        N_mark_locations = []
+
+        def make_iteration_copy_and_clear(data_list):
+            _iteration_copy = data_list[:]
+            data_list.clear()
+            return _iteration_copy
+
+        # поиск решения
+        def Solve() -> bool:
+
+            N = 1
+            while True:
+
+                window.update()
+                app.processEvents()
+                time.sleep(freeze)
+
+                noSolution = True
+                for loc in make_iteration_copy_and_clear(N_mark_locations):
+                    for i in range(4):
+                        try:
+                            cur_loc = self[loc._xx + DX[i], loc._yy + DY[i]]
+                        except (IndexError, AttributeError):
+                            continue
+                        if CanGo(loc._xx, loc._yy, DX[i], DY[i]) and (cur_loc.mark == 0):
+                            noSolution = False
+                            cur_loc.mark = N + 1
+                            N_mark_locations.append(cur_loc)
+                            if (loc._xx + DX[i] == f.x()) and (loc._yy + DY[i] == f.y()):
+                                return True
+
+                N += 1
+                if noSolution:
+                    break
+            return False
+
+        for xx in range(self.width):
+            for yy in range(self.height):
+                l  = self[xx, yy]
+                l.mark = 0
+                l._xx = xx
+                l._yy = yy
+
+
+        loc = self[s.x(), s.y()]
+        loc.mark = 1
+        N_mark_locations.append(loc)
+
+
+        if Solve():
+            # print('solved')
+            x = f.x()
+            y = f.y()
+
+            finish_mark = self[f.x(), f.y()].mark
+            for N in range(finish_mark, 0, -1):
+                self.Path.append(QPoint(x, y))
+                for i in range(4):
+                    if CanGo(x, y, DX[i], DY[i]) and (self[x+DX[i], y + DY[i]].mark == N-1):
+                        x += DX[i]
+                        y += DY[i]
+                        break
+            return True
+        else:
+            # print('not solved')
+            self.Path = []
+            return False
+
 
     def PrimGenerateMaze(self, Width, Height):
 
