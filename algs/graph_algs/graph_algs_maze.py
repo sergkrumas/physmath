@@ -463,6 +463,11 @@ class Maze():
                         y += DY[i]
                         break
 
+            # чтобы подержать точку пересечения
+            window.update()
+            app.processEvents()
+            time.sleep(freeze)
+
             return True
         else:
             return False
