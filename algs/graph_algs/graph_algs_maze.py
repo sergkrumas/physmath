@@ -416,6 +416,7 @@ class Maze():
                             border_locations.append(l)
 
                 counter = randint(counter) + 1
+                # !!! пока не могу избавиться от использования counter, перепробовал все замены и лабиринт с этими заменами не получается
                 for i in range(4):
                     xc = cur_loc._xx + DX[i]
                     yc = cur_loc._yy + DY[i]
