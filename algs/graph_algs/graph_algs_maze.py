@@ -13,6 +13,7 @@ import time
 from enum import IntEnum
 import random
 
+from collections import defaultdict
 
 atNull = 0
 atInside = 1
@@ -34,8 +35,10 @@ class Location():
         self.up_wall = False
         self.visited = False
         self.mark = 0
+        self.multimark = defaultdict(int)
         self.attr = 0
         self.start = False
+        self.meet_loc = False
 
     def __repr__(self):
         return f'Location ({self.left_wall} {self.up_wall})'
@@ -111,7 +114,7 @@ class Maze():
     def drawMaze(self, painter, widget):
         painter.save()
 
-        CELLSIZE = 50
+        CELLSIZE = 60
 
         o = offset = self.main_offset
 
@@ -120,10 +123,14 @@ class Maze():
         painter.fillRect(rect, Qt.gray)
 
         MAX_N = 0
+        MAX_N_0 = 0
+        MAX_N_1 = 0
         for x in range(self.width):
             for y in range(self.height):
                 cell = self[x, y]
-                MAX_N  = max(MAX_N, cell.mark)
+                MAX_N = max(MAX_N, cell.mark)
+                MAX_N_0 = max(MAX_N_0, cell.multimark[0])
+                MAX_N_1 = max(MAX_N_1, cell.multimark[1])
 
         widget.maze_cells.clear()
 
@@ -152,10 +159,21 @@ class Maze():
                     painter.fillRect(r1, QColor(220, 100, 100))
 
                 if MAX_N != 0:
-                    pass
                     factor = cell.mark/MAX_N
                     color = QColor.fromHslF(0.6, factor, factor*0.5, 0.5)
                     painter.fillRect(r1, color)
+                else:
+                    for n, _max in enumerate((MAX_N_0, MAX_N_1)):
+                        if _max != 0:
+                            factor = cell.multimark[n]/_max
+                            if n == 0:
+                                hue = 0.6
+                            else:
+                                hue = 1.0
+                            if cell.meet_loc:
+                                hue = 0.2
+                            color = QColor.fromHslF(hue, factor, factor*0.5, 0.5)
+                            painter.fillRect(r1, color)
 
                 painter.setPen(QPen(Qt.black, 2))
                 path = QPainterPath()
@@ -168,7 +186,7 @@ class Maze():
                 painter.drawPath(path)
 
                 attr = atToStr[self[x, y].attr]
-                text = f'{cell.mark}\n{attr}\n{x}:{y}'
+                text = f'{cell.multimark[0]} {cell.multimark[1]}\n{attr}\n{x}:{y}'
 
                 color = {
                     0: Qt.black,
@@ -324,11 +342,11 @@ class Maze():
             x = f.x()
             y = f.y()
 
-            finish_mark = self[f.x(), f.y()].mark
+            finish_mark = self[x, y].mark
             for N in range(finish_mark, 0, -1):
                 self.Path.append(QPoint(x, y))
                 for i in range(4):
-                    if CanGo(x, y, DX[i], DY[i]) and (self[x+DX[i], y + DY[i]].mark == N-1):
+                    if CanGo(x, y, DX[i], DY[i]) and (self[x+DX[i], y+DY[i]].mark == N-1):
                         x += DX[i]
                         y += DY[i]
                         break
@@ -338,9 +356,7 @@ class Maze():
             self.Path = []
             return False
 
-    def waveTracingSolve2(self, s: QPoint, f: QPoint, freeze=0.2):
-
-        self.Path = []
+    def doubleWaveTracingSolve(self, start: QPoint, finish: QPoint, freeze=0.2):
 
         DX = (1, 0, -1, 0)
         DY = (0, -1, 0, 1)
@@ -354,15 +370,22 @@ class Maze():
             elif dy == -1: return not self[x, y].up_wall
             else: return not self[x, y+1].up_wall
 
-        N_mark_locations = []
-
-        def make_iteration_copy_and_clear(data_list):
+        def makeIterationCopyAndClear(data_list):
             _iteration_copy = data_list[:]
             data_list.clear()
             return _iteration_copy
 
         # поиск решения
-        def Solve() -> bool:
+
+        meet_loc = None
+        def Solve(start_point, end_point, _id) -> bool:
+            nonlocal meet_loc
+
+            step_list = []
+
+            loc = self[start_point.x(), start_point.y()]
+            loc.multimark[_id] = 1
+            step_list.append(loc)
 
             N = 1
             while True:
@@ -372,56 +395,77 @@ class Maze():
                 time.sleep(freeze)
 
                 noSolution = True
-                for loc in make_iteration_copy_and_clear(N_mark_locations):
+                for loc in makeIterationCopyAndClear(step_list):
                     for i in range(4):
                         try:
                             cur_loc = self[loc._xx + DX[i], loc._yy + DY[i]]
                         except (IndexError, AttributeError):
                             continue
-                        if CanGo(loc._xx, loc._yy, DX[i], DY[i]) and (cur_loc.mark == 0):
+                        if CanGo(loc._xx, loc._yy, DX[i], DY[i]) and (cur_loc.multimark[_id] == 0):
                             noSolution = False
-                            cur_loc.mark = N + 1
-                            N_mark_locations.append(cur_loc)
-                            if (loc._xx + DX[i] == f.x()) and (loc._yy + DY[i] == f.y()):
-                                return True
+                            cur_loc.multimark[_id] = N + 1
+                            step_list.append(cur_loc)
+                            if _id == 1 and cur_loc.multimark[0] != 0:
+                                # когда два "киселя" встречаются
+                                meet_loc = cur_loc
+                                meet_loc.meet_loc = True
+                                return StopIteration
+                            if (loc._xx + DX[i] == end_point.x()) and (loc._yy + DY[i] == end_point.y()):
+                                return StopIteration
 
                 N += 1
                 if noSolution:
                     break
-            return False
+
+                yield True
+            yield False
 
         for xx in range(self.width):
             for yy in range(self.height):
                 l  = self[xx, yy]
-                l.mark = 0
+                l.multimark = defaultdict(int)
+                l.meet_loc = False
                 l._xx = xx
                 l._yy = yy
 
+        r1 = r2 = False
+        for r1, r2 in zip(Solve(start, finish, 0), Solve(finish, start, 1)):
+            pass
+            # print(r1, r2)
 
-        loc = self[s.x(), s.y()]
-        loc.mark = 1
-        N_mark_locations.append(loc)
+        self.Path = []
 
+        if r1 and r2 and meet_loc is not None:
 
-        if Solve():
-            # print('solved')
-            x = f.x()
-            y = f.y()
-
-            finish_mark = self[f.x(), f.y()].mark
-            for N in range(finish_mark, 0, -1):
-                self.Path.append(QPoint(x, y))
+            to_prevent_double_in_path = True
+            x = meet_loc._xx
+            y = meet_loc._yy
+            meet_mark_for_1 = self[x, y].multimark[1]
+            for N in range(meet_mark_for_1, 0, -1):
+                if to_prevent_double_in_path:
+                    to_prevent_double_in_path = False
+                else:
+                    self.Path.append(QPoint(x, y))
                 for i in range(4):
-                    if CanGo(x, y, DX[i], DY[i]) and (self[x+DX[i], y + DY[i]].mark == N-1):
+                    if CanGo(x, y, DX[i], DY[i]) and (self[x+DX[i], y+DY[i]].multimark[1] == N-1):
                         x += DX[i]
                         y += DY[i]
                         break
+
+            x = meet_loc._xx
+            y = meet_loc._yy
+            meet_mark_for_0 = self[x, y].multimark[0]
+            for N in range(meet_mark_for_0, 0, -1):
+                self.Path.insert(0, QPoint(x, y))
+                for i in range(4):
+                    if CanGo(x, y, DX[i], DY[i]) and (self[x+DX[i], y+DY[i]].multimark[0] == N-1):
+                        x += DX[i]
+                        y += DY[i]
+                        break
+
             return True
         else:
-            # print('not solved')
-            self.Path = []
             return False
-
 
     def PrimGenerateMaze(self, Width, Height):
 
@@ -520,7 +564,8 @@ class Maze():
                 self[x, y+1].up_wall = False
 
         def isConnected(xs, ys, xf, yf):
-            res = self.waveTracingSolve(QPoint(xs, ys), QPoint(xf, yf), freeze=0.1)
+            # res = self.waveTracingSolve(QPoint(xs, ys), QPoint(xf, yf), freeze=0.1)
+            res = self.doubleWaveTracingSolve(QPoint(xs, ys), QPoint(xf, yf), freeze=0.1)
             self.Path = []
             return res
 
@@ -616,6 +661,8 @@ class Window(QWidget):
             subMenu = QMenu()
             recursive_solve = subMenu.addAction("Рекурсивный обход")
             wave_tracing = subMenu.addAction("Волновая трассировка")
+            double_wave_tracing = subMenu.addAction("Волновая трассировка из обоих концов")
+
             subMenu.addSeparator()
             prim_generate_maze = subMenu.addAction("Алгоритм Прима")
             kruskal_generate_maze = subMenu.addAction("Алгоритм Краскала")
@@ -636,6 +683,10 @@ class Window(QWidget):
             elif action is wave_tracing:
                 print('wave tracing')
                 self.maze.waveTracingSolve(self.points[0], self.points[1])
+
+            elif action is double_wave_tracing:
+                print('wave tracing')
+                self.maze.doubleWaveTracingSolve(self.points[0], self.points[1])
 
             elif action is prim_generate_maze:
                 self.maze.PrimGenerateMaze(10, 8)
@@ -659,6 +710,7 @@ class Window(QWidget):
                 path = data[0]
                 if path:
                     self.maze.loadMaze(path)
+
 
         self.update()
 
