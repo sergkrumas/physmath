@@ -364,10 +364,15 @@ class Maze():
             for y in range(Height):
                 self[x, y].attr = atOutside
 
+        border_locations = []
+
         for x in range(Width+1):
             for y in range(Height+1):
-                self[x, y].left_wall = True
-                self[x, y].up_wall = True
+                l = self[x, y]
+                l.left_wall = True
+                l.up_wall = True
+                l._xx = x
+                l._yy = y
 
         random.seed(random.randint(0, 1000))
         x = randint(Width) # выбираем начальную локацию
@@ -380,57 +385,64 @@ class Maze():
             xc = x + DX[i]
             yc = y + DY[i]
             if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height):
-                self[xc, yc].attr = atBorder
+                loc = self[xc, yc]
+                loc.attr = atBorder
+                border_locations.append(loc)
 
-        counter = xloc = yloc = 0
+        counter = 0
+        xloc = yloc = 0
         isEnd = False
 
+        cur_loc = None
+
         def first_step():
-            nonlocal counter, xloc, yloc
-            counter = randint(counter) + 1 # выбираем из них одну случайную
-            for x in range(Width):
-                for y in range(Height):
-                    if self[x, y].attr == atBorder:
-                        counter -= 1
-                        if counter == 0:
-                            xloc = x   # xloc, yloc - её координаты
-                            yloc = y
-                            return True
+            # nonlocal counter, xloc, yloc
+            # counter = randint(counter) + 1 
+            # for x in range(Width):
+            #     for y in range(Height):
+            #         if self[x, y].attr == atBorder:
+            #             counter -= 1
+            #             if counter == 0:
+            #                 xloc = x   # xloc, yloc - её координаты
+            #                 yloc = y
+            #                 return True
+            # return False
+
+            nonlocal cur_loc
+
+            if border_locations:
+                cur_loc = random.choice(border_locations) # выбираем одну случайную
+                border_locations.remove(cur_loc)
+                xloc = loc._xx
+                yloc = loc._yy
+                return True
             return False
 
         def second_step():
-            nonlocal counter, xloc, yloc
 
-            self[xloc, yloc].attr = atInside
+            nonlocal cur_loc
+            cur_loc.attr = atInside
 
             counter = 0
             for i in range(4):
-                xc = xloc + DX[i]
-                yc = yloc + DY[i]
+                xc = cur_loc._xx + DX[i]
+                yc = cur_loc._yy + DY[i]
+                _loc = self[xc, yc]
                 if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height):
-                    if self[xc, yc].attr == atInside:
+                    if _loc.attr == atInside:
                         counter += 1
-                    if self[xc, yc].attr == atOutside:
-                        self[xc, yc].attr = atBorder
+                    if _loc.attr == atOutside:
+                        _loc.attr = atBorder
+                        border_locations.append(_loc)
 
             counter = randint(counter) + 1
             for i in range(4):
-                xc = xloc + DX[i]
-                yc = yloc + DY[i]
+                xc = cur_loc._xx + DX[i]
+                yc = cur_loc._yy + DY[i]
                 if (xc >= 0) and (yc >= 0) and (xc < Width) and (yc < Height) and (self[xc, yc].attr == atInside):
                     counter -= 1
                     if counter == 0:
-                        breakWall(xloc, yloc, DX[i], DY[i])
-                        return True
-            return False
-
-        def final_step():
-            nonlocal isEnd
-
-            for x in range(Width):
-                for y in range(Height):
-                    if self[x, y].attr == atBorder:
-                        isEnd = False
+                        breakWall(cur_loc._xx, cur_loc._yy, DX[i], DY[i])
                         return True
             return False
 
@@ -442,16 +454,12 @@ class Maze():
             isEnd = True
             counter = 0
 
-            for x in range(Width):   # подсчитываем количество локаций с атрибутом Border
-                for y in range(Height):
-                    if self[x, y].attr == atBorder:
-                        counter += 1
+            counter = len(border_locations)
 
             a = first_step()
             b = second_step()
-            c = final_step()
 
-            if isEnd:
+            if not border_locations:
                 break
 
     def KruskalGenerateMaze(self, Width, Height):
