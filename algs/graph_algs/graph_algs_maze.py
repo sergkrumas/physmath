@@ -208,7 +208,7 @@ class Maze():
 
                             painter.save()
                             direction = cell.direction
-                            if direction != -1 and not cell.meet_loc:
+                            if direction != -1 and not cell.meet_loc and not mark_value == 1:
                                 color = QColor.fromHslF(hue, 1.0, 0.5, 1.0)
                                 painter.setPen(QPen(color, 4))
                                 draw_arrow(self.aps[direction], r1.center())
