@@ -39,6 +39,7 @@ class Location():
         self.attr = 0
         self.start = False
         self.meet_loc = False
+        self.direction = -1
 
     def __repr__(self):
         return f'Location ({self.left_wall} {self.up_wall})'
@@ -68,6 +69,19 @@ class Maze():
 
         self.Path = []
         self.main_offset = QPoint(10, 10)
+
+        self.prepare_arrows()
+
+    def prepare_arrows(self):
+        f = 15
+        h = 5
+        ap0 = [QPoint(f, 0), QPoint(-f, 0), QPoint(f-15, h), QPoint(f-15, -h)]
+        self.aps = [ap0]
+        ap = ap0
+        for i in range(3):
+            # rotate 90 degress counterclockwise
+            ap = list(map(lambda p: QPoint(p.y(), -p.x()), ap))
+            self.aps.append(ap)
 
     def setLength(self, w, h):
         self.maze_array = []
@@ -113,6 +127,14 @@ class Maze():
 
     def drawMaze(self, painter, widget):
         painter.save()
+
+        def draw_arrow(ap, center):
+            _ap = [QPoint(p) for p in ap]
+            for p in _ap:
+                p += center
+            painter.drawLine(_ap[0], _ap[1])
+            painter.drawLine(_ap[0], _ap[2])
+            painter.drawLine(_ap[0], _ap[3])
 
         CELLSIZE = 60
 
@@ -177,12 +199,20 @@ class Maze():
                                 hue = 0.2
                             if mark_value == 1.0:
                                 factor = 1.0
-                            color = QColor.fromHslF(hue, factor, factor*0.5, 0.5)
+                            color = QColor.fromHslF(hue, factor, 0.5, factor*0.5)
 
                             if mark_value == 1.0:
                                 r1 = r1.adjusted(10, 10, -10, -10)
 
                             painter.fillRect(r1, color)
+
+                            painter.save()
+                            direction = cell.direction
+                            if direction != -1 and not cell.meet_loc:
+                                color = QColor.fromHslF(hue, 1.0, 0.5, 1.0)
+                                painter.setPen(QPen(color, 4))
+                                draw_arrow(self.aps[direction], r1.center())
+                            painter.restore()
 
                 painter.setPen(QPen(Qt.black, 2))
                 path = QPainterPath()
@@ -368,6 +398,8 @@ class Maze():
 
         DX = (1, 0, -1, 0)
         DY = (0, -1, 0, 1)
+        # i       0   1   2   3
+        # angle   0   90  180 270
 
         # служебная функция, определяет
         # можно ли пройти из локации(x, y) в локацию (x+dx, y+dy),
@@ -412,6 +444,7 @@ class Maze():
                         if CanGo(loc._xx, loc._yy, DX[i], DY[i]) and (cur_loc.multimark[_id] == 0):
                             noSolution = False
                             cur_loc.multimark[_id] = N + 1
+                            cur_loc.direction = i
                             step_list.append(cur_loc)
                             if (_id == 1 and cur_loc.multimark[0] != 0) or (_id == 0 and cur_loc.multimark[1] != 0):
                                 # когда два "киселя" встречаются, запоминаем место встречи и заканчиваем просчёт;
