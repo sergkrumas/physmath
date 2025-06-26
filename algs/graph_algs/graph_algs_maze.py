@@ -165,14 +165,23 @@ class Maze():
                 else:
                     for n, _max in enumerate((MAX_N_0, MAX_N_1)):
                         if _max != 0:
-                            factor = cell.multimark[n]/_max
+                            mark_value = cell.multimark[n]
+                            if mark_value == 0.0: # если это закоментировать, то остальные клетки будут темнеть
+                                continue
+                            factor = mark_value/_max
                             if n == 0:
                                 hue = 0.6
                             else:
                                 hue = 1.0
                             if cell.meet_loc:
                                 hue = 0.2
+                            if mark_value == 1.0:
+                                factor = 1.0
                             color = QColor.fromHslF(hue, factor, factor*0.5, 0.5)
+
+                            if mark_value == 1.0:
+                                r1 = r1.adjusted(10, 10, -10, -10)
+
                             painter.fillRect(r1, color)
 
                 painter.setPen(QPen(Qt.black, 2))
@@ -404,8 +413,9 @@ class Maze():
                             noSolution = False
                             cur_loc.multimark[_id] = N + 1
                             step_list.append(cur_loc)
-                            if _id == 1 and cur_loc.multimark[0] != 0:
-                                # когда два "киселя" встречаются
+                            if (_id == 1 and cur_loc.multimark[0] != 0) or (_id == 0 and cur_loc.multimark[1] != 0):
+                                # когда два "киселя" встречаются, запоминаем место встречи и заканчиваем просчёт;
+                                # встретится они могут во время просчёта шагов первого и второго "киселей"
                                 meet_loc = cur_loc
                                 meet_loc.meet_loc = True
                                 return StopIteration
@@ -419,8 +429,8 @@ class Maze():
                 yield True
             yield False
 
-        for xx in range(self.width):
-            for yy in range(self.height):
+        for xx in range(self.width+1):
+            for yy in range(self.height+1):
                 l  = self[xx, yy]
                 l.multimark = defaultdict(int)
                 l.meet_loc = False
@@ -729,7 +739,7 @@ def main():
 
     window = Window()
     window.maze = maze
-    window.resize(1100, 500)
+    window.resize(1100, 700)
     window.show()
     app.exec_()
 
