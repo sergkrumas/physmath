@@ -1644,6 +1644,10 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
   - An Introduction to Curvilinear Coordinates in Differential Geometry https://www.youtube.com/watch?v=2V__naEkXVY
   - How to learn Differential Geometry | Differential Geometry | Differential Geometry Lecture https://www.youtube.com/watch?v=ITHausnPq7A
 
+
+- Комбинаторика и алгоритмы 
+  - https://combalg.ru/
+
 - Python Internals
   - **CPython Internals: Your Guide to the Python 3 Interpreter**
     - мало нового узнал, но всё-таки чего-то да узнал
@@ -1881,7 +1885,7 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 - https://www.mccme.ru/free-books/
 - https://math.ru/lib/
 - http://ilib.mccme.ru/ 
-- Журнал Мир Математики (48 файлов)
+- Журнал «Мир Математики» (48 файлов)
     - В ЛОКАЛЬНОЙ БИБЛИОТЕКЕ 
 - ЛОКАЛЬНАЯ БИБЛИОТЕКА ПО ТЕГУ MATH
     - http://127.0.0.1:5081/tag/math
@@ -1905,6 +1909,66 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
     - Учёные о науке
 - Лекции Савватеева https://usdp.ru/savva.html
 - Проект Алексея Савватеева — «Маткульт-привет!»  https://savvateev.xyz/
+- Методика Абрамсона https://yabramson.ru/
+- Журнал «Математика в школе»
+- Ёжик в матане
+  - https://vk.com/public186208863
+  - https://www.youtube.com/channel/UC4E452Wqoiv-JU_lWHAQTWQ/videos
+  - https://www.youtube.com/channel/UC4E452Wqoiv-JU_lWHAQTWQ/playlists
+- Материалы от Международного научно-методического центра НИУ Высшей Школы экономики
+  - в списке есть youtube-каналы с лекциями
+    - https://mnmc.hse.ru/materials
+- https://ru.wikipedia.org/wiki/Открытые_математические_проблемы
+- Борис Трушин http://trushinbv.ru/
+- https://ru.wikipedia.org/wiki/Категория:Теоремы_геометрии
+- https://ru.wikipedia.org/wiki/Категория:Теоремы_планиметрии
+- журнал Квантика https://kvantik.com/archive/
+- https://www.studmed.ru/science/matematika/
+- Математик МГУ https://www.youtube.com/@hitman_math/playlists
+- «Математическое просвещение» сборник научно-популярных статей по математике, ныне издаваемый МЦНМО
+  - https://www.mccme.ru/free-books/matpros.html
+- Серия “Библиотека «Математическое просвещение»”
+  - https://www.mccme.ru/mmmf-lectures/books/
+- Майлз Рид, Miles Reid, Автор «Теория Галуа» и «Алгебраическая геометрия для всех»
+  - http://homepages.warwick.ac.uk/~masda/
+  - теория Галуа - https://homepages.warwick.ac.uk/~masda/MA3D5/
+- открытое образование
+  - https://openedu.ru/course/
+
+# МОНИТОРИНГ
+- физмат класс https://vk.com/club129346689
+- научная электронная библиотека https://elibrary.ru/defaultx.asp
+- Библиотека естественных и технических наук
+  - https://vk.com/club49053453
+  - https://t.me/BIBLIOFILZ
+- teach-in https://www.youtube.com/channel/UCimGOl6wSQWDbBFoVMQGzMg
+- всё о математическом образовании, доступная литература https://www.mathedu.ru/
+- сайт библиотеки Мехмата МГУ http://lib.mexmat.ru/
+- ПАВЕЛ ВИКТОР - лицейские уроки по физике https://www.youtube.com/@pvictor54/playlists
+- учебные материалы для студентов мехмата МГУ http://dmvn.mexmat.net/
+- Флесс
+    - Канал Виктора Рогуленко о карьере и профессиональном развитии. 
+    - https://www.youtube.com/@Fless/videos
+- абитуриенты МФТИ
+    - https://www.youtube.com/channel/UCXke-DouIY5aDboRKnjirCQ
+- Врата в физмат
+    - https://www.youtube.com/channel/UC4I74zWb4uVUEvl7V0zkVyg
+- дистанционные занятия МФТИ
+    - https://www.youtube.com/channel/UCEEhbFAvl3fOW5geICQbMcg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # КАНАЛЫ С РЕШЕНИЯМИ ПО ГЕОМЕТРИИ
 - Геометрия Валерий Казаков                   https://www.youtube.com/channel/UCfbAQx8l8Aym0jLB5dsvP2g
