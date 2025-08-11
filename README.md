@@ -17,7 +17,7 @@
 
 Читаемые на данный момент книги помечаются фразой «___в процессе___»
 
-Этот файл ведётся с августа 2024 года, это и база знаний, и пройденный путь.
+Этот файл ведётся публично с августа 2024 года, это и база знаний, и пройденный путь. Попытки изучать математику заново и капитально начались весной 2023 года.
 
 Читать надо весь файл целиком, так как сведения на одну и ту же тему могут оказаться в разных разделах - в математике всё переплетается.
 
@@ -65,20 +65,28 @@
   - https://ru.wikipedia.org/wiki/Аналитическая_геометрия
   - https://ru.wikipedia.org/wiki/Проективная_геометрия
 - (12 авг 25) посмотреть книги по теории принятия решения
+- (12 авг 25) https://ru.wikipedia.org/wiki/Метод_Лапласа
+  - обратить внимание на книги
+- (12 авг 25) Программисты России. Возможно в статьях будут указаны полезные ссылки
+  - https://ru.wikipedia.org/wiki/Категория:Программисты_России
+  - Вале́рий Никола́евич Аши́хмин https://ru.wikipedia.org/wiki/Ашихмин,_Валерий_Николаевич
+    - российский учёный и программист, специализирующийся в области механики деформируемого твёрдого тела (МДТТ), мезомеханики, и численных методов МДТТ. Автор учебных пособий по математическому моделированию и программированию.
+  - Баяковский, Юрий Матвеевич https://ru.wikipedia.org/wiki/Баяковский,_Юрий_Матвеевич
+    - учёный, кандидат физико-математических наук, доцент кафедры автоматизации систем вычислительных комплексов ВМК МГУ, заведующий лабораторией компьютерной графики и мультимедиа ВМК МГУ. Награждён двумя медалями «За трудовое отличие». Лауреат премии Совета Министров СССР (1985). Золотая медаль ВДНХ (1985). Член ACM (с 1971), ACM SIGGRAPH (с 1991), ACM Siggraph Computer Graphics Pioneers Club (с 1991), IEEE CS (с 1995).
+- (23 год) продолжать читать серию «Мир Математики»                        
 
 
 
 
 
 
-
-
-# ГРАФИЧЕСКИЕ КАЛЬКУЛЯТОРЫ
+# ГРАФИЧЕСКИЕ КАЛЬКУЛЯТОРЫ И ПРОЧЕЕ
 - https://www.geogebra.org/
     - https://www.geogebra.org/calculator
 - https://www.cinderella.de/tiki-index.php
 - https://www.math10.com/ru/geometria/geogebra/geogebra.html
 - https://www.desmos.com/calculator?lang=ru
+- лаборатория численных вычислений https://www.scilab.org/
 
 --------------------
 # ИНТЕРЕСНЫЕ ФАКТЫ И ЗАМЕТКИ
@@ -618,11 +626,13 @@
     - *Рекомендуется список литературы*
 
 # ТЕОРИЯ ИГР
+- https://ru.wikipedia.org/wiki/Теория_игр
 - **Вентцель «Элементы теории игр»**
     - *Книга представляет собой поплуярное изложение элементов теории игр и некоторых способов решения матричных игр. Она почти не содержит доказательств и иллюстрирует основные положения теории примерами. Для чтения достаточно знакомства с элементами теории вероятностей и математического анализа. Книга предназначена для популяризации идей теори игр, имеющей широкое практическое применение в экономике и военном деле.*
 
 # ДИФФЕРЕНЦИАЛЬНЫЕ ИГРЫ
-- https://ru.wikipedia.org/wiki/Дифференциальные_игры
+- раздел теории игр https://ru.wikipedia.org/wiki/Дифференциальные_игры
+- Большинство изучаемых игр дискретны: в них конечное число игроков, ходов, событий, исходов и т. п. Однако эти составляющие могут быть расширены на множество вещественных чисел. Игры, включающие такие элементы, часто называются дифференциальными. Они связаны с какой-то вещественной шкалой (обычно — шкалой времени), хотя происходящие в них события могут быть дискретными по природе. Дифференциальные игры также рассматриваются в теории оптимизации, находят своё применение в технике и технологиях, физике.
 - **Петросян, Рихсиев «Преследование на плоскости»**
     - *Содержит популярное изложение элементов теории диффеернциальных игр и некоторых геометрических способов решения игр преследования на плоскости, базирующихся на использовании стратегии параллельного сближения (П-стратегия). Для конкретных задач преследования приведены и обоснованы оптимальные способы поведения преследующего и убегающего игроков. Для широкого круга читателей, включая школьников старших классов, интересующихся математикой.*
 
@@ -641,8 +651,32 @@
 
 СТАТИСТИКА
 - Основы статистки https://stepik.org/course/76/promo
+- «Наглядная математическая статистика»
 
 # АЛГЕБРА, ТЕОРИЯ ЧИСЕЛ, АРИФМЕТИКА
+- https://ru.wikipedia.org/wiki/Категория:Теоремы_алгебры
+    - среди них - теорема Безу, о которой мне почему-то в школе не рассказывали
+- основые разделы
+    - теория множеств
+    - теория рекурретнтых последовательностей
+    - алгебраическая геометрия
+- **МНОГОЧЛЕНЫ, ДЕЛЕНИЕ МНОГОЧЛЕНОВ**
+    - https://www.youtube.com/watch?v=XSWiDZAjz88
+    - https://www.youtube.com/watch?v=XSWiDZAjz88&t=609s
+    - https://www.youtube.com/watch?v=QxV_dZm_3TE
+    - https://www.youtube.com/watch?v=H9teIpb62iI
+    - https://www.youtube.com/watch?v=w000MfaTJaA
+    - https://www.youtube.com/watch?v=EdDGvdSOuBA
+    - https://www.youtube.com/watch?v=NxKscNPqPXo
+    - https://ru.wikipedia.org/wiki/Теорема_Безу
+    - https://ru.wikipedia.org/wiki/Соотношение_Безу
+    - https://ru.wikipedia.org/wiki/Разложение_рациональной_дроби_на_простейшие#:~:text=Разложение рациональной дроби на простейшие ― представление рациональной дроби в - виде,обратного преобразования Лапласа рациональных функций.
+    - https://www.berdov.com/docs/polynom/teorema-bezu-mnogochlen/
+    - https://www.berdov.com/docs/polynom/
+    - https://www.berdov.com/docs/polynom/metod-neopredelennih-koefficientov/
+    - http://www.cleverstudents.ru/expressions/partial_fraction_expansion.html
+    - https://www.resolventa.ru/spr/algebra/red2.htm
+
 - **Шафаревич «О решениях уравнений высших степеней (метод Штурма)»**
     - *Когда читал книгу по вычислительной математике, то задался вопросом, как узнать количество корней многочлена и вычислить эти корни? В книге описан метод Штурма, который как раз помогает выяснить это. Но, кажись, это не для всех уравнений. В основе деление многочлена на производный от него многочлен (используется понятие производной)*
 - **Курош «Алгебраические уравнения произвольных степеней»**
@@ -1135,6 +1169,9 @@
     - *Весьма годная книжка, всё то, что я хотел узнать*
     - *Подойдёт к изучению комплексного анализа*
     - *В конце рекомендуется литература*
+- **Теория вычетов**
+    - https://ru.wikipedia.org/wiki/Вычет_(комплексный_анализ)#Приложения_теории_вычетов
+    - Вычисление определенных интегралов с помощью вычетов 1. https://www.youtube.com/watch?v=MsrETmBhkm0
 
 # ФУНКЦИОНАЛЬНЫЙ АНАЛИЗ
 - в основном это здесь появилось из-за нейросетей
@@ -1157,6 +1194,11 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 - свёртка https://betterexplained.com/articles/intuitive-convolution/
 ## цифровая обработка сигналов
 - https://www.youtube.com/playlist?list=PLmu_y3-DV2_kpP8oX_Uug0IbgH2T4hRPL
+
+
+# ОБРАБОТКА СИГНАЛОВ
+- https://ru.wikipedia.org/wiki/Категория:Обработка_сигналов
+
 
 # ОПЕРАЦИОННОЕ ИСЧИСЛЕНИЕ
 - Операционное исчисление — раздел математики, изучающий интегральные преобразования (прежде всего, преобразование Лапласа) и их свойства. Обычно раздел изучается в курсе «Теория функций комплексного переменного».
@@ -1223,6 +1265,9 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 
 # ДИФФЕРЕНЦИАЛЬНАЯ ГЕОМЕТРИЯ
 - кривые и поверхности, фрейм Френе
+- кривые на сфере
+  - https://faculty.evansville.edu/ck6/Gallery/Introduction.html
+  - http://faculty.evansville.edu/ck6/GalleryTwo/Introduction2.html
 - **SHIZ «Кисть Гримстрока и дифференциальная геометрия»** 
   - https://www.youtube.com/watch?v=HfTVryPdvyE
 - (дек 24) Introduction to Differential Geometry: Curves https://www.youtube.com/watch?v=4fB0VfKZRXM
@@ -1258,6 +1303,7 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 # СПЕЦИАЛЬНЫЕ ФУНКЦИИ
 - (25 июл 25) специальные функции, список книг осиливать https://ru.wikipedia.org/wiki/Специальные_функции
 - (25 июл 25) !! функции параболического цилиндра, внезапно среди них обнаружились уже знакомые мне полиномы Эрмита https://ru.wikipedia.org/wiki/Функции_параболического_цилиндра
+- (12 авг 25) https://ru.wikipedia.org/wiki/Категория:Специальные_функции
 
 # ЧИСЛЕННЫЕ МЕТОДЫ
 
@@ -1521,12 +1567,21 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
   - *По сути излагается материал из начертательной геометрии, в конце даётся литература для углублённого изучения, в том числе для художников.*
   - *Излагается вычислительный метод построения изображения.*
 
-# ОБРАБОТКА СИГНАЛОВ
-- https://ru.wikipedia.org/wiki/Категория:Обработка_сигналов
+
+
+# ГЕОМЕТРИЯ (ШКОЛЬНАЯ)
+- Геронов_треугольник https://ru.wikipedia.org/wiki/Геронов_треугольник
+- Всё, что нужно знать о треугольнике https://ege-ok.ru/2012/05/04/vse-chto-nuzhno-znat-o-treugolnike
+- Справочник по планиметрии http://tmath.ru/1/page.php
+- Прасолов В. В. Задачи по планиметрии
+  - там есть задача про то, что правильный треугольник нельзя вписать в клеточки тетради https://www.mccme.ru/free-books/prasolov/planim/contents.htm
+
 
 
 # ТОПОЛОГИЯ
 - особо не нужна для 3D-шки, поэтому надо ещё подумать, нужно ли её ворочать
+
+
 
 
 # ПРОЧЕЕ
@@ -1548,6 +1603,41 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
   - Теория Галуа - 11 часов, 28 минут - https://www.youtube.com/watch?v=Rir4DM3Y9hE&list=PLgEpoT7yAl9VWebUfw4uOlut1ZaoFjFcb
   - Математика для гуманитариев 2014 - 7 часов, 44 минут - https://www.youtube.com/watch?v=Z5C0D8EzBLw&list=PLgEpoT7yAl9UWe6jjGkNEe7da2wCJyxI0
   - ПАНМАТЕМАТИКА от Савватеева - 8 часов, 45 минут - https://www.youtube.com/watch?v=e8_iTww_jkU&list=PLH3NNipqeM1vPZjcwzi0hyhdgc7jdyBOv&index=1
+  - цикл лекций о великих математиках - 21 час, 48 минут https://www.youtube.com/watch?v=Nd5VJAR3ZPw&list=PLmu_y3-DV2_k-Tnu_L-uZ8FMbTWGce-ED
+    - 4 дня по 6 часов
+  - 100 уроков математики - 1 день, 1 час, 23 минуты - https://www.youtube.com/playlist?list=PLqBfxn8OBMGrsA_YynaQWqHKhL7kEvL4X
+    - 3 дня по 9 часов
+  - Савватеев: Избранные вопросы неевклидовой геометрии - 9 часов, 51 минута - https://www.youtube.com/watch?v=OoKpduJylbM&list=PLgEpoT7yAl9VS-cQTxqecNtQ_yQ5A1FCJ
+    - 1 день
+  - Теория групп - чуть менее 10 часов 
+      - https://www.youtube.com/watch?v=ihoATq9jSlQ  1:13:37
+      - https://www.youtube.com/watch?v=cEC7gPN441w  1:14:37
+      - https://www.youtube.com/watch?v=m0Fz88VtTKc  1:15:56
+      - https://www.youtube.com/watch?v=OgQSmqZABVY  1:14:35
+      - https://www.youtube.com/watch?v=OraV8VbFzrQ  1:20:10
+      - https://www.youtube.com/watch?v=obXICujbJMw  1:12:47
+      - https://www.youtube.com/watch?v=ytRgMCC2DN0  1:07:00
+      - https://www.youtube.com/watch?v=YoHJ1LN3qV4  1:02:41
+  - Савватеев: Конечные поля - 5 часов, 8 минут - https://www.youtube.com/watch?v=nm_o0IS2gK4&list=PLH3NNipqeM1vcHnP4czWemq5DyBw9MXxn&index=2
+    - 1 день
+  - Савватеев, Терема Ферма - 12 часов - https://www.youtube.com/watch?v=sDgeroYKMEg&list=PLgEpoT7yAl9XgSQcTuUEyriQyLu1dEy_B
+    - 2 дня по 6 часов
+  - геометрия лобачевского для начинающих - 7 часов- https://www.youtube.com/watch?v=YzqCeaA0OcI&list=PLtgH-y7CMNBn52IF1u_s7fnJn7L6S8x75&index=1
+    - 1 день
+  - ВСЕ ВИДЕО С КАНАЛА САВВАТЕЕВА - хз под длительности - https://www.youtube.com/channel/UCWk8OxsylgmZ_VgY7jC9pjQ
+  - 7.5 ЧАСОВ МАТАНА ОТ ЁЖИКА В МАТАНЕ!!! https://www.youtube.com/watch?v=NX4s0ZE97Kc
+
+
+
+
+
+
+
+
+
+
+
+
 
 - всё о числе Пи
   - https://abitu.net/articles/296
@@ -1555,6 +1645,12 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
   - https://www.youtube.com/watch?v=b3ErXRmDCrg
   - https://www.youtube.com/watch?v=fHYvc-zKEwA
 - (лето 24) ЗАПИСЬ ЧИСЕЛ: ПОЗИЦИОННЫЕ СИСТЕМЫ И ЦЕПНЫЕ ДРОБИ https://www.youtube.com/watch?v=WgEUTnsZ_Xg
+
+
+
+# НАЧЕРТАТЕЛЬНАЯ ГЕОМЕТРИЯ
+- https://de.wikipedia.org/wiki/Darstellende_Geometrie
+- Mette/Kranz "AIRBRUSH" Spiegelung in Theorie und Praxis https://miumau.livejournal.com/810657.html?page=4#comments
 
 
 # ФИЗИКА
@@ -1866,7 +1962,8 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
     - ___в процессе___
     - 
 
-
+# ЗАЛИПАЛОВО
+- омплексные числа и узоры https://habr.com/ru/company/ruvds/blog/565382/
 
 
 # БИБЛИОТЕКА
@@ -1934,6 +2031,9 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
   - теория Галуа - https://homepages.warwick.ac.uk/~masda/MA3D5/
 - открытое образование
   - https://openedu.ru/course/
+- (29 авг 24) препринты научных статей. Возможно тут я смогу найти те статьи, что мне не дают на официальных площадках
+  - https://arxiv.org/
+  - https://vixra.org/ - никакой модерации вообще
 
 # МОНИТОРИНГ
 - физмат класс https://vk.com/club129346689
@@ -1955,8 +2055,8 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
     - https://www.youtube.com/channel/UC4I74zWb4uVUEvl7V0zkVyg
 - дистанционные занятия МФТИ
     - https://www.youtube.com/channel/UCEEhbFAvl3fOW5geICQbMcg
-
-
+- Архивы журнала «Квант»
+  - https://www.mathnet.ru/php/archive.phtml?jrnid=kvant&wshow=contents&option_lang=rus
 
 
 
