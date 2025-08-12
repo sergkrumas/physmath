@@ -1464,6 +1464,14 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 
 
 # ЧИСЛЕННЫЕ МЕТОДЫ, ВЫЧИСЛИТЕЛЬНАЯ МАТЕМАТИКА, ЧИСЛЕННЫЙ АНАЛИЗ
+- https://ru.wikipedia.org/wiki/Вычислительная_математика
+- https://ru.wikipedia.org/wiki/Численные_методы
+- https://ru.wikipedia.org/wiki/Численное_решение_уравнений#Общий_алгоритм_последовательных_приближений
+- https://ru.wikipedia.org/wiki/Логарифмическая_линейка
+- https://ru.wikipedia.org/wiki/Номограмма
+- https://vk.com/wall-48736444?offset=520
+- эта штука очень прикольно выглядит https://ru.wikipedia.org/wiki/Диаграмма_Вольперта_—_Смита
+- Решение нелийных уравнений где??
 - **видеокурс Лукьяненко «Численные методы»**
     - *этот курс так и не просмотрен мною до конца, я пытался его осилить летом 2023 года, теперь можно попробовать ещё раз*
     - продолжительность 45 часов 40 минут (почти два дня), всего 27 видосов
@@ -1475,6 +1483,15 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
     - автор https://teach-in.ru/lecturer/Lukyanenko-D-V
     - сюда же относится и его курс «Параллельные вычисления» https://www.youtube.com/playlist?list=PLcsjsqLLSfNCxGJjuYNZRzeDIFQDQ9WvC
 
+- рекомендуемая литература
+  - 1. Калиткин Н.Н., Альшина Е.А. Численные методы, Книга 1, Численный анализ, 2013.
+  - 2. Калиткин Н.Н., Корякин П.В. Численные методы, Книга 2, Методы математической физики, , 2013
+  - 3. Калиткин Н.Н., Альшин А.Б., Альшина Е.А., Рогов Б.В. Вычисления на квазиравномерных сетках. Москва, Физматлит, 2005.
+
+  - Также классической является следующая литература:
+    - 1. Гулин А.В., Самарский А.А. Численные методы. "Наука", Москва, 1989.
+    - 2. Бахвалов Н.С., Жидков Н.П., Кобельков Г.М.  Численные методы. "Наука", Москва, 1987.
+    - ***P.S. Лекции автора последней указанной книги, Георгия Михайловича Кобелькова, также доступны для просмотра на канале Teach-In***  https://www.youtube.com/@teachin-ru/search?query=кобельков 
 - Ряд Тейлора или как компьютер вычисляет синус https://www.youtube.com/watch?v=Apo6NBvU3iI
 
 - у Бояршинова были лекции на Youtube о численных методах и линейных дифференциальных уравнениях. Раньше доступ был платным, а на момент 16 августа 24 года канал снесён
@@ -1592,6 +1609,59 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
     - 
 
 
+
+# FLOATING POINT, IEEE
+- https://habr.com/ru/companies/wunderfund/articles/776496/ 16-, 8- и 4-битные форматы чисел с плавающей запятой
+- https://habr.com/ru/articles/745640/ Числа с плавающей точкой для гуманитариев. Что это такое и как они работают
+- https://Lahey.com/float.htm
+- https://habr.com/ru/articles/112953/ - Что нужно знать про арифметику с плавающей запятой
+- https://ru.wikipedia.org/wiki/Денормализованные_числа
+- https://ru.wikipedia.org/wiki/Исчезновение_порядка
+- https://web.archive.org/web/20140828020343/http://fondatore.ru/ch02_04a.shtml
+- https://ru.wikipedia.org/wiki/Математический_сопроцессор
+- https://ru.wikipedia.org/wiki/Число_с_плавающей_запятой
+- https://ru.wikipedia.org/wiki/Вычислительная_устойчивость
+- https://ru.wikipedia.org/wiki/Погрешность_измерения#По_форме_представления
+- http://www.maksakov-sa.ru/EGEEInforman/TeoriaEGEEE/InformIKodirov/FormPredstChisel/index.html
+- http://khpi-iip.mipk.kharkiv.edu/library/datastr/book_sod/structura/chapter2.htm
+- https://habr.com/ru/post/466813/
+- https://habr.com/ru/post/309812/
+- https://ru.wikipedia.org/wiki/Алгоритм_Кэхэна
+- https://randomascii.wordpress.com/category/floating-point/page/2/
+- https://randomascii.wordpress.com/category/floating-point/
+- https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/
+- https://randomascii.wordpress.com/2012/02/13/dont-store-that-in-a-float/
+- https://randomascii.wordpress.com/2012/01/23/stupid-float-tricks-2/
+- https://lemire.me/blog/2017/02/28/how-many-floating-point-numbers-are-in-the-interval-01/
+- https://en.wikipedia.org/wiki/Floating-point_arithmetic
+- https://en.wikipedia.org/wiki/Floating-point_error_mitigation
+- https://news.ycombinator.com/item?id=13759458
+- https://www.volkerschatz.com/science/float.html
+- https://linux.die.net/man/3/isgreater
+- https://www.youtube.com/watch?v=R-oBCI8vn98
+- https://ru.wikipedia.org/wiki/IEEE_754-2008
+- http://digteh.ru/proc/float/
+- https://indepth.dev/the-simple-math-behind-decimal-binary-conversion-algorithms/
+- https://studopedia.ru/6_124790_chisla-s-plavayushchey-zapyatoy.html
+- https://ru.wikipedia.org/wiki/Машинный_ноль
+- https://qna.habr.com/q/160995 Что такое машинный эпсилон
+- https://code-live.ru/forum/cpp/25/
+- http://blog.kislenko.net/show.php?id=1391
+- https://neerc.ifmo.ru/wiki/index.php?title=Представление_целых_чисел:_прямой_код,_код_со_сдвигом,_дополнительный_код
+- https://neerc.ifmo.ru/wiki/index.php?title=Представление_вещественных_чисел#- .D0.94.D0.B5.D0.BD.D0.BE.D1.80.D0.BC.D0.B0.D0.BB.D0.B8.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.BD.D1.8B.D0.B5_.D1.87.D0.B8.D1.81.D0.BB.D0.B0
+- https://neerc.ifmo.ru/wiki/index.php?title=Математический_сопроцессор
+- https://ru.wikipedia.org/wiki/NaN
+- https://en.wikipedia.org/wiki/NaN
+- https://www.youtube.com/watch?v=xWLGlF_K6oQ&list=PL8VwjEVsGB_agvx1NaUijGK28UpW_MpFw&index=2
+- Число одинарной точности https://ru.wikipedia.org/wiki/Число_одинарной_точности
+- Число с плавающей запятой https://ru.wikipedia.org/wiki/Число_с_плавающей_запятой
+- Число половинной точности https://ru.wikipedia.org/wiki/Число_половинной_точности
+- Число двойной точности https://ru.wikipedia.org/wiki/Число_двойной_точности
+- Число четверной точности https://ru.wikipedia.org/wiki/Число_четверной_точности
+- Число восьмерной точности https://ru.wikipedia.org/wiki/Число_восьмерной_точности
+## x86-64 Floating Point Assembler 
+https://ru.wikipedia.org/wiki/AVX
+https://ru.wikipedia.org/wiki/SSE4
 
 
 
