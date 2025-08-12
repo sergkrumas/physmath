@@ -178,6 +178,33 @@
 - (12 авг 25) ознакомится с некоторыми статьями из «Кванта» http://www.ega-math.narod.ru/Quant/
 - (12 авг 25) ***учебник по машинному обучению от Яндекса*** https://education.yandex.ru/handbook/ml
   - Понадобятся знания линейной алгебры, анализа и теории вероятностей. Опыт со статистикой и оптимизацией — желателен, но не критичен
+- (12 авг 25) Савватеев рекомендует план, по которому можно дойти до матанализа, но мне некогда сейчас его анализировать, проанализирую когда-нибудь потом
+    - https://www.youtube.com/watch?v=F6pVHfFihEk
+    - https://www.youtube.com/watch?v=RlmUrHjj_XY
+- (12 авг 25) ещё один план изучения математики «от начала до конца» от The Math Sorcerer
+    - https://www.youtube.com/watch?v=pTnEG_WGd2Q
+- (12 авг 25) совет от Савватеева для абитуриенов: вбить в гугл `матфак рекомендует` и изучить рекомендации
+    - вывод поисковика должен быть какой-то такой:
+      - https://math.hse.ru/books
+      - «Факультет математики рекомендует» https://math.hse.ru/data/2023/01/13/2041804931/03_Fac_Matematiki_Brochura_A5_2023.pdf
+- (12 авг 25) интересная тема, надо пролистать позже
+    - https://www.mathedu.ru/text/sbornik_metodicheskih_materialov_uchiteley_prezidentskogo_fml_239_ch1_2021/p1/?query=Сборник методических материалов по математике учителей Президентского ФМЛ
+    - https://www.mathedu.ru/text/sbornik_metodicheskih_materialov_uchiteley_prezidentskogo_fml_239_ch2_2022/p1/?query=Сборник методических материалов по математике учителей Президентского ФМЛ
+    - https://www.mathedu.ru/text/sbornik_metodicheskih_materialov_uchiteley_prezidentskogo_fml_239_ch3_2024/p1/?query=Сборник методических материалов по математике учителей Президентского ФМЛ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # ГРАФИЧЕСКИЕ КАЛЬКУЛЯТОРЫ И ПРОЧЕЕ
 - https://www.geogebra.org/
@@ -512,6 +539,11 @@
 
 - **«Академик Ландау. Как Мы Жили. Воспоминания»** Кора Ландау
     - там мало инфы по теме этого файла, но всё же приводится интересный диалог со студентом, его содержимое я тут постить не буду, книгу просто стоит прочесть. На Youtube есть аудиокнига
+
+- **Эдвард Виттен**
+    - https://ru.wikipedia.org/wiki/Виттен,_Эдвард
+    - Является одним из ведущих в мире исследователей теории струн и квантовой теории поля.
+    - *до его работ мне ещё как до Китая, но пусть пока тут побудет*
 
 - **Владимир Арнольд / Острова / Телеканал Культура** https://www.youtube.com/watch?v=M-JYy1rDWPI
     - *Арнольд очень человекоориентированный, дружелюбен, стоит пересматривать видео*
@@ -934,7 +966,8 @@
   - https://ru.wikipedia.org/wiki/Тригонометрическая_подстановка
   - https://ru.wikipedia.org/wiki/Формула_половины_стороны
   - https://ru.wikipedia.org/wiki/Сферический_треугольник
-
+- Баум И. В. Система изучения тригонометрии на векторной основе в курсе алгебры средней школы. — 1965
+  - https://www.mathedu.ru/text/baum_sistema_izucheniya_trigonometrii_na_vektornoy_osnove_v_kurse_algebry_sredney_shkoly_1965/p0/
 
 
 # ГЕОМЕТРИЧЕСКАЯ АЛГЕБРА КЛИФФОРДА (GEOMETRIC ALGEBRA)
@@ -982,6 +1015,10 @@
 - Канал, посвящённый Gemetric Algebra - https://www.youtube.com/channel/UCEo_JfTH_9FK-7k9-mAWJkQ
 - http://www.gaalop.de/
 - A vector algebra war https://www.youtube.com/watch?v=_AaOFCl2ihc
+- From Vectors to Multivectors
+    - https://www.youtube.com/watch?v=P-IKemH3jsg
+    - https://www.youtube.com/watch?v=FUivWb4k_bE
+    - https://www.youtube.com/watch?v=b0K451IxLBQ
 
 
 
@@ -1306,6 +1343,10 @@
 - формула для приближённых вычислений тригонометрических функций (используем первый дифференциал) https://www.youtube.com/watch?v=euQUHSgcuHE
 - Матан за час, шпаргалка для первокурсника от «Математика МГУ» https://www.youtube.com/watch?v=A4zYWofyQLE
 - метод рационализации при решении неравенств, Трушин https://www.youtube.com/watch?v=_skyZu5ARAs
+- решение интеграла шустрым школотроном https://www.youtube.com/watch?v=DuS9QAL34tU
+- как вычислить корень используя матанализ без калькулятора  https://www.youtube.com/watch?v=VrQF_DFndO8
+- "Задача-гроб" для нежелательных абитуриентов в СССР https://dzen.ru/media/mathematic/zadachagrob-dlia-nejelatelnyh-abiturientov-v-sssr-na-etot-raz-ia-ne-soglasen-s-avtorom-na-100--617a63d1b6a86b000cb598f6
+
 
 
 
@@ -1355,7 +1396,7 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 - Функциональный анализ. Курс. Свёртка https://www.youtube.com/watch?v=hGe1VUge4Nc&list=PLcsjsqLLSfNBBXO_-H8YhaLIS2BKdTM4V&index=12
 - Функциональный анализ, курсы на teach-in https://www.youtube.com/@teachin-ru/search?query=функциональный анализ
 - свёртка https://betterexplained.com/articles/intuitive-convolution/
-
+- Convolutions | Why X+Y in probability is a beautiful mess https://www.youtube.com/watch?v=IaSGqQa5O-M
 
 
 # ОБРАБОТКА СИГНАЛОВ
