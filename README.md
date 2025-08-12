@@ -1464,13 +1464,16 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 
 
 # ЧИСЛЕННЫЕ МЕТОДЫ, ВЫЧИСЛИТЕЛЬНАЯ МАТЕМАТИКА, ЧИСЛЕННЫЙ АНАЛИЗ
+- «Вычислительная математика. Численные методы алгебры» для 10-11 классов https://www.youtube.com/watch?v=DWyhHDtMQjg
 - https://ru.wikipedia.org/wiki/Вычислительная_математика
 - https://ru.wikipedia.org/wiki/Численные_методы
 - https://ru.wikipedia.org/wiki/Численное_решение_уравнений#Общий_алгоритм_последовательных_приближений
 - https://ru.wikipedia.org/wiki/Логарифмическая_линейка
 - https://ru.wikipedia.org/wiki/Номограмма
 - https://vk.com/wall-48736444?offset=520
+
 - эта штука очень прикольно выглядит https://ru.wikipedia.org/wiki/Диаграмма_Вольперта_—_Смита
+- Теория приближений, сплайны https://ru.wikipedia.org/wiki/Категория:Теория_приближений
 - Решение нелийных уравнений где??
 - **видеокурс Лукьяненко «Численные методы»**
     - *этот курс так и не просмотрен мною до конца, я пытался его осилить летом 2023 года, теперь можно попробовать ещё раз*
@@ -1660,9 +1663,9 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 - Число четверной точности https://ru.wikipedia.org/wiki/Число_четверной_точности
 - Число восьмерной точности https://ru.wikipedia.org/wiki/Число_восьмерной_точности
 ## x86-64 Floating Point Assembler 
-https://ru.wikipedia.org/wiki/AVX
-https://ru.wikipedia.org/wiki/SSE4
-
+- https://ru.wikipedia.org/wiki/AVX
+- https://ru.wikipedia.org/wiki/SSE4
+- (12 авг 25) смотреть исходники https://codebrowser.dev/gcc/include/math.h.html
 
 
 
@@ -1709,6 +1712,8 @@ https://ru.wikipedia.org/wiki/SSE4
 - https://neerc.ifmo.ru/wiki/index.php?title=Категория:Вычислительная_геометрия
 - https://ru.wikipedia.org/wiki/Триангуляция_(геометрия)
 - https://forums.odforce.net/topic/19476-creating-a-upvector-for-a-twisting-rollercoaster/
+- Вычислительная геометрия, или как я стал заниматься олимпиадным программированием.Часть 1 https://habr.com/post/147691/
+- Вычислительная геометрия, или как я стал заниматься олимпиадным программированием. Часть 2 https://habr.com/post/148325/
 
 
 
@@ -1997,6 +2002,7 @@ https://ru.wikipedia.org/wiki/SSE4
       - https://ru.wikipedia.org/wiki/Категория:Компьютерная_арифметика
       - https://ru.wikipedia.org/wiki/Алгоритм_Кэхэна
   - Приближённые вычисления: абсолютная и относительная погрешность https://www.youtube.com/watch?v=WYD9lI9Opg4
+  - Алгоритм вычисления корня n-ой степени из произвольного положительного числа https://habr.com/post/469735/
 
 - **Алгоритмы манипуляций с битами** https://habr.com/ru/articles/886182/
   - http://www-graphics.stanford.edu/~seander/bithacks.html
