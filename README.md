@@ -1795,15 +1795,94 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 
 
 
-# КВАТЕРНИОНЫ
-
+# КВАТЕРНИОНЫ и КВАТЕРНИОНЫ для 3D
+- https://ru.wikipedia.org/wiki/Кватернион
+- https://en.wikipedia.org/wiki/Quaternion
+- https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
+    - статья на английском более понятна, чем статья на русском https://ru.wikipedia.org/wiki/Кватернионы_и_вращение_пространства
+    - https://ru.wikipedia.org/wiki/Формула_поворота_Родрига
+- факт о кватернионах: произведение двух векторов (чисто мнимых кватернионов) дают кватернион удвоенного поворота одного во второй по кратчайшему пути
+- в книге «Geometry algebra for physicists» хорошо объясняются кватернионы
 - Кватернионы как язык описания пространства, Алексей Савватеев 
   - https://www.youtube.com/watch?v=3upW_3CJJqA
+- что такое кватернионы
+  - Quaternions and 3d rotation, explained interactively https://www.youtube.com/watch?v=zjMuIxRvygQ
+  - Visualizing quaternions (4d numbers) with stereographic projection https://www.youtube.com/watch?v=d4EgbgTm0Bg
+  - Кватернионы в Blender
+    - https://www.youtube.com/watch?v=syQnn_xuB8U
+    - https://www.youtube.com/watch?v=4mXL751ko0w
+  - Dual Quaternion Deformation Blender Rigging | Preserve Volume Option https://www.youtube.com/watch?v=2s3uToONDHg
+  - Visualising Quaternions https://eater.net/quaternions
+  - КВАТЕРНИОНЫ https://www.youtube.com/watch?v=UcYoC7uQzNA
+  - https://www.3dgep.com/understanding-quaternions/
+  - http://wat.gamedev.ru/articles/quaternions
+  - https://qna.habr.com/q/269411
+  - ***классные статьи про кватернионы***
+    - https://medium.com/@mrHuempolbu/кватернионы-как-инъекция-чистого-ахуя-прямо-в-мозг-784e104c3cb9
+      - Ликбез по квартернионам: Здесь чувак поясняет всё более матаново, если шаришь за ряды и дифференциалы, то обязательно почитай, там очень понятно.
+        - https://nabbla1.livejournal.com/172771.html
+      - Вот это нечто классное, примерно такие же кватернионы, только чуть другие, могут сильно облегчить понимание. Если умеешь в английский, то обязательно читай оригинал статьи, потому что в переводе есть конфликты терминов.
+        - https://habr.com/ru/articles/429640/ Давайте уберём кватернионы из всех 3D-движков
 
 
-
-
-
+- подборка литературы для анализа
+  - Кантор И.Л. Солодовников А.С. Гиперкомплексные числа. – М.: Изд. «Наука», 1973.
+  - Диментберг Ф.М. Теория винтов и её приложения. – М.: Изд. «Наука», 1978.
+  - Березин А.В., Курочкин Ю.А., Толкачёв Е.А. Кватернионы в релятивисткой физике. Минск. «Наука и техника», 1989.
+  - Котельников А.П. Теория винтов и комплексные числа. Сб. «Некоторые приложения идей Лобачевского в механике и физике». Изд. «КомКнига», 2006.
+  - Гохман Э.Х. Моторное исчисление и его приложение к механике твёрдого тела. Тр. Одесского института инженеров водного транспорта, 1935.
+  - Челноков Ю.Н. Кватернионные и бикватернионные модели и методы механики твёрдого тела и их приложения – М.: Физматлит, 2006.
+- Гиперкомплексные числа в геометрии и физике https://istina.msu.ru/journals/1050395/
+- Вращение в 3D при помощи гиперкомплексных чисел http://grafika.me/node/157
+- Поворот в пространстве и кватернионы https://web.archive.org/web/20131230235337/http://muzhig.ru/quaternion-orientation-rotation/
+- Вращение и кватернионы. Сборник рецептов  https://web.archive.org/web/20131231074510/http://www.gamedev.ru/code/articles/?id=4215
+- Кватернионный анализ https://ru.wikipedia.org/wiki/Кватернионный_анализ
+- Dual quaternion https://en.wikipedia.org/wiki/Dual_quaternion
+- Двойной кватернион https://ru.wikibrief.org/wiki/Dual_quaternion
+- Двойной кватернион https://wiki5.ru/wiki/Dual_quaternion
+- Двойные кватернионы https://gamedev.ru/flame/forum/?id=239748
+- Гамильтон, Уильям Роуэн https://ru.wikipedia.org/wiki/Гамильтон,_Уильям_Роуэн
+- Sir William Rowan Hamilton (1805-1865): Mathematical Papers https://www.maths.tcd.ie/pub/HistMath/People/Hamilton/Papers.html
+- Доступно о кватернионах и их преимуществах https://habr.com/ru/articles/426863/
+- Каверзные кватернионы https://habr.com/ru/articles/183908/
+- бикватернионы, dual quaternions
+  - https://en.wikipedia.org/wiki/Biquaternion
+  - https://en.wikipedia.org/wiki/Dual_quaternion
+  - https://ru.wikipedia.org/wiki/Бикватернион
+- Кватернионы при разном масштабе по осям
+  - https://nabbla1.livejournal.com/500645.html
+  - https://nabbla1.livejournal.com/474460.html
+  - https://nabbla1.livejournal.com/474813.html
+- https://stackoverflow.com/questions/8919086/why-are-quaternions-used-for-rotations/
+- матрицы и кватернионы FAQ
+  - http://www.rossprogrammproduct.com/translations/Matrix%20and%20Quaternion%20FAQ.htm#Q47
+  - https://www.j3d.org/matrix_faq/matrfaq_latest.html
+- The rotation problem and Hamilton's discovery of quaternions 
+  - https://www.youtube.com/watch?v=uRKZnFAR7yw
+  - https://www.youtube.com/watch?v=0_XoZc-A1HU
+  - https://www.youtube.com/watch?v=g22jAtg3QAk
+  - https://www.youtube.com/watch?v=MkNfQtINEjo
+- кватернионы - 40 минут
+  - https://www.youtube.com/watch?v=mHVwd8gYLnI
+  - https://www.youtube.com/watch?v=3BR8tK-LuB0
+  - https://www.youtube.com/watch?v=jlskQDR8-bY
+  - https://en.wikipedia.org/wiki/Dual_quaternion
+  - https://www.youtube.com/watch?v=88BA8aO3qXA
+  - https://www.youtube.com/watch?v=eGguwYPC32I
+  - https://www.youtube.com/watch?v=5YJwszR246I
+- ещё три видео про кватернионы
+  - https://www.youtube.com/watch?v=jTgdKoQv738
+  - https://www.youtube.com/watch?v=1yoFjjJRnLY
+  - https://www.youtube.com/watch?v=IXySkVFNhdk
+- Давайте уберём кватернионы из всех 3D-движков https://habr.com/ru/post/429640/
+  - там ещё книга есть хорошая
+- Арнольд «Геометрия комплексных чисел, кватернионов и спинов»
+- текстовый faq про кватернионы http://www.opengl-tutorial.org/assets/faq_quaternions/index.html#Q47
+- К вопросу гудиньщика про кватернионы https://vk.com/wall-639056_15180
+  - сам вопрос 
+    - https://vk.com/wall-639056_14664
+    - https://vk.com/wall-639056_14664?reply=14692
+- Бикватернионы https://habr.com/ru/post/436210/
 
 # ОБЩЕЕ
 - **Площадь всей сферы, шапочки или кольца на сфере**
