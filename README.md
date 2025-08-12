@@ -909,9 +909,7 @@
   - https://ru.wikipedia.org/wiki/Формула_половины_стороны
   - https://ru.wikipedia.org/wiki/Сферический_треугольник
 
-# КВАТЕРНИОНЫ
-- Кватернионы как язык описания пространства, Алексей Савватеев 
-  - https://www.youtube.com/watch?v=3upW_3CJJqA
+
 
 # ГЕОМЕТРИЧЕСКАЯ АЛГЕБРА КЛИФФОРДА (GEOMETRIC ALGEBRA)
 - Maths - 3D Clifford / Geometric Algebra https://www.euclideanspace.com/maths/algebra/clifford/d3/index.htm
@@ -1322,14 +1320,13 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 - Функциональный анализ. Курс. Свёртка https://www.youtube.com/watch?v=hGe1VUge4Nc&list=PLcsjsqLLSfNBBXO_-H8YhaLIS2BKdTM4V&index=12
 - Функциональный анализ, курсы на teach-in https://www.youtube.com/@teachin-ru/search?query=функциональный анализ
 - свёртка https://betterexplained.com/articles/intuitive-convolution/
-## цифровая обработка сигналов
-- https://www.youtube.com/playlist?list=PLmu_y3-DV2_kpP8oX_Uug0IbgH2T4hRPL
 
 
 
 # ОБРАБОТКА СИГНАЛОВ
-
 - https://ru.wikipedia.org/wiki/Категория:Обработка_сигналов
+## цифровая обработка сигналов
+- https://www.youtube.com/playlist?list=PLmu_y3-DV2_kpP8oX_Uug0IbgH2T4hRPL
 
 
 
@@ -1410,6 +1407,28 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 
 
 
+# СПЕЦИАЛЬНЫЕ ФУНКЦИИ
+- (25 июл 25) специальные функции, список книг осиливать https://ru.wikipedia.org/wiki/Специальные_функции
+- (25 июл 25) !! функции параболического цилиндра, внезапно среди них обнаружились уже знакомые мне полиномы Эрмита https://ru.wikipedia.org/wiki/Функции_параболического_цилиндра
+- (12 авг 25) https://ru.wikipedia.org/wiki/Категория:Специальные_функции
+  - https://ru.wikipedia.org/wiki/Цилиндрические_функции
+  - https://ru.wikipedia.org/wiki/Функции_параболического_цилиндра
+  - https://ru.wikipedia.org/wiki/Функции_Матьё
+  - https://ru.wikipedia.org/wiki/Функции_Бесселя
+
+
+# ОПТИМИЗАЦИИ И МАТЕМАТИЧЕСКОЕ ПРОГРАММИРОВАНИЕ
+- https://ru.wikipedia.org/wiki/Оптимизация_(математика)
+
+
+
+# ВАРИАЦИОННОЕ ИСЧИСЛЕНИЕ
+- Интегральные уравнения и вариационные исчисления https://www.youtube.com/watch?v=9Xx6fDkQyPU&list=PLcsjsqLLSfNDTYXRv4HAR40q3En27EddE
+- Вариационное исчисление 
+  - https://ru.wikipedia.org/wiki/Вариационное_исчисление
+  - https://ru.wikipedia.org/wiki/Вариационное_исчисление#Применение_вариационного_исчисления
+
+
 
 # ДИФФЕРЕНЦИАЛЬНАЯ ГЕОМЕТРИЯ
 - кривые и поверхности, фрейм Френе
@@ -1449,28 +1468,6 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
     - **если читать более вдумчиво и спрашивать ChatGPT каждый вопрос появляющийся в голове, конспектировать ответ или скриншотить его, то чтение подобных книг будет намного полезней**
 
 
-
-
-# СПЕЦИАЛЬНЫЕ ФУНКЦИИ
-- (25 июл 25) специальные функции, список книг осиливать https://ru.wikipedia.org/wiki/Специальные_функции
-- (25 июл 25) !! функции параболического цилиндра, внезапно среди них обнаружились уже знакомые мне полиномы Эрмита https://ru.wikipedia.org/wiki/Функции_параболического_цилиндра
-- (12 авг 25) https://ru.wikipedia.org/wiki/Категория:Специальные_функции
-  - https://ru.wikipedia.org/wiki/Цилиндрические_функции
-  - https://ru.wikipedia.org/wiki/Функции_параболического_цилиндра
-  - https://ru.wikipedia.org/wiki/Функции_Матьё
-  - https://ru.wikipedia.org/wiki/Функции_Бесселя
-
-
-# ОПТИМИЗАЦИИ И МАТЕМАТИЧЕСКОЕ ПРОГРАММИРОВАНИЕ
-- https://ru.wikipedia.org/wiki/Оптимизация_(математика)
-
-
-
-# ВАРИАЦИОННОЕ ИСЧИСЛЕНИЕ
-- Интегральные уравнения и вариационные исчисления https://www.youtube.com/watch?v=9Xx6fDkQyPU&list=PLcsjsqLLSfNDTYXRv4HAR40q3En27EddE
-- Вариационное исчисление 
-  - https://ru.wikipedia.org/wiki/Вариационное_исчисление
-  - https://ru.wikipedia.org/wiki/Вариационное_исчисление#Применение_вариационного_исчисления
 
 
 
@@ -1632,6 +1629,8 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 
 
 
+
+
 # FLOATING POINT, IEEE
 - https://habr.com/ru/companies/wunderfund/articles/776496/ 16-, 8- и 4-битные форматы чисел с плавающей запятой
 - https://habr.com/ru/articles/745640/ Числа с плавающей точкой для гуманитариев. Что это такое и как они работают
@@ -1687,7 +1686,10 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 - (12 авг 25) смотреть исходники https://codebrowser.dev/gcc/include/math.h.html
 
 
+
+
 # ЧИСЛЕННЫЕ МЕТОДЫ: ВЫЧИСЛИТЕЛЬНЫЕ УСТРОЙСТВА И ИНСТРУМЕНТЫ
+
 - Планиметр (аналоговый)
 - Точечный планиметр (для вычисления площадей)
 - Steinhaus Longimeter (для измерения длин кривых и периметров)
@@ -1696,7 +1698,11 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
     - https://www.ibm.com/docs/ru/cognos-analytics/11.2.0?topic=visualizations-logarithmic-scale
     - https://revealthedata.com/blog/all/sravnenie-ravnomernoy-logarifmicheskoy-i-stepennoy-shkal/
 
+
+
+
 # МЕХАНИКА, ТЕОРМЕХ
+
 - один из вариантов
   - УЧЕБНИКИ
     - 1. Николаи. Теоретическая механика (2 или 3 тома).
@@ -1735,14 +1741,20 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 
 
 # ВЫЧИСЛИТЕЛЬНАЯ ГЕОМЕТРИЯ
-- BVH, Вороной
+
+- BVH
+- Вороной
 - https://neerc.ifmo.ru/wiki/index.php?title=Категория:Вычислительная_геометрия
 - https://ru.wikipedia.org/wiki/Триангуляция_(геометрия)
 - https://forums.odforce.net/topic/19476-creating-a-upvector-for-a-twisting-rollercoaster/
 - Вычислительная геометрия, или как я стал заниматься олимпиадным программированием.Часть 1 https://habr.com/post/147691/
 - Вычислительная геометрия, или как я стал заниматься олимпиадным программированием. Часть 2 https://habr.com/post/148325/
 
+
+
+
 # СПЛАЙНЫ (БЕЗЬЕ, НУРБСЫ)
+
 - чертёжные сплайны, называются «Flat Spline» или «draftsman spline» https://en.wikipedia.org/wiki/Flat_spline
 - https://ru.wikipedia.org/wiki/Шёнберг,_Исаак
 - https://ru.wikipedia.org/wiki/Сплайн
@@ -1781,6 +1793,12 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
   - https://www.ryanjuckett.com/biarc-interpolation/
 
 
+
+
+# КВАТЕРНИОНЫ
+
+- Кватернионы как язык описания пространства, Алексей Савватеев 
+  - https://www.youtube.com/watch?v=3upW_3CJJqA
 
 
 
