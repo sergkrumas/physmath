@@ -172,9 +172,12 @@
 - (7 авг 24) была книга, в оглавлении которой были разработки по теме устного счёта. Надо её найти в файловых залежах
     - (6 ноя 24) поискал сегодня, но ничего не нашёл толком. Это надо открывать буквально каждую книгу, перелопатить все 200 ГБ книг!
 - (20 окт 24) изучить инфу и книги про сетунь и про силогистику
-        - https://ru.wikipedia.org/wiki/Сетунь_(компьютер)
-        - https://ru.wikipedia.org/wiki/Силлогистика
+    - https://ru.wikipedia.org/wiki/Сетунь_(компьютер)
+    - https://ru.wikipedia.org/wiki/Силлогистика
 - (12 авг 25) Некоторые обзорные работы и первоисточники по истории уравнений гидромеханики https://gidropraktikum.narod.ru/equations-of-hydrodynamics.htm
+- (12 авг 25) ознакомится с некоторыми статьями из «Кванта» http://www.ega-math.narod.ru/Quant/
+- (12 авг 25) ***учебник по машинному обучению от Яндекса*** https://education.yandex.ru/handbook/ml
+  - Понадобятся знания линейной алгебры, анализа и теории вероятностей. Опыт со статистикой и оптимизацией — желателен, но не критичен
 
 # ГРАФИЧЕСКИЕ КАЛЬКУЛЯТОРЫ И ПРОЧЕЕ
 - https://www.geogebra.org/
@@ -978,6 +981,9 @@
     - https://marctenbosch.com/quaternions/
 - Канал, посвящённый Gemetric Algebra - https://www.youtube.com/channel/UCEo_JfTH_9FK-7k9-mAWJkQ
 - http://www.gaalop.de/
+- A vector algebra war https://www.youtube.com/watch?v=_AaOFCl2ihc
+
+
 
 
 
@@ -1297,6 +1303,11 @@
   - https://eqworld.ipmnet.ru/ru/library/mathematics/calculus.htm
   - https://eqworld.ipmnet.ru/ru/library.htm
 - 100 integrals https://www.youtube.com/watch?v=dgm4-3-Iv3s
+- формула для приближённых вычислений тригонометрических функций (используем первый дифференциал) https://www.youtube.com/watch?v=euQUHSgcuHE
+- Матан за час, шпаргалка для первокурсника от «Математика МГУ» https://www.youtube.com/watch?v=A4zYWofyQLE
+- метод рационализации при решении неравенств, Трушин https://www.youtube.com/watch?v=_skyZu5ARAs
+
+
 
 
 
@@ -2508,87 +2519,6 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
     - https://www.morkniga.ru/
 
 
-# БИБЛИОТЕКА
-- изучить сайт мехмата МГУ https://math.msu.ru/structure
-- изучить сайт физтеха https://mipt.ru/
-- книги малого мехмата МГУ http://mmmf.msu.ru/books/
-- книги годные по термодинамике https://mipt.ru/education/chair/physics/S_II/method/
-- архив журнала Техника - молодёжи http://journal-club.ru/?q=image/tid/131
-- Математика — просто - YouTube  https://www.youtube.com/channel/UClTIrwj5npeOaBjH6_AkKyA
-- Фундаментальные уроки математики от чувака  https://www.youtube.com/channel/UCur_wYe8uQOh5FLXjwbWemw
-- журналы 
-    - Юный техник
-    - Техника Молодёжи
-    - Наука и техника
-    - Химия и жизнь
-- https://www.mccme.ru/free-books/
-- https://math.ru/lib/
-- http://ilib.mccme.ru/ 
-- Журнал «Мир Математики» (48 файлов)
-    - В ЛОКАЛЬНОЙ БИБЛИОТЕКЕ 
-- ЛОКАЛЬНАЯ БИБЛИОТЕКА ПО ТЕГУ MATH
-    - http://127.0.0.1:5081/tag/math
-- Журнал «Квант» 
-    - http://kvant.mccme.ru/
-- http://alexandr4784.narod.ru/index.html
-    - Астрономия и астрофизика
-    - Учебные пособия по общей физике
-    - История физики и математики
-    - Теоретическая физика
-    - Электротехника, радиотехника, электроника
-    - Физика и математика в биологии
-    - Методы математической физики
-    - Алгебра
-    - Геометрия
-    - Топология
-    - Математический анализ
-    - Функциональный анализ
-    - Справочные материалы
-    - Философские вопросы естественных наук
-    - Учёные о науке
-- Лекции Савватеева https://usdp.ru/savva.html
-- Проект Алексея Савватеева — «Маткульт-привет!»  https://savvateev.xyz/
-- Методика Абрамсона https://yabramson.ru/
-- Журнал «Математика в школе»
-- Ёжик в матане
-  - https://vk.com/public186208863
-  - https://www.youtube.com/channel/UC4E452Wqoiv-JU_lWHAQTWQ/videos
-  - https://www.youtube.com/channel/UC4E452Wqoiv-JU_lWHAQTWQ/playlists
-- Материалы от Международного научно-методического центра НИУ Высшей Школы экономики
-  - в списке есть youtube-каналы с лекциями
-    - https://mnmc.hse.ru/materials
-- https://ru.wikipedia.org/wiki/Открытые_математические_проблемы
-- Борис Трушин http://trushinbv.ru/
-- https://ru.wikipedia.org/wiki/Категория:Теоремы_геометрии
-- https://ru.wikipedia.org/wiki/Категория:Теоремы_планиметрии
-- журнал Квантика https://kvantik.com/archive/
-- https://www.studmed.ru/science/matematika/
-- Математик МГУ https://www.youtube.com/@hitman_math/playlists
-- «Математическое просвещение» сборник научно-популярных статей по математике, ныне издаваемый МЦНМО
-  - https://www.mccme.ru/free-books/matpros.html
-- Серия “Библиотека «Математическое просвещение»”
-  - https://www.mccme.ru/mmmf-lectures/books/
-- Майлз Рид, Miles Reid, Автор «Теория Галуа» и «Алгебраическая геометрия для всех»
-  - http://homepages.warwick.ac.uk/~masda/
-  - теория Галуа - https://homepages.warwick.ac.uk/~masda/MA3D5/
-- открытое образование
-  - https://openedu.ru/course/
-- (29 авг 24) препринты научных статей. Возможно тут я смогу найти те статьи, что мне не дают на официальных площадках
-  - https://arxiv.org/
-  - https://vixra.org/ - никакой модерации вообще
-- (6 авг 24) ресурсы от math.ru
-  - Журнал «Квант» https://kvant.mccme.ru/
-  - Вестник опытной физики и элементарной математики https://www.vofem.ru/
-  - Сборник "Математическое Просвещение" https://old.mccme.ru//free-books//matpros.html
-  - Механизмы Чебышева — виртуальный музей механизмов, созданных великим российским математиком Пафнутием Львовичем Чебышёвым (1821–1894). По каждому механизму — фотографии, компьютерная модель, фильм, объясняющий принцип работы. https://tcheb.ru/
-- (12 авг 25) старые книги по компьютерной графике
-      https://archive.org/details/computergraphics0000wait/mode/2up
-      https://archive.org/details/engineeringgraph0000unse_l0m3/mode/2up
-      https://archive.org/details/mathematicalelem00roge/mode/2up
-- Летний математический лекторий https://www.youtube.com/channel/UCSu-VThaGs8YW5in5Dbl37A
-- https://ikfia.ysn.ru/matematicheskij-analiz-funktsionalnyj-analiz/
-- лекторий ФПМи https://www.youtube.com/channel/UCdxesVp6Fs7wLpnp1XKkvZg
-
 
 
 
@@ -2672,3 +2602,90 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 - Разбор олимпиады Курчатов-2022 по математике. Самая простая классическая олимпиада прошлого года https://www.youtube.com/watch?v=qv5xi6yNLGU
 - №18 Самые важные олимпиадные идеи https://www.youtube.com/watch?v=Uqj0LciC1hQ
 - Полный разбор ЕГЭ-2023 по математике. Профильный уровень | Борис Трушин - YouTube https://www.youtube.com/watch?v=gTER6R-J-Vk
+
+
+
+
+
+# БИБЛИОТЕКА
+- изучить сайт мехмата МГУ https://math.msu.ru/structure
+- изучить сайт физтеха https://mipt.ru/
+- книги малого мехмата МГУ http://mmmf.msu.ru/books/
+- книги годные по термодинамике https://mipt.ru/education/chair/physics/S_II/method/
+- архив журнала Техника - молодёжи http://journal-club.ru/?q=image/tid/131
+- Математика — просто - YouTube  https://www.youtube.com/channel/UClTIrwj5npeOaBjH6_AkKyA
+- Фундаментальные уроки математики от чувака  https://www.youtube.com/channel/UCur_wYe8uQOh5FLXjwbWemw
+- журналы 
+    - Юный техник
+    - Техника Молодёжи
+    - Наука и техника
+    - Химия и жизнь
+- https://www.mccme.ru/free-books/
+- https://math.ru/lib/
+- http://ilib.mccme.ru/ 
+- Журнал «Мир Математики» (48 файлов)
+    - В ЛОКАЛЬНОЙ БИБЛИОТЕКЕ 
+- ЛОКАЛЬНАЯ БИБЛИОТЕКА ПО ТЕГУ MATH
+    - http://127.0.0.1:5081/tag/math
+- Журнал «Квант» 
+    - http://kvant.mccme.ru/
+- http://alexandr4784.narod.ru/index.html
+    - Астрономия и астрофизика
+    - Учебные пособия по общей физике
+    - История физики и математики
+    - Теоретическая физика
+    - Электротехника, радиотехника, электроника
+    - Физика и математика в биологии
+    - Методы математической физики
+    - Алгебра
+    - Геометрия
+    - Топология
+    - Математический анализ
+    - Функциональный анализ
+    - Справочные материалы
+    - Философские вопросы естественных наук
+    - Учёные о науке
+- Лекции Савватеева https://usdp.ru/savva.html
+- Проект Алексея Савватеева — «Маткульт-привет!»  https://savvateev.xyz/
+- Методика Абрамсона https://yabramson.ru/
+- Журнал «Математика в школе»
+- Ёжик в матане
+  - https://vk.com/public186208863
+  - https://www.youtube.com/channel/UC4E452Wqoiv-JU_lWHAQTWQ/videos
+  - https://www.youtube.com/channel/UC4E452Wqoiv-JU_lWHAQTWQ/playlists
+- Материалы от Международного научно-методического центра НИУ Высшей Школы экономики
+  - в списке есть youtube-каналы с лекциями
+    - https://mnmc.hse.ru/materials
+- https://ru.wikipedia.org/wiki/Открытые_математические_проблемы
+- Борис Трушин http://trushinbv.ru/
+- https://ru.wikipedia.org/wiki/Категория:Теоремы_геометрии
+- https://ru.wikipedia.org/wiki/Категория:Теоремы_планиметрии
+- журнал Квантика https://kvantik.com/archive/
+- https://www.studmed.ru/science/matematika/
+- Математик МГУ https://www.youtube.com/@hitman_math/playlists
+- «Математическое просвещение» сборник научно-популярных статей по математике, ныне издаваемый МЦНМО
+  - https://www.mccme.ru/free-books/matpros.html
+- Серия “Библиотека «Математическое просвещение»”
+  - https://www.mccme.ru/mmmf-lectures/books/
+- Майлз Рид, Miles Reid, Автор «Теория Галуа» и «Алгебраическая геометрия для всех»
+  - http://homepages.warwick.ac.uk/~masda/
+  - теория Галуа - https://homepages.warwick.ac.uk/~masda/MA3D5/
+- открытое образование
+  - https://openedu.ru/course/
+- (29 авг 24) препринты научных статей. Возможно тут я смогу найти те статьи, что мне не дают на официальных площадках
+  - https://arxiv.org/
+  - https://vixra.org/ - никакой модерации вообще
+- (6 авг 24) ресурсы от math.ru
+  - Журнал «Квант» https://kvant.mccme.ru/
+  - Вестник опытной физики и элементарной математики https://www.vofem.ru/
+  - Сборник "Математическое Просвещение" https://old.mccme.ru//free-books//matpros.html
+  - Механизмы Чебышева — виртуальный музей механизмов, созданных великим российским математиком Пафнутием Львовичем Чебышёвым (1821–1894). По каждому механизму — фотографии, компьютерная модель, фильм, объясняющий принцип работы. https://tcheb.ru/
+- (12 авг 25) старые книги по компьютерной графике
+      https://archive.org/details/computergraphics0000wait/mode/2up
+      https://archive.org/details/engineeringgraph0000unse_l0m3/mode/2up
+      https://archive.org/details/mathematicalelem00roge/mode/2up
+- Летний математический лекторий https://www.youtube.com/channel/UCSu-VThaGs8YW5in5Dbl37A
+- https://ikfia.ysn.ru/matematicheskij-analiz-funktsionalnyj-analiz/
+- лекторий ФПМи https://www.youtube.com/channel/UCdxesVp6Fs7wLpnp1XKkvZg
+- Механико-математический факультет МГУ https://www.youtube.com/@MathLomonosovMSU/videos
+- Видеозаписи МЦНМО https://www.youtube.com/channel/UCtUJwoYzwI1XP2FIkQaQygA
