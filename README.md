@@ -1514,6 +1514,13 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
     - Здесь дополнитеьлные описания
       - https://intuit.ru/studies/courses/2317/617/info
       - https://intuit.ru/goods_store/video/5768
+      - https://intuit.ru/intuituser/demands/author/78
+      - https://intuit.ru/intuituser/userpage/b_s_boyarshinov
+      - https://intuit.ru/studies/courses/4819/1071/info
+      - https://intuit.ru/studies/courses/3676/918/info
+      - https://intuit.ru/studies/courses/2341/641/info
+      - https://intuit.ru/studies/courses/2317/617/info
+      - https://intuit.ru/studies/curriculums/17905/info
 
 - **Основные темы**
     Погрешности и устойчивость вычислений
@@ -1668,6 +1675,11 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 - (12 авг 25) смотреть исходники https://codebrowser.dev/gcc/include/math.h.html
 
 
+# ЧИСЛЕННЫЕ МЕТОДЫ: ВЫЧИСЛИТЕЛЬНЫЕ УСТРОЙСТВА И ИНСТРУМЕНТЫ
+- Планиметр (аналоговый)
+- Точечный планиметр (для вычисления площадей)
+- Steinhaus Longimeter (для измерения длин кривых и периметров)
+
 
 # МЕХАНИКА, ТЕОРМЕХ
 - один из вариантов
@@ -1731,12 +1743,6 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 
 
 
-
-# ЧИСЛЕННЫЕ МЕТОДЫ: ВЫЧИСЛИТЕЛЬНЫЕ УСТРОЙСТВА И ИНСТРУМЕНТЫ
-- Планиметр (аналоговый)
-- Точечный планиметр (для вычисления площадей)
-- Steinhaus Longimeter (для измерения длин кривых и периметров)
--
 
 # ОБЩЕЕ
 - **Площадь всей сферы, шапочки или кольца на сфере**
