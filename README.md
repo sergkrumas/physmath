@@ -1461,6 +1461,18 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
   - https://ru.wikipedia.org/wiki/Функции_Бесселя
 
 
+# ОПТИМИЗАЦИИ И МАТЕМАТИЧЕСКОЕ ПРОГРАММИРОВАНИЕ
+- https://ru.wikipedia.org/wiki/Оптимизация_(математика)
+
+
+
+# ВАРИАЦИОННОЕ ИСЧИСЛЕНИЕ
+- Интегральные уравнения и вариационные исчисления https://www.youtube.com/watch?v=9Xx6fDkQyPU&list=PLcsjsqLLSfNDTYXRv4HAR40q3En27EddE
+- Вариационное исчисление 
+  - https://ru.wikipedia.org/wiki/Вариационное_исчисление
+  - https://ru.wikipedia.org/wiki/Вариационное_исчисление#Применение_вариационного_исчисления
+
+
 
 
 # ЧИСЛЕННЫЕ МЕТОДЫ, ВЫЧИСЛИТЕЛЬНАЯ МАТЕМАТИКА, ЧИСЛЕННЫЙ АНАЛИЗ
@@ -1679,7 +1691,10 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 - Планиметр (аналоговый)
 - Точечный планиметр (для вычисления площадей)
 - Steinhaus Longimeter (для измерения длин кривых и периметров)
-
+- логарифмическая шкала
+    - https://ru.wikipedia.org/wiki/Логарифмическая_бумага
+    - https://www.ibm.com/docs/ru/cognos-analytics/11.2.0?topic=visualizations-logarithmic-scale
+    - https://revealthedata.com/blog/all/sravnenie-ravnomernoy-logarifmicheskoy-i-stepennoy-shkal/
 
 # МЕХАНИКА, ТЕОРМЕХ
 - один из вариантов
@@ -1727,19 +1742,47 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 - Вычислительная геометрия, или как я стал заниматься олимпиадным программированием.Часть 1 https://habr.com/post/147691/
 - Вычислительная геометрия, или как я стал заниматься олимпиадным программированием. Часть 2 https://habr.com/post/148325/
 
+# СПЛАЙНЫ (БЕЗЬЕ, НУРБСЫ)
+- чертёжные сплайны, называются «Flat Spline» или «draftsman spline» https://en.wikipedia.org/wiki/Flat_spline
+- https://ru.wikipedia.org/wiki/Шёнберг,_Исаак
+- https://ru.wikipedia.org/wiki/Сплайн
+- https://ru.wikipedia.org/wiki/B-сплайн
+- https://ru.wikipedia.org/wiki/Категория:Сплайны
+- https://www.codeproject.com/Articles/199645/Bezier-curve-angle-calculation-in-Silverlight
+- https://www.codeproject.com/Articles/105827/Bezier-Curves-in-Bing-Silverlight-Maps
+- https://www.codeproject.com/Articles/25237/Bezier-Curves-Made-Simple
+- https://www.codeproject.com/Articles/28948/Curve-Fitting-using-Lagrange-Interpolation
+- https://www.codeproject.com/Articles/1095142/Generate-and-understand-NURBS-curves
+- https://www.codeproject.com/Articles/883386/Interpolation-from-Polynomial-to-Natural-Splines
+- https://www.codeproject.com/Articles/996281/NURBS-curve-made-easy
+- https://www.codeproject.com/Articles/747928/Spline-Interpolation-history-theory-and-implementa
+- http://tehc0dez.blogspot.com/2010/04/nice-curves-catmullrom-spline-in-c.html
+- http://web.cs.wpi.edu/~matt/courses/cs563/talks/nurbs.html
+- точки пересечения кривых безье - http://alex-black.ru/article.php?content=114
+- кривые безье, применение - http://alex-black.ru/article.php?content=109
+- https://www.rhino3d.com/features/nurbs/
+- кривая Безье
+  - https://en.wikipedia.org/wiki/Bézier_curve
+  - https://fr.wikipedia.org/wiki/Courbe_de_Bézier
+  - https://de.wikipedia.org/wiki/Bézierkurve
+- Сatmull-Сlark
+    - https://rosettacode.org/wiki/Catmull–Clark_subdivision_surface
+    - https://en.wikipedia.org/wiki/Catmull–Clark_subdivision_surface
+    - https://ru.wikipedia.org/wiki/Алгоритм_Катмулла_—_Кларка
+    - https://cragl.cs.gmu.edu/splineskin/
+- https://en.wikipedia.org/wiki/Freeform_surface_modelling
+- алгоритмы
+    - https://en.wikipedia.org/wiki/De_Casteljau's_algorithm
+    - https://ru.wikipedia.org/wiki/Алгоритм_де_Бура
+    - https://en.wikipedia.org/wiki/De_Boor's_algorithm
+- ***An Interactive Introduction to Splines***
+  - https://www.ibiblio.org/e-notes/Splines/Intro.htm
+- ***Интересное***
+  - https://www.ryanjuckett.com/biarc-interpolation/
 
 
 
-# ОПТИМИЗАЦИИ И МАТЕМАТИЧЕСКОЕ ПРОГРАММИРОВАНИЕ
-- https://ru.wikipedia.org/wiki/Оптимизация_(математика)
 
-
-
-# ВАРИАЦИОННОЕ ИСЧИСЛЕНИЕ
-- Интегральные уравнения и вариационные исчисления https://www.youtube.com/watch?v=9Xx6fDkQyPU&list=PLcsjsqLLSfNDTYXRv4HAR40q3En27EddE
-- Вариационное исчисление 
-  - https://ru.wikipedia.org/wiki/Вариационное_исчисление
-  - https://ru.wikipedia.org/wiki/Вариационное_исчисление#Применение_вариационного_исчисления
 
 
 
