@@ -191,7 +191,22 @@
     - https://www.mathedu.ru/text/sbornik_metodicheskih_materialov_uchiteley_prezidentskogo_fml_239_ch1_2021/p1/?query=Сборник методических материалов по математике учителей Президентского ФМЛ
     - https://www.mathedu.ru/text/sbornik_metodicheskih_materialov_uchiteley_prezidentskogo_fml_239_ch2_2022/p1/?query=Сборник методических материалов по математике учителей Президентского ФМЛ
     - https://www.mathedu.ru/text/sbornik_metodicheskih_materialov_uchiteley_prezidentskogo_fml_239_ch3_2024/p1/?query=Сборник методических материалов по математике учителей Президентского ФМЛ
-
+- (12 авг 25) https://ru.wikipedia.org/wiki/Теория_устойчивости
+- (12 авг 25) ***Учёные-самоучки*** https://ru.wikipedia.org/wiki/Категория:Учёные-самоучки
+- (12 авг 25) Математики по алфавиту https://ru.wikipedia.org/wiki/Категория:Математики_по_алфавиту
+- (12 авг 25) Сриниваса Рамануджан https://ru.wikipedia.org/wiki/Сриниваса_Рамануджан
+- (12 авг 25) движение 
+    - https://ru.wikipedia.org/wiki/Категория:Движения_пространства
+    - https://ru.wikipedia.org/wiki/Движение_(математика)
+- (12 авг 25) https://ru.wikipedia.org/wiki/Замощение_(геометрия)
+- (12 авг 25) https://ru.wikipedia.org/wiki/Категория:Математическое_образование
+- (12 авг 25) https://ru.wikipedia.org/wiki/Анализ_функций_многих_переменных
+- (12 авг 25) https://ru.wikipedia.org/wiki/Категория:Длинная_арифметика
+- (12 авг 25) интересная инфа в статье про кубические уравнения https://ru.wikipedia.org/wiki/Кубическое_уравнение
+- (12 авг 25) тщательней вычитать всю статью https://ru.wikipedia.org/wiki/Геометрия_Лобачевского
+- (12 авг 25) https://ru.wikipedia.org/wiki/История_математических_обозначений
+- (12 авг 25) https://ru.wikipedia.org/wiki/История_комбинаторики
+        
 
 
 
@@ -512,6 +527,18 @@
   - 2. Курс учебников под названием "Математика в техническом вузе"
   - 3. П. Н. Учебник по логике за 1954 г. И учебнику по психологии за 1954 г.
 - Слова великих людей в подлиннике — наилучший источник для понимания их творчества и условий, в которых их творчество развивалось. (с) Академик Л.И.Седов, 1964 г.
+- (12 авг 25) соглашение Эйнштейна https://ru.wikipedia.org/wiki/Соглашение_Эйнштейна
+- (12 авг 25) неравенство Бернулли, на английском статья более информативная https://en.wikipedia.org/wiki/Bernoulli's_inequality
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -545,7 +572,9 @@
     - Является одним из ведущих в мире исследователей теории струн и квантовой теории поля.
     - *до его работ мне ещё как до Китая, но пусть пока тут побудет*
 
-- **Владимир Арнольд / Острова / Телеканал Культура** https://www.youtube.com/watch?v=M-JYy1rDWPI
+- **Владимир Арнольд** 
+    - https://ru.wikipedia.org/wiki/Арнольд,_Владимир_Игоревич
+    - Владимир Арнольд / Острова / Телеканал Культура https://www.youtube.com/watch?v=M-JYy1rDWPI
     - *Арнольд очень человекоориентированный, дружелюбен, стоит пересматривать видео*
     - *Нужно обратиться к опыту Леонардо да Винчи. Он писал, правда, о художниках, но это в равной мере относится и к науке. У Леонардо было двадцать учеников, и ему предстояло определить, кто из них станет хорошим художником, кто талантлив, на кого стоит тратить время... Леонардо говорил так: начинаешь их учить и видишь, что одному удается натюрморт, другому - пейзаж, третьему - перспектива и так далее. А вот шестой уступает в натюрморте первому, в пейзажах второму, в перспективе третьему... У него нет склонности к специализации, но зато он всем интересуется. Вот он-то и будет настоящим художником, заключает Леонардо да Винчи.* Подробнее см.: https://www.nkj.ru/archive/articles/5174/ (Наука и жизнь, Академик В. И. Арнольд: Путешествие в хаосе)**
 
@@ -968,7 +997,7 @@
   - https://ru.wikipedia.org/wiki/Сферический_треугольник
 - Баум И. В. Система изучения тригонометрии на векторной основе в курсе алгебры средней школы. — 1965
   - https://www.mathedu.ru/text/baum_sistema_izucheniya_trigonometrii_na_vektornoy_osnove_v_kurse_algebry_sredney_shkoly_1965/p0/
-
+- https://ru.wikipedia.org/wiki/История_тригонометрии
 
 # ГЕОМЕТРИЧЕСКАЯ АЛГЕБРА КЛИФФОРДА (GEOMETRIC ALGEBRA)
 - Maths - 3D Clifford / Geometric Algebra https://www.euclideanspace.com/maths/algebra/clifford/d3/index.htm
@@ -1329,8 +1358,8 @@
     -
     - ___в процессе___
     - 
-
-
+- ***«O» большое и «o» малое*** https://ru.wikipedia.org/wiki/«O»_большое_и_«o»_малое
+    - встречается в анализе алгоритмов
 
 # МАТЕМАТИЧЕСКИЙ АНАЛИЗ: ПРАКТИКА
 
@@ -1346,14 +1375,18 @@
 - решение интеграла шустрым школотроном https://www.youtube.com/watch?v=DuS9QAL34tU
 - как вычислить корень используя матанализ без калькулятора  https://www.youtube.com/watch?v=VrQF_DFndO8
 - "Задача-гроб" для нежелательных абитуриентов в СССР https://dzen.ru/media/mathematic/zadachagrob-dlia-nejelatelnyh-abiturientov-v-sssr-na-etot-raz-ia-ne-soglasen-s-avtorom-na-100--617a63d1b6a86b000cb598f6
-
-
+- https://ru.wikipedia.org/wiki/Метод_Самокиша
+- (12 авг 25) в прочитанных мною учебниках это всё есть, но всё же, как альтернативу оставляю
+    - Как вычислить площадь поверхности вращения - https://mathprofi.ru/ploshad_poverhnosti_vrashenija.html
+    - Объём тела варщения - https://mathhelpplanet.com/static.php?p=obem-tela-vrashcheniya
+    - Длина дуги кривой - https://mathhelpplanet.com/static.php?p=formuly-dliny-dugi-krivoi
 
 
 
 
 # НЕСТАНДАРТНЫЙ АНАЛИЗ
 
+- https://ru.wikipedia.org/wiki/Нестандартный_анализ
 - https://www.google.com/search?q=нестандартный+анализ&oq=нестандартный+анализ
 - https://dxdy.ru/post1228021.html
 - http://old.math.nsc.ru/LBRT/g2/english/ssk/na_today.html
@@ -1373,6 +1406,17 @@
 - **Теория вычетов**
     - https://ru.wikipedia.org/wiki/Вычет_(комплексный_анализ)#Приложения_теории_вычетов
     - Вычисление определенных интегралов с помощью вычетов 1. https://www.youtube.com/watch?v=MsrETmBhkm0
+
+- пока будет в этом разделе, потом решу куда сунуть https://ru.wikipedia.org/wiki/Категория:Картографические_проекции
+
+- сходим с ума по комплексным числам
+  - https://ru.wikipedia.org/wiki/Комплексное_число
+  - https://ru.wikipedia.org/wiki/Гиперкомплексное_число
+  - https://ru.wikipedia.org/wiki/Гиперболические_числа
+  - https://ru.wikipedia.org/wiki/Дуальные_числа
+  - https://ru.wikipedia.org/wiki/Бикватернион
+
+
 
 
 
@@ -1491,7 +1535,7 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
   - https://ru.wikipedia.org/wiki/Функции_параболического_цилиндра
   - https://ru.wikipedia.org/wiki/Функции_Матьё
   - https://ru.wikipedia.org/wiki/Функции_Бесселя
-
+- лютая дичь, пока просто открываю вкладку, смотрю и быстро закрываю https://ru.wikipedia.org/wiki/Гипергеометрическая_функция
 
 # ОПТИМИЗАЦИИ И МАТЕМАТИЧЕСКОЕ ПРОГРАММИРОВАНИЕ
 - https://ru.wikipedia.org/wiki/Оптимизация_(математика)
@@ -1507,6 +1551,9 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 
 
 # ДИФФЕРЕНЦИАЛЬНАЯ ГЕОМЕТРИЯ
+- https://ru.wikipedia.org/wiki/Дифференциальная_геометрия_кривых
+- https://ru.wikipedia.org/wiki/Дифференциальная_геометрия
+- https://ru.wikipedia.org/wiki/Шаблон:Кривые
 - кривые и поверхности, фрейм Френе
 - кривые на сфере
   - https://faculty.evansville.edu/ck6/Gallery/Introduction.html
@@ -1549,16 +1596,24 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 
 
 # ЧИСЛЕННЫЕ МЕТОДЫ, ВЫЧИСЛИТЕЛЬНАЯ МАТЕМАТИКА, ЧИСЛЕННЫЙ АНАЛИЗ
-- «Вычислительная математика. Численные методы алгебры» для 10-11 классов https://www.youtube.com/watch?v=DWyhHDtMQjg
+- видеолекция «Вычислительная математика. Численные методы алгебры» для 10-11 классов https://www.youtube.com/watch?v=DWyhHDtMQjg
+
 - https://ru.wikipedia.org/wiki/Вычислительная_математика
 - https://ru.wikipedia.org/wiki/Численные_методы
+- https://ru.wikipedia.org/wiki/Численное_интегрирование
 - https://ru.wikipedia.org/wiki/Численное_решение_уравнений#Общий_алгоритм_последовательных_приближений
 - https://ru.wikipedia.org/wiki/Логарифмическая_линейка
 - https://ru.wikipedia.org/wiki/Номограмма
 - https://vk.com/wall-48736444?offset=520
 
+- Быстрый обратный квадратный корень https://ru.wikipedia.org/wiki/Быстрый_обратный_квадратный_корень
+- ***Методы вычисления квадратных корней*** https://ru.wikipedia.org/wiki/Методы_вычисления_квадратных_корней
+
+- Алгоритмы вычисления числа Пи https://ru.wikipedia.org/wiki/Категория:Алгоритмы_вычисления_числа_пи
+
 - эта штука очень прикольно выглядит https://ru.wikipedia.org/wiki/Диаграмма_Вольперта_—_Смита
 - Теория приближений, сплайны https://ru.wikipedia.org/wiki/Категория:Теория_приближений
+- Теория приближений https://ru.wikipedia.org/wiki/Теория_приближений
 - Решение нелийных уравнений где??
 - **видеокурс Лукьяненко «Численные методы»**
     - *этот курс так и не просмотрен мною до конца, я пытался его осилить летом 2023 года, теперь можно попробовать ещё раз*
@@ -1816,7 +1871,7 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
   - https://www.youtube.com/watch?v=2FHTo8xPD7w
   - https://www.youtube.com/watch?v=ej7CRAIGXow
   - https://www.youtube.com/watch?v=JOLtS4VUcvQ
-- локальная библиотека http://127.0.0.1:5555555/bundle/theorymech
+- https://ru.wikipedia.org/wiki/Гамильтонова_механика
 - разделы Теоритической Механики
   - статика
   - кинематика
@@ -1837,7 +1892,6 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
   - гироскопия
   - теория управления
 - http://www.prikladmeh.ru/
-
 
 
 # ВЫЧИСЛИТЕЛЬНАЯ ГЕОМЕТРИЯ
@@ -2111,7 +2165,12 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
   - https://spark-interfax.ru/moskva-meshchanski/bf-moskovski-detski-klub-kompyuter-inn-7702019686-ogrn-1027739149360-6906d96f762f226ae0531b9aa8c04bb6
   - https://focus.kontur.ru/entity?query=1027739149360
 
+- дичь: нулевой корень из числа не определён https://www.youtube.com/watch?v=pxdfDwk-GwU
 
+- The Geometric Beauty of RSA  https://www.youtube.com/watch?v=1HfRrK5YxOA
+
+
+- Why There's 'No' Quintic Formula (proof without Galois theory)  https://www.youtube.com/watch?v=BSHv9Elk1MU
 
 - лекции Савватеева
   - Математика для гуманитариев - 9 часов, 9 минут - https://www.youtube.com/watch?v=rQJMT9nbFhk&list=PLgEpoT7yAl9W6_iVhoxxWoNxcPXt7GJ0D&index=1  
@@ -2180,6 +2239,10 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 
 
 # АЛГОРИТМЫ И СТРУКТУРЫ ДАННЫХ, ЯЗЫКИ ПРОГРАММИРОВАНИЯ
+
+- https://ru.wikipedia.org/wiki/Вычислительная_сложность
+
+- https://ru.wikipedia.org/wiki/Алгоритм_Дейкстры
 
 - книги отсортированы по сложности (книги взяты из видео S0ER - https://www.youtube.com/watch?v=CVJ3pe9dc2E, Три замечательные книги по алгоритмам)
   - 0) «Грокаем алгоритмы»
