@@ -1562,6 +1562,16 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 - (июль 24) книги про приложения диффуров, очень классные, не находятся в сети в свободном доступе на момент проверки начала июля 24 года
     - http://w.ict.nsc.ru/books/textbooks/akhmerov/index.html
     -  http://w.ict.nsc.ru/books/textbooks/akhmerov/ode_unicode/s-36/s-36.html#eq4
+- ***БАЗИРОВАННАЯ БАЗА ПО ДИФФУРАМ***
+  - приятного просмотра
+    - DE1 - Differential equations, a tourist's guide https://www.youtube.com/watch?v=p_di4Zn4wz4
+    - DE2 - But what is a partial differential equation? https://www.youtube.com/watch?v=ly4S0oi3Yz8
+    - DE3 - Solving the heat equation https://www.youtube.com/watch?v=ToIXSwZ1pJU
+    - DE4 - But what is a Fourier series? From heat flow to drawing with circles https://www.youtube.com/watch?v=r6sGWTCMz2k
+    - DE5 - e^(iπ) in 3.14 minutes, using dynamics https://www.youtube.com/watch?v=v0YEaeIClKY
+    - DE6 - How (and why) to raise e to the power of a matrix https://www.youtube.com/watch?v=O85OWBJ2ayo
+        - вот это лютая дичь - число е возводят в степень..... матрицы!
+    - This is why you're learning differential equations https://www.youtube.com/watch?v=ifbaAqfqpc4
 
 
 
