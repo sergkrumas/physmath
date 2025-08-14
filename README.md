@@ -1590,6 +1590,12 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
   - https://ru.wikipedia.org/wiki/Фазовое_пространство
   - https://ru.wikipedia.org/wiki/Интегральная_кривая
   - https://en.wikipedia.org/wiki/Phase_space
+- Кривая погони
+  - https://en.wikipedia.org/wiki/Pursuit_curve
+  - несколько гифок https://mathworld.wolfram.com/PursuitCurve.html
+  - https://ru.wikipedia.org/wiki/Кривая_погони
+
+
 
 
 # СПЕЦИАЛЬНЫЕ ФУНКЦИИ
@@ -1654,8 +1660,12 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
     - *страница 172 - следствие: сумма углов геодезического треугольника на поверхности с положительной кривизной больше π, на поверхности с отрицательной кривизной меньше π, на поверхности с нулевой кривизной равна π*
     - **в целом книга хорошая, кое-чего уже знал, так как программировал шейдеры**
     - **если читать более вдумчиво и спрашивать ChatGPT каждый вопрос появляющийся в голове, конспектировать ответ или скриншотить его, то чтение подобных книг будет намного полезней**
-
-
+- Кривые
+  - параллельная кривая (уравнение)
+      - https://en.wikipedia.org/wiki/Parallel_curve
+      - https://ru.wikipedia.org/wiki/Параллельная_кривая
+  - https://en.wikipedia.org/wiki/Orthoptic_(geometry)
+  - https://en.wikipedia.org/wiki/Caustic_(mathematics)
 
 
 # ЧИСЛЕННЫЕ МЕТОДЫ, ВЫЧИСЛИТЕЛЬНАЯ МАТЕМАТИКА, ЧИСЛЕННЫЙ АНАЛИЗ
