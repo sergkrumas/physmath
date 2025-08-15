@@ -1594,7 +1594,7 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
   - https://en.wikipedia.org/wiki/Pursuit_curve
   - несколько гифок https://mathworld.wolfram.com/PursuitCurve.html
   - https://ru.wikipedia.org/wiki/Кривая_погони
-
+- (15 авг 25) купить книгу «Infinite Powers: How Calculus Reveals the Secrets of the Universe»
 
 
 
@@ -2538,10 +2538,11 @@ https://ru.wikipedia.org/wiki/Экстраполяция
 # МЕХАНИКА СПЛОШНОЙ СРЕДЫ, FEM- И MPM-СОЛВЕРЫ
 ## ВЫЧИСЛИТЕЛЬНАЯ МЕХАНИКА
 - https://ru.wikipedia.org/wiki/Вычислительная_механика
-  - https://ru.wikipedia.org/wiki/Метод_конечных_разностей
-  - https://ru.wikipedia.org/wiki/Метод_конечных_элементов
-  - https://ru.wikipedia.org/wiki/Метод_подвижных_клеточных_автоматов
-  - https://ru.wikipedia.org/wiki/Метод_дискретных_элементов
+  - https://ru.wikipedia.org/wiki/Категория:Численные_методы_механики_сплошных_сред
+    - https://ru.wikipedia.org/wiki/Метод_конечных_разностей
+    - https://ru.wikipedia.org/wiki/Метод_конечных_элементов
+    - https://ru.wikipedia.org/wiki/Метод_подвижных_клеточных_автоматов
+    - https://ru.wikipedia.org/wiki/Метод_дискретных_элементов
   - (15 авг 25) накачаны книги в папке с одноимённым названием, надо пробежаться
 ## ОБЩЕЕ
 - Механика сплошной среды - раздел Механики, наряду с теоретической механикой.укуцйкуцйкуцйкуцйкуцйкуцкуцкукукккккккк
