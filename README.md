@@ -215,7 +215,7 @@
   - https://ru.wikipedia.org/wiki/Крылов,_Алексей_Николаевич
   - надо изучать его работы
       - https://www.livelib.ru/author/124230/top-aleksej-krylov
-
+- (27 авг 25) 7 советов как решить любую задачу https://www.youtube.com/watch?v=vFc8z7zNVPQ
 
 
 
