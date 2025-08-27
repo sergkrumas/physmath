@@ -1771,6 +1771,22 @@
 - Инверсия
   - по фразе «инверсия» в локальном поиске должно быть две книги
 
+## ВЫХОДИМ В 4D (И ВОЗВРАЩАЕМСЯ)
+- фильм «Dimensions» на французском длительностью 2 часа
+  - https://www.youtube.com/watch?v=abvtNhvFM4c
+  - https://www.youtube.com/watch?v=DvCCz4MJJhA
+  - https://www.youtube.com/watch?v=ZZEdE2g_YDM
+  - https://www.youtube.com/watch?v=gLGyd7CcVC8
+  - https://www.youtube.com/watch?v=BosTQT4smJA
+  - https://www.youtube.com/watch?v=NdpArmitQjo
+  - https://www.youtube.com/watch?v=tX_NUlO_tbw
+  - https://www.youtube.com/watch?v=ECHNPCTLL8c
+  - https://www.youtube.com/watch?v=05eQLnxsTd0
+  - а это его перевод на русский, топорно выполненные анимации под плохо исполненную озвучку оставляют впечатление артхаусности, так что я предупреждаю
+    - Документальный фильм «Измерения» — это два часа математики, постепенно выводящие вас в четвёртое измерение. В создании фильма принимали участие Джос Лейс, Этьен Джус, Аурельен Альварез. https://vk.com/wall-51126445_48398
+    - в пятой части наглядно показали, что сфера это прямая... Я таких фокусов не ожидал.
+    - в шестой части показывали комформные отображения на фотографии
+
 
 ## ОПЕРАЦИОННОЕ ИСЧИСЛЕНИЕ
 
