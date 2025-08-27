@@ -1867,6 +1867,7 @@ https://ru.wikipedia.org/wiki/Гармонический_анализ
 - https://en.wikipedia.org/wiki/Kernel_(image_processing)
 - https://ru.wikipedia.org/wiki/Ядро_свертки
 - https://ru.wikipedia.org/wiki/Категория:Выделение_признаков_(компьютерное_зрение)
+- магия H.264 (с комментариями) https://habr.com/ru/articles/316580/
 - цифровая обработка изображений 
   - Восстановление расфокусированных и смазанных изображений https://habr.com/ru/articles/136853/
       - matlab, восстановление мыльных фоток
@@ -2914,6 +2915,9 @@ https://ru.wikipedia.org/wiki/Экстраполяция
       - https://ru.wikipedia.org/wiki/Алгоритм_Кэхэна
   - Приближённые вычисления: абсолютная и относительная погрешность https://www.youtube.com/watch?v=WYD9lI9Opg4
   - Алгоритм вычисления корня n-ой степени из произвольного положительного числа https://habr.com/post/469735/
+  - CORDIC
+    - CORDIC — это алгоритм для вычисления тригонометрических функций вроде sin, cos, tan и тому подобных на маломощных устройствах без использования модуля обработки операций с плавающей запятой или затратных таблиц поиска. По факту он сводит эти сложные функции до простых операций сложения и битового сдвига.
+    - https://habr.com/ru/companies/ruvds/articles/814733/
 
 - **Алгоритмы манипуляций с битами** https://habr.com/ru/articles/886182/
   - http://www-graphics.stanford.edu/~seander/bithacks.html
