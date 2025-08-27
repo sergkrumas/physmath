@@ -2932,6 +2932,9 @@ https://ru.wikipedia.org/wiki/Экстраполяция
   - An Introduction to Curvilinear Coordinates in Differential Geometry https://www.youtube.com/watch?v=2V__naEkXVY
   - How to learn Differential Geometry | Differential Geometry | Differential Geometry Lecture https://www.youtube.com/watch?v=ITHausnPq7A
 
+- перемножение больших чисел
+  - https://ru.wikipedia.org/wiki/Алгоритм_Фюрера
+
 
 - Комбинаторика и алгоритмы
   - https://combalg.ru/
