@@ -2963,6 +2963,8 @@ https://ru.wikipedia.org/wiki/Экстраполяция
 - перемножение больших чисел
   - https://ru.wikipedia.org/wiki/Алгоритм_Фюрера
 
+- Branchless programming
+  - https://www.youtube.com/watch?v=bVJ-mWWL7cE
 
 - Комбинаторика и алгоритмы
   - https://combalg.ru/
