@@ -3101,6 +3101,7 @@ https://ru.wikipedia.org/wiki/Экстраполяция
 
 # ИСТОРИЯ АЙТИШКИ
 - (30 сен 25) про компанию Borland и почему Turbo Pascal так назывался https://habr.com/ru/articles/949956/
+- (30 сен 25) мелодии из кейгенов, демосцена. Архивы в конце статьи https://habr.com/ru/companies/ruvds/articles/948560/
 
 # АЛГОРИТМЫ И СТРУКТУРЫ ДАННЫХ, ЯЗЫКИ ПРОГРАММИРОВАНИЯ
 
