@@ -87,6 +87,11 @@ Finally, although it should be clear from reading this, the opinions given withi
 
     Physics is obviously a field of study in its own right and not a sub-category of mathematics. Nevertheless, physics and mathematics are closely tied to one another in several areas within computer graphics. Examples of graphics problems that involve physics include how light interacts with the surfaces of objects, how light bounces around in a complex environment, the way people and animals move, and the motion of water and wind. Knowledge of physics is important for simulating all of these phenomena. This is closely tied to solving differential equations, which I shall discuss next.
 
+    - ТЕОРМЕХ
+        - https://library.bmstu.ru/Pages/Edu/Books/1kurs/2semestr/teoreticheskaya_mehanika
+        - https://ru.wikipedia.org/wiki/Теоретическая_механика
+
+
 9) NUMERICAL SOLUTIONS OF DIFFERENTIAL EQUATIONS
 
     It is my belief that techniques for solving differential equations are extremely important to computer graphics. As we just discussed, much of computer graphics is devoted to simulating physical systems from the real world. How waves form in water and how an animal walks across the ground are two examples of physical simulation. Simulation of physical systems very often leads to numerical solutions of differential equations. Note that this is actually very different than symbolic solutions to differential equations. Symbolic solutions are exact answers, and usually can be found only for extremely simple sets of equations. Sometimes a college course called "Differential Equations" will only examine symbolic solutions, and this will not help much for most computer graphics problems.
@@ -117,10 +122,6 @@ Finally, although it should be clear from reading this, the opinions given withi
         Springer-Verlag
         [the classic text, somewhat dated]
 
-13) ТЕОРМЕХ
-
-    - https://library.bmstu.ru/Pages/Edu/Books/1kurs/2semestr/teoreticheskaya_mehanika
-    - https://ru.wikipedia.org/wiki/Теоретическая_механика
 
 
 CONCLUDING WORDS: APPLIED AND PURE MATHEMATICS
